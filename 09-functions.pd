@@ -1,117 +1,117 @@
-# Functions
+# 函数
 
-Functions are reusable pieces of programs. They allow you to give a name to a block of statements, allowing you to run that block using the specified name anywhere in your program and any number of times. This is known as *calling* the function. We have already used many built-in functions such as `len` and `range`.
+函数是重用的程序片段。它们允许你给一块语句一个名字，允许您在你的程序的任何地方使用指定的名字运行任何次数。这就是所谓的*函数*调用。我们已经使用了许多内置函数, 如`len`和`range`。
 
-The function concept is probably *the* most important building block of any non-trivial software (in any programming language), so we will explore various aspects of functions in this chapter.
+函数概念可能是任何有价值软件中*最*重要的块(在任何编程语言中)，所以，在这一章，我们将探索函数的各各方面。
 
-Functions are defined using the `def` keyword. After this keyword comes an *identifier* name for the function, followed by a pair of parentheses which may enclose some names of variables, and by the final colon that ends the line. Next follows the block of statements that are part of this function. An example will show that this is actually very simple:
+定义函数使用`def`关键字。在这个关键字之后是*标识*函数的名字，其次是在一对括号中可以附上一些变量名，最后在行的末尾是冒号。接下来是语句块--函数的一部分。一个例子将展示这些，这实际上是非常简单的:
 
-Example (save as `function1.py`):
+例子 (保存为`function1.py`):
 
 ~~~python
 def sayHello():
-    print('Hello World!') # block belonging to the function
+    print('世界您好!') # 属于函数的块
 # End of function
 
-sayHello() # call the function
-sayHello() # call the function again
+sayHello() # 调用函数
+sayHello() # 再次调用函数
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 function1.py
-Hello World!
-Hello World!
+世界您好! 
+世界您好! 
 ~~~
 
-How It Works:
+它是如何工作的：
 
-We define a function called `sayHello` using the syntax as explained above. This function takes no parameters and hence there are no variables declared in the parentheses. Parameters to functions are just input to the function so that we can pass in different values to it and get back corresponding results.
+我们使用上述的语法，定义了一个称为`sayHello`函数。这个函数没有参数，因此没有在圆括号中声明变量。函数的参数只是输入到函数中，以便我们可以给它传递不同的值返回相应的结果。
 
-Notice that we can call the same function twice which means we do not have to write the same code again.
+注意，我们可以调用相同的函数两次，这意味着我们不需要再写同样的代码。
 
-## Function Parameters 
+## 函数的参数
 
-A function can take parameters, which are values you supply to the function so that the function can *do* something utilising those values. These parameters are just like variables except that the values of these variables are defined when we call the function and are already assigned values when the function runs.
+一个函数可以带参数--你提供给函数的值，利用这些值该函数可以*做*一些事情。这些参数就像变量除了当我们调用函数时这些变量的值已经被定义，当函数运行时，它们已经有了指定的的值。
 
-Parameters are specified within the pair of parentheses in the function definition, separated by commas. When we call the function, we supply the values in the same way.  Note the terminology used - the names given in the function definition are called *parameters* whereas the values you supply in the function call are called *arguments*.
+参数是在函数定义中在一对括号中指定，之间用逗号分隔。当我们调用这个函数，我们以同样的方式提供这些值。注意使用的术语——在函数的定义中给出的名字叫*形参*，而在函数调用时您提供的值被称为*实参*。
 
-Example (save as `func_param.py`):
+例子 (保存为`func_param.py`):
 
 ~~~python
 def printMax(a, b):
     if a > b:
-        print(a, 'is maximum')
+        print(a, '大')
     elif a == b:
-        print(a, 'is equal to', b)
+        print(a, '等于', b)
     else:
-        print(b, 'is maximum')
+        print(b, '大')
 
-printMax(3, 4) # directly give literal values
+printMax(3, 4) # 直接给出字面值
 
 x = 5
 y = 7
 
-printMax(x, y) # give variables as arguments
+printMax(x, y) # 给出参数的变量
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_param.py
-4 is maximum
-7 is maximum
+4 大
+7 大
 ~~~
 
-How It Works:
+它如何工作的：
 
-Here, we define a function called `printMax` that uses two parameters called `a` and `b`.  We find out the greater number using a simple `if..else` statement and then print the bigger number.
+在这里，我们定义了一个称为`printMax`的函数，它使用叫做`a`和`b`的两个参数。我们使用简单的`if..else`语句找出比较大的数，然后打印较大的数。
 
-The first time we call the function `printMax`, we directly supply the numbers as arguments. In the second case, we call the function with variables as arguments. `printMax(x, y)` causes the value of argument `x` to be assigned to parameter `a` and the value of argument `y` to be assigned to parameter `b`. The printMax function works the same way in both cases.
+我们第一次调用函数`printMax`，我们直接提供了数字作为参数。在第二种情况下，我们调用函数使用变量作为参数。`printMax`把实参`x`分配给形参`a`，`y`分配给`b`。在这两种情况下，printMax函数以同样方式工作。
 
-## Local Variables 
+## 局部变量
 
-When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are *local* to the function. This is called the *scope* of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.
+你在函数定义中声明的变量，他们与在函数外使用的其它同名变量没有任何关系，即变量名称对函数来说是*局部*的。这叫变量的*范围*。所有变量都有它们被声明的块的范围，从名称定义的点开始。
 
-Example (save as `func_local.py`):
+例子 (保存为`func_local.py`):
 
 ~~~python
 x = 50
 
 def func(x):
-    print('x is', x)
+    print('x等于', x)
     x = 2
-    print('Changed local x to', x)
+    print('局部变量x改变为', x)
 
 func(x)
-print('x is still', x)
+print('x一直是', x)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_local.py
-x is 50
-Changed local x to 2
-x is still 50
+x等于50
+局部变量x改变为2
+x一直是50
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The first time that we print the *value* of the name *x* with the first line in the function's body, Python uses the value of the parameter declared in the main block, above the function definition.
+第一次，我们使用函数体中第一行打印变量*x*的*值*，Python使用在主块中，函数定义上声明的实参。
 
-Next, we assign the value `2` to `x`. The name `x` is local to our function.  So, when we change the value of `x` in the function, the `x` defined in the main block remains unaffected.
+接下来，我们给`x`赋值为`2`，变量为`x`对我们的函数来说是局部变量，因此在函数中当我们改变`x`的值时，在主块中定义的变量`x`不受影响。
 
-With the last `print` function call, we display the value of `x` as defined in the main block, thereby confirming that it is actually unaffected by the local assignment within the previously called function.
+最后调用的`print`函数，显示在主块中定义的变量`x`，因此证实，它不受在前面调用函数的局部变量的影响。
 
-## Using The global Statement
+## 使用全局声明
 
-If you want to assign a value to a name defined at the top level of the program (i.e. not inside any kind of scope such as functions or classes), then you have to tell Python that the name is not local, but it is *global*. We do this using the `global` statement. It is impossible to assign a value to a variable defined outside a function without the `global` statement.
+如果你想给在顶层的程序(即未在任何类型的范围如函数或类之中)定义的变量赋值,那么你必须告诉Python，变量不是局部的，而是*全局*的。我们使用`global`语句，没有`global`语句赋值给一个在函数外定义的变量是不可能的。
 
-You can use the values of such variables defined outside the function (assuming there is no variable with the same name within the function). However, this is not encouraged and should be avoided since it becomes unclear to the reader of the program as to where that variable's definition is. Using the `global` statement makes it amply clear that the variable is defined in an outermost block.
+您可以使用这些在函数外定义的变量的值(假设在函数内没有同名的变量)。然而，这并不鼓励，应该避免，因为这使程序的读者不清楚变量是在哪里定义的，使用 `global` 语句就非常清楚，变量定义在一个最外的块中。
 
-Example (save as `func_global.py`):
+例子 (保存为`func_global.py`):
 
 ~~~python
 x = 50
@@ -119,104 +119,105 @@ x = 50
 def func():
     global x
 
-    print('x is', x)
+    print('x的值是', x)
     x = 2
-    print('Changed global x to', x)
+    print('全局变量x改为', x)
 
 func()
-print('Value of x is', x)
+print('x的值是', x)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_global.py
-x is 50
-Changed global x to 2
-Value of x is 2
+x的值是50
+全局变量to改为2
+x的值是2
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The `global` statement is used to declare that `x` is a global variable - hence, when we assign a value to `x` inside the function, that change is reflected when we use the value of `x` in the main block.
+`global`语句用来声明`x`是全局变量，当我们在函数内给`x`赋值时，它的改变映射到我们在主块中使用的`x`的值。  
 
-You can specify more than one global variable using the same `global` statement e.g. `global x, y, z`.
+用同样的`global`语句可以指定多个全局变量，比如： `global x, y, z`。 
 
-## Default Argument Values 
+## 默认参数
 
-For some functions, you may want to make some parameters *optional* and use default values in case the user does not want to provide values for them. This is done with the help of default argument values. You can specify default argument values for parameters by appending to the parameter name in the function definition the assignment operator (`=`) followed by the default value.
+对于一些函数，你可能想要一些参数是*可选*，即在用户不希望为它们提供值时使用默认值，这在默认的参数值的帮助下完成的。你可以在函数定义中通过在参数名称后使用赋值操作符(`=`)后跟默认值来指定默认的参数值。
 
-Note that the default argument value should be a constant. More precisely, the default argument value should be immutable - this is explained in detail in later chapters. For now, just remember this.
+注意，默认参数值应该是一个常数。更准确的说，默认的参数值应该是不可变的——这在后面的章节中做了详细解释。现在，只要记住这点。
 
-Example (save as `func_default.py`):
+例子 (保存为 `func_default.py`):
 
 ~~~python
 def say(message, times = 1):
     print(message * times)
 
-say('Hello')
-say('World', 5)
+say('你好')
+say('世界', 5)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_default.py
-Hello
-WorldWorldWorldWorldWorld
+你好
+世界世界世界世界世界
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The function named `say` is used to print a string as many times as specified. If we don't supply a value, then by default, the string is printed just once. We achieve this by specifying a default argument value of `1` to the parameter `times`.
+函数`say`是用来按照指定的次数打印一个字符串。如果我们不提供一个值，那么在默认情况下字符串只打印一次。为此，我们为参数`times`指定一个默认参数值`1`。
 
-In the first usage of `say`, we supply only the string and it prints the string once. In the second usage of `say`, we supply both the string and an argument `5` stating that we want to *say* the string message 5 times.
+在第一次使用函数`say`时，我们只提供了字符串，它打印字符串一次。在第二次使用`say`时，我们提供了字符串和一个实参`5`两个参数，说明我们想要*say*字符串5次。
 
-Important
+重要一点
 
-:   Only those parameters which are at the end of the parameter list can be given default argument values i.e. you cannot have a parameter with a default argument value preceding a parameter without a default argument value in the function's parameter list.
+:   只有在参数列表后面的的参数可以被赋予默认参数值，即在参数列表中，你不能在没有默认值的参数前有有默认参数值的参数。
 
-    This is because the values are assigned to the parameters by position. For example,`def func(a, b=5)` is valid, but `def func(a=5, b)` is *not valid*.
+    这是因为，值按位置分配给参数。例如，`def func(a, b=5)`是有效的，而`def func(a=5, b)`是*无效*的。
 
-## Keyword Arguments 
 
-If you have some functions with many parameters and you want to specify only some of them, then you can give values for such parameters by naming them - this is called *keyword arguments* - we use the name (keyword) instead of the position (which we have been using all along) to specify the arguments to the function.
+## 参数关键字
 
-There are two *advantages* - one, using the function is easier since we do not need to worry about the order of the arguments. Two, we can give values to only those parameters to which we want to, provided that the other parameters have default argument values.
+如果你有一些有许多参数的函数，您想要指定参数中的一些，那么，你可以通过为参数命名来为它们赋值——这叫做*参数关键字*——我们使用名称(关键字)而不是位置(我们一直使用的)来指定函数的参数。
 
-Example (save as `func_key.py`):
+这有两个*优势*，一是，使用函数容易，因为我们不需要担心参数的顺序。二是，如果其他参数有默认参数值，我们可以只给我们想赋值的参数赋值。
+
+例子 (保存为`func_key.py`):
 
 ~~~python
 def func(a, b=5, c=10):
-    print('a is', a, 'and b is', b, 'and c is', c)
+    print('a为', a, '和b为', b, '和c为', c)
 
 func(3, 7)
 func(25, c=24)
 func(c=50, a=100)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_key.py
-a is 3 and b is 7 and c is 10
-a is 25 and b is 5 and c is 24
-a is 100 and b is 5 and c is 50
+a为3 和b为7 和c为10
+a为25 和b为5 和c为24
+a为100 和b为5 和c为50
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The function named `func` has one parameter without a default argument value, followed by two parameters with default argument values.
+名为`func`的函数中有一个参数没有默认参数值，后面两个参数有默认参数值。
 
-In the first usage, `func(3, 7)`, the parameter `a` gets the value `3`, the parameter `b` gets the value `7` and `c` gets the default value of `10`.
+第一次使用`func(3, 7)`，参数`a`得到值`3`，参数`b`得到值`7`，参数`c`得到默认值`10`。
 
-In the second usage `func(25, c=24)`, the variable `a` gets the value of 25 due to the position of the argument. Then, the parameter `c` gets the value of `24` due to naming i.e. keyword arguments. The variable `b` gets the default value of `5`.
+第二次使用`func(25, c=24)`, 参数`a`按照参数的位置得到值`25`，然后参数`c`按照参数名，也就是参数关键字，得到值`24`，变量`b`得到默认值`5`。
 
-In the third usage `func(c=50, a=100)`, we use keyword arguments for all specified values. Notice that we are specifying the value for parameter `c` before that for `a` even though `a` is defined before `c` in the function definition.
+第三次使用`func(c=50, a=100)`，我们为所有给定的值使用了参数关键字。注意，我们为参数`c`指定值是在参数`a`之前，尽管在函数定义中`a`在`c`前。
 
-## VarArgs parameters
+## 变量参数
 
-Sometimes you might want to define a function that can take *any* number of parameters, this can be achieved by using the stars (save as `total.py`):
+有时你可能想定义一个函数，它可以获取参数的*任何*值，这可以通过使用星号(另存为`total.py`)实现：
 
 ~~~python
 def total(initial=5, *numbers, **keywords):
@@ -230,24 +231,24 @@ def total(initial=5, *numbers, **keywords):
 print(total(10, 1, 2, 3, vegetables=50, fruits=100))
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 total.py
 166
 ~~~
 
-How It Works:
+它是如何工作的：
 
-When we declare a starred parameter such as `*param`, then all the positional arguments from that point till the end are collected as a tuple called 'param'.
+当我们声明一个星号的参数，如`*param`，那么从这一点开始到结束的所有位置的参数都被收集到一个叫`param`的元组中。
+ 
+同样,当我们声明一个双星参数，如`**param`，那么人那一点开始到结束的所有关键字参数都被收集到一个叫`param`的字典中。
 
-Similarly, when we declare a double-starred parameter such as `**param`, then all the keyword arguments from that point till the end are collected as a dictionary called 'param'.
+我们将在[后面章节)(#数据结构)中探讨元组和字典。
 
-We will explore tuples and dictionaries in a [later chapter](#data-structures).
+## 只有关键字的参数
 
-## Keyword-only Parameters 
-
-If we want to specify certain keyword parameters to be available as keyword-only and *not* as positional arguments, they can be declared after a starred parameter (save as `keyword_only.py`):
+如果我们想要指定特定的关键字参数作为只有关键字的参数，而*不*是位置参数，它们可以被声明在星号参数后(另存为`keyword_only.py`)：
 
 ~~~python
 def total(initial=5, *numbers, extra_number):
@@ -262,7 +263,7 @@ total(10, 1, 2, 3)
 # Raises error because we have not supplied a default argument value for 'extra_number'
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 keyword_only.py
@@ -273,105 +274,105 @@ total(10, 1, 2, 3)
 TypeError: total() needs keyword-only argument extra_number
 ~~~
 
-How It Works:
+它是如何工作的：
 
-Declaring parameters after a starred parameter results in keyword-only arguments. If these arguments are not supplied a default value, then calls to the function will raise an error if the keyword argument is not supplied, as seen above.
+在星号参数后面声明参数，结果是只有关键字参数，如果这些参数没有提供一个默认值，那么如果关键字参数没有提供值，函数调用会产生错误，如上所示。
 
-Notice the use of `+=` which is a shortcut operator, so instead of saying `x = x + y`, you can say `x += y`.
+注意，`+=`的用法是操作符的缩写，因此，`x = x + y`，你可以写成`x += y`。
+ 
+如果你不需要星号参数，但还想使用只有关键字参数，那么只需简单使用一个星号而不使用任何名字，例如，`def total(initial=5, *, extra_number)`。
 
-If you want to have keyword-only arguments but have no need for a starred parameter, then simply use an empty star without using any name such as `def total(initial=5, *, extra_number)`.
+## return语句
 
-## The return Statement 
+`return` 语句用来从函数中*return(返回)*，也就是说跳出函数。同样，我们也可以从函数中选择性地*返回一个值*。
 
-The `return` statement is used to *return* from a function i.e. break out of the function. We can optionally *return a value* from the function as well.
-
-Example (save as `func_return.py`):
+例子 (保存为`func_return.py`):
 
 ~~~python
 def maximum(x, y):
     if x > y:
         return x
     elif x == y:
-        return 'The numbers are equal'
+        return '两个数相等'
     else:
         return y
 
 print(maximum(2, 3))
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_return.py
 3
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The `maximum` function returns the maximum of the parameters, in this case the numbers supplied to the function. It uses a simple `if..else` statement to find the greater value and then *returns* that value.
+函数`maximum`返回参数中的最大值，在这个例子中是提供给函数的数值。它使用了简单的`if..else`语句找到比较大的值，然后*return(返回)*那个值。
 
-Note that a `return` statement without a value is equivalent to `return None`. `None` is a special type in Python that represents nothingness. For example, it is used to indicate that a variable has no value if it has a value of `None`.
+注意，没有一个值的`return`语句相当于`return None(什么也不返回)`。`None`是Python中的一个特殊类型，它代表什么也没有。例如，如果一个变量的值是`None`，它说明这个变量没有值。
 
-Every function implicitly contains a `return None` statement at the end unless you have written your own `return` statement. You can see this by running `print(someFunction())` where the function `someFunction` does not use the `return` statement such as:
-
+除非你已经写了自己的`return`语句，否则，每个函数都默认包含一个`return None`语句。通过运行`print(someFunction())`你可以看到这一点，这里`someFunction` 没有使用`return`语句，比如：
+ 
 ~~~python
 def someFunction():
     pass
 ~~~
 
-The `pass` statement is used in Python to indicate an empty block of statements.
+在Python中`pass`语句用来说明一个空的语句块。
 
-Note
+注意
 
-:   There is a built-in function called `max` that already implements the 'find maximum' functionality, so use this built-in function whenever possible.
+:   已经有一个叫`max`的内建函数能够完成'find maximum'函数的功能 ，因此，只要可能使用这个内建函数。
 
-## DocStrings 
+## 文档字符串
 
-Python has a nifty feature called *documentation strings*, usually referred to by its shorter name *docstrings*. DocStrings are an important tool that you should make use of since it helps to document the program better and makes it easier to understand. Amazingly, we can even get the docstring back from, say a function, when the program is actually running!
+Python有一个叫*documentation strings(文档字符串)*的好特性，通常用缩写名*docstrings*来指定。 文档字符串是你应该使用的一个重要工具，它对程序文档有助，令其容易理解。令人惊讶的是，当程序实际运行时，我们甚至可以从例如一个函数返回文档字符串。
 
-Example (save as `func_doc.py`):
+例子 (保存为`func_doc.py`):
 
 ~~~python
 def printMax(x, y):
-    '''Prints the maximum of two numbers.
+    '''打印两个数中的最大值。
 
-    The two values must be integers.'''
-    x = int(x) # convert to integers, if possible
+    两个值必须是整数。'''
+    x = int(x) # 如果可能，转换为整数
     y = int(y)
 
     if x > y:
-        print(x, 'is maximum')
+        print(x, '最大')
     else:
-        print(y, 'is maximum')
+        print(y, '最大')
 
 printMax(3, 5)
 print(printMax.__doc__)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 func_doc.py
-5 is maximum
-Prints the maximum of two numbers.
+5 最大
+打印两个数中的最大值。
 
-        The two values must be integers.
+            两个值必须是整数。
 ~~~
 
-How It Works:
+它是如何工作的：
 
-A string on the first logical line of a function is the *docstring* for that function. Note that DocStrings also apply to [Modules](#modules) and [classes](#object-oriented-programming) which we will learn about in the respective chapters.
+函数的第一个逻辑行的字符串是那个函数的*文档字符串*。注意，文档字符串也适用于在各自 的章节将要学习的[模块](#模块)和(类)(#面向对象的程序设计)。
 
-The convention followed for a docstring is a multi-line string where the first line starts with a capital letter and ends with a dot. Then the second line is blank followed by any detailed explanation starting from the third line. You are *strongly advised* to follow this convention for all your docstrings for all your non-trivial functions.
+文档的以贯例是多行字符串，第一行以大写字母开头以句点(.)结束(注：中文在V3.3中也可以)，第二行是空行，从第三行开始是详细描述。*强烈建议*，为你重要的函数写文档字符串要遵循此贯例。
 
-We can access the docstring of the `printMax` function using the `__doc__` (notice the *double underscores*) attribute (name belonging to) of the function. Just remember that Python treats *everything* as an object and this includes functions. We'll learn more about objects in the chapter on [classes](#object-oriented-programming).
+我们可以使用函数的`__doc__`(注意，**双下划线**)属性(属于名字的)访问`printMax`函数的文档字符串。只要记住，Python把*一切任何事情*作为一个对象对待，这也包括函数。我们将在[类](#面向对象编程)这一章学习关于对象的更多知识。
 
-If you have used `help()` in Python, then you have already seen the usage of docstrings! What it does is just fetch the `__doc__` attribute of that function and displays it in a neat manner for you. You can try it out on the function above - just include `help(printMax)` in your program. Remember to press the `q` key to exit `help`.
+如果你在Python中已经使用过`help()`，那么你已经看到如何使用文档字符串了!它所做的仅仅是获取函数的 `__doc__` 属性，并以一个整洁的方式显示给你。你可以在上面的函数——在你的程序中仅包括`help(printMax)`尝试一下。记得按下`q`键，退出`help`。
 
-Automated tools can retrieve the documentation from your program in this manner. Therefore, I *strongly recommend* that you use docstrings for any non-trivial function that you write. The `pydoc` command that comes with your Python distribution works similarly to `help()` using docstrings.
+自动化工具可以从你的程序中以这种方式检索文档。因此，我*强烈建议*，为你写的任何重要函数使用文档字符串。来自Python的自动化工具`pydoc`命令使用文档字符串的工作原理类似于`help()`。
 
-## Summary 
+## 小结
 
-We have seen so many aspects of functions but note that we still haven't covered all aspects of them. However, we have already covered most of what you'll use regarding Python functions on an everyday basis.
+我们已经见过函数的很多方面，但请注意，我们仍然没有覆盖它们的所有方面。然而，我们已经覆盖了Python函数日常使用的大部分。
 
-Next, we will see how to use as well as create Python modules.
+接下来，我们将看到如何创建及使用Python模块。
