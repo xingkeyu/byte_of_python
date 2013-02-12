@@ -1,20 +1,20 @@
-# Standard Library
+# 标准库
 
-The Python Standard Library contains a huge number of useful modules and is part of every standard Python installation. It is important to become familiar with the Python Standard Library since many problems can be solved quickly if you are familiar with the range of things that these libraries can do.
+Python标准库包含大量有用的模块，是每个标准Python安装的一部分。如何你熟悉这些库能做的事的范围，许多问题可以快速解决，因此，熟悉Python标准库是很重要的，
 
-We will explore some of the commonly used modules in this library. You can find complete details for all of the modules in the Python Standard Library in the ['Library Reference' section](http://docs.python.org/py3k/library/index.html) of the documentation that comes with your Python installation.
+在这个库中，我们将探讨一些经常使用的模块。在你安装的Python的文档中['Library Reference' section](http://docs.python.org/py3k/library/index.html)，你可以找到在Python标准库中所有模块的完整细节。
 
-Let us explore a few useful modules.
+让我们探讨几个有用的模块：
 
-Note
+注意
 
-:   If you find the topics in this chapter too advanced, you may skip this chapter. However, I highly recommend coming back to this chapter when you are more comfortable with programming using Python.
+:   如果你发现本章的主题太先进，你可以跳过这一章。但是，当你更喜欢使用Python编程时，我强烈建议你回到本章。
 
-## sys module 
+## sys（系统）模块
 
-The `sys` module contains system-specific functionality. We have already seen that the `sys.argv` list contains the command-line arguments.
+`sys`模块包含系统特定的功能。我们已经看到, `sys.argv`列表包含的命令行参数。
 
-Suppose we want to check the version of the Python command being used so that, say, we want to ensure that we are using at least version 3. The `sys` module gives us such functionality.
+假设我们想要检查正在使用的Python命令的版本，也就是说，我们希望确保我们使用至少是版本3。`sys`模块给了我们这样的功能。
 
 ~~~
 $ python3
@@ -25,41 +25,41 @@ sys.version_info(major=3, minor=3, micro=0, releaselevel='final', serial=0)
 True
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The `sys` module has a `version_info` tuple that gives us the version information. The first entry is the major version. We can check this to, for example, ensure the program runs only under Python 3.0:
+`sys`模块有一个给我们版本信息的`version_info`元组，第一部分是 major主版本号，例如，我们可以检查确保程序在Pythpn 3.0版本下运行。
 
-Save as `versioncheck.py`:
+保存为`versioncheck.py`:
 
 ~~~python
 import sys, warnings
 if sys.version_info.major < 3:
-    warnings.warn("Need Python 3.0 for this program to run",
+    warnings.warn("程序需要在 Python 3.0 以上版本上运行",
         RuntimeWarning)
 else:
-    print('Proceed as normal')
+    print('按正常情况处理')
 ~~~
 
 Output:
 
 ~~~
 $ python2.7 versioncheck.py
-versioncheck.py:6: RuntimeWarning: Need Python 3.0 for this program to run
+versioncheck.py:6: 程序需要在 Python 3.0 以上版本上运行
   RuntimeWarning)
 
 $ python3 versioncheck.py
-Proceed as normal
+按正常情况处理
 ~~~
 
-How It Works:
+它是如何工作的：
 
-We use another module from the standard library called `warnings` that is used to display warnings to the end-user. If the Python version number is not at least 3, we display a corresponding warning.
+我们使用标准库的另一个模块，称为`warnings`(警告)，用于向最终用户显示警告。如果Python版本号小于3，我们显示相应的警告。
 
-## logging module 
+## logging（日志）模块
 
-What if you wanted to have some debugging messages or important messages to be stored somewhere so that you can check whether your program has been running as you would expect it? How do you "store somewhere" these messages? This can be achieved using the `logging` module.
+如果你想把一些调试信息或重要信息存储在某个地方，以便你可以检查你的程序是否按你的期望运行，你该如何做呢？你怎样将这些信息"存储在某个地方"？这可以通过使用 `logging`模块实现。
 
-Save as `use_logging.py`:
+保存为 `use_logging.py`:
 
 ~~~python
 import os, platform, logging
@@ -69,7 +69,7 @@ if platform.platform().startswith('Windows'):
 else:
     logging_file = os.path.join(os.getenv('HOME'), 'test.log')
 
-print("Logging to", logging_file)
+print("记录到", logging_file)
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -78,46 +78,46 @@ logging.basicConfig(
     filemode = 'w',
 )
 
-logging.debug("Start of the program")
-logging.info("Doing something")
-logging.warning("Dying now")
+logging.debug("程序开始")
+logging.info("做些事情")
+logging.warning("现在结束")
 ~~~
 
 Output:
 
 ~~~
 $ python3 use_logging.py
-Logging to C:\Users\swaroop\test.log
+记录到 C:\Users\swaroop\test.log
 ~~~
 
-If we check the contents of `test.log`, it will look something like this:
+如果我们检查`test.log`文件的内容，它看起来像：
 
 ~~~
-2012-10-26 16:52:41,339 : DEBUG : Start of the program
-2012-10-26 16:52:41,339 : INFO : Doing something
-2012-10-26 16:52:41,339 : WARNING : Dying now
+2013-02-05 21:38:24,592 : DEBUG : 程序开始
+2013-02-05 21:38:24,592 : INFO : 做些事情
+2013-02-05 21:38:24,592 : WARNING : 现在结束
 ~~~
 
-How It Works:
+它是如何工作的：
 
-We use three modules from the standard library - the `os` module for interacting with the operating system, the `platform` module for information about the platform i.e. the operating system and the `logging` module to *log* information.
+我们从标准库使用三个模块，`os`（操作系统）模块，与操作系统交互，`platform`（平台）模块，操作平台的信息，信息平台即操作系统和`logging`（日志）模块，*记录*信息。
 
-First, we check which operating system we are using by checking the string returned by `platform.platform()` (for more information, see `import platform; help(platform)`). If it is Windows, we figure out the home drive, the home folder and the filename where we want to store the information. Putting these three parts together, we get the full location of the file. For other platforms, we need to know just the home folder of the user and we get the full location of the file.
+首先,我们根据`platform.platform()` (更多信息，见`import platform; help(platform)`)返回的字符串检查我们正在使用哪个操作系统，如果是Windows，我们找出我们要存储信息的主盘（磁盘驱动器），目录和文件名。把这三部分组装在一起，我们得到文件的完整位置。其他平台，我们需要知道用户的主文件夹，然后我们就得到了完整的文件的位置。
 
-We use the `os.path.join()` function to put these three parts of the location together. The reason to use a special function rather than just adding the strings together is because this function will ensure the full location matches the format expected by the operating system.
+我们使用`os.path.join()`函数把这3部分连接在一起。之所以使用一个特殊的函数而不仅仅是字符串连接，是因为这个函数将确保整的位置的格式与操作系统所期望的相匹配。
 
-We configure the `logging` module to write all the messages in a particular format to the file we have specified.
+我们配置`logging`模块使之以我们指定的特定格式来编写所有的信息。
 
-Finally, we can put messages that are either meant for debugging, information, warning or even critical messages. Once the program has run, we can check this file and we will know what happened in the program, even though no information was displayed to the user running the program.
+最后，我们旋转为了调试、信息、警告甚至至关重要的信息。一旦程序已经运行，我们可以检查这个文件，我们将会知道在程序中发生了什么事，即使没有信息显示给运行程序的用户。
 
-## Module of the Week Series 
+## Week（周）系列模块
 
-There is much more to be explored in the standard library such as [debugging](http://docs.python.org/py3k/library/pdb.html), [handling command line options](http://docs.python.org/py3k/library/argparse.html), [regular expressions](http://docs.python.org/py3k/library/re.html) and so on.
+在标准库中，有很多需要探索如 [debugging(调试)](http://docs.python.org/py3k/library/pdb.html),[handling command line options（处理命令行选项）](http://docs.python.org/py3k/library/argparse.html),[regular expressions(正则表达式)](http://docs.python.org/py3k/library/re.html)等等。
 
-The best way to further explore the standard library is to read Doug Hellmann's excellent [Python Module of the Week](http://www.doughellmann.com/projects/PyMOTW/) series or reading the [Python documentation](http://docs.python.org/py3k/).
+进一步探索标准库的最好方法就是阅读 Doug Hellmann的优秀的[Python Module of the Week](http://www.doughellmann.com/projects/PyMOTW/)系列或阅读［Python文档］(http://docs.python.org/py3k/)。
 
-## Summary 
+## 小结
 
-We have explored some of the functionality of many modules in the Python Standard Library. It is highly recommended to browse through the [Python Standard Library documentation](http://docs.python.org/py3k/library/index.html) to get an idea of all the modules that are available.
+我们已经探索过了Python标准库中许多模块的一些功能。强烈建议浏览［Python Standard Library documentation(Python标准库文档)］(http://docs.python.org/py3k/library/index.html)来了解可用的所有模块。
 
-Next, we will cover various aspects of Python that will make our tour of Python more *complete*.
+接下来，我们将讨论Python的各个方面,这将使我们的Python旅程更*完整*。
