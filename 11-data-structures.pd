@@ -1,153 +1,154 @@
-# Data Structures
+# 数据结构
 
-Data structures are basically just that - they are *structures* which can hold some *data* together. In other words, they are used to store a collection of related data.
+数据结构基本上是由于--他们是*结构*可将一些*数据*容纳在一起。换句话说，它们是用来存储一系列关的数据。
 
-There are four built-in data structures in Python - list, tuple, dictionary and set. We will see how to use each of them and how they make life easier for us.
+在Python中有四种 内建数据结构--列表、元组、字典和集合（set)，我们将看到如何使用它们中的每一个，它们是怎样使我们的生活更容易的。
 
-## List 
+## 列表
 
-A `list` is a data structure that holds an ordered collection of items i.e. you can store a *sequence* of items in a list. This is easy to imagine if you can think of a shopping list where you have a list of items to buy, except that you probably have each item on a separate line in your shopping list whereas in Python you put commas in between them.
+`列表`是一种数据结构，它保存条目的有序集合。例如，你可以在列表中存储一个*序列*。这很容易想象，你想像一下购物清单,那里有你要购买物品的一个清单。除非在你的清单上每一行列有一个单独物品，然而，在python中，你在它们中间放上逗号。
 
-The list of items should be enclosed in square brackets so that Python understands that you are specifying a list. Once you have created a list, you can add, remove or search for items in the list. Since we can add and remove items, we say that a list is a *mutable* data type i.e. this type can be altered.
+条目的列表应包含在方括号内，以便Python明白你在指定一个列表。一旦您创建了一个列表，你可以添加、删除或是搜索列表中的条目。因为我们可以添加和删除条目，我们说一个列表是一个*可变的*数据类型，即这种类型可以更改。
 
-### Quick Introduction To Objects And Classes 
+### 对象和类的快速介绍
 
-Although I've been generally delaying the discussion of objects and classes till now, a little explanation is needed right now so that you can understand lists better. We will explore this topic in detail in a [later chapter](#object-oriented-programming).
+尽管直到现在，我一直推迟讨论对象和类，现在需要一个小小的解释，这样你可以更好的理解列表。我们将在[后面章节](#面向对象的程序设计)中详细探讨这一课题。
 
-A list is an example of usage of objects and classes. When we use a variable `i` and assign a value to it, say integer `5` to it, you can think of it as creating an **object** (i.e. instance) `i` of **class** (i.e. type) `int`. In fact, you can read `help(int)` to understand this better.
+列表是使用对象和类的一个例子。当我们使用一个变量 `i`，为它分配一个值，例如把整数`5`赋值给它，你可以认为它是创建一个**类**为`int`（即类型）的*对象*(即实例)`i`。事实上，你可以阅读的`help(int)`更好地理解这一点。
 
-A class can also have **methods** i.e. functions defined for use with respect to that class only. You can use these pieces of functionality only when you have an object of that class. For example, Python provides an `append` method for the `list` class which allows you to add an item to the end of the list. For example, `mylist.append('an item')` will add that string to the list `mylist`. Note the use of dotted notation for accessing methods of the objects.
+类也有**方法**，也就是为了使用而定义的只关于那个类的函数，只有当你有那个类的对象时，你才可以使用这些函数.例如，Python为`list`（列表）类提供了一个`append`方法，它允许你在列表的整改添加一个条目。例如，`mylist.append('an item')`将给列表`mylist`添加字符串。注意，我们使用点操作符访问对象的方法。
 
-A class can also have **fields** which are nothing but variables defined for use with respect to that class only. You can use these variables/names only when you have an object of that class. Fields are also accessed by the dotted notation, for example, `mylist.field`.
+类也有**字段**，除了为了使用而定义的只与那个类相关的变量，它什么也没有。只有当你有那个类的对象时，你可以使用那些变量或名字。字段孔明通过点操作符访问的。例如，`mylist.field`。
 
-Example (save as `using_list.py`):
+例子 (保存为`using_list.py`):
 
 ~~~python
-# This is my shopping list
-shoplist = ['apple', 'mango', 'carrot', 'banana']
+# 这是我的购物清单
+shoplist = ['苹果', '芒果', '胡萝卜', '香蕉']
 
-print('I have', len(shoplist), 'items to purchase.')
+print('我要买', len(shoplist), '个物品。')
 
-print('These items are:', end=' ')
+print('清单是：', end=' ')
 for item in shoplist:
     print(item, end=' ')
 
-print('\nI also have to buy rice.')
-shoplist.append('rice')
-print('My shopping list is now', shoplist)
+print('\n我还要买大米。')
+shoplist.append('大米')
+print('现在我的清单是', shoplist)
 
-print('I will sort my list now')
+print('现在我将要为我的清单排序')
 shoplist.sort()
-print('Sorted shopping list is', shoplist)
+print('排序后的购物清单是', shoplist)
 
-print('The first item I will buy is', shoplist[0])
+print('我要买的第一个物品是', shoplist[0])
 olditem = shoplist[0]
 del shoplist[0]
-print('I bought the', olditem)
-print('My shopping list is now', shoplist)
+print('我已经买了', olditem)
+print('现在我的清单是', shoplist)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 using_list.py
-I have 4 items to purchase.
-These items are: apple mango carrot banana
-I also have to buy rice.
-My shopping list is now ['apple', 'mango', 'carrot', 'banana', 'rice']
-I will sort my list now
-Sorted shopping list is ['apple', 'banana', 'carrot', 'mango', 'rice']
-The first item I will buy is apple
-I bought the apple
-My shopping list is now ['banana', 'carrot', 'mango', 'rice']
+我要买 4 个物品。
+清单是: 苹果 芒果 胡萝卜 香蕉
+我还要买大米。
+现在我的清单是 ['苹果', '芒果', '胡萝卜', '香蕉', '大米']
+现在我将要为我的清单排序
+排序后的购物清单是 ['大米', '胡萝卜', '芒果', '苹果', '香蕉']
+我要买的第一个物品是 大米
+我已经买了大米
+现在我的清单是 ['胡萝卜', '芒果', '苹果', '香蕉']
 ~~~
+（注：原文为英文，翻译为中文排序后结果与英文不一致，其后的运行结果也不一样了）
 
-How It Works:
+它是如何工作的:
 
-The variable `shoplist` is a shopping list for someone who is going to the market. In `shoplist`, we only store strings of the names of the items to buy but you can add *any kind of object* to a list including numbers and even other lists.
+变量`shoplist`是将要去超市的人的一个购物清单。在`shoplist`中，我们只存储了要买的物品的名字的字符串，你可以向清单中添加包括数字甚至是其它清单的*任何对象*。
 
-We have also used the `for..in` loop to iterate through the items of the list. By now, you must have realised that a list is also a sequence. The speciality of sequences will be discussed in a [later section](#sequence).
+我们也使用了循环`for..in`遍历清单中的所有条目。到现在为止，你必须认识到一个清单也是一个序列。序列的特性将在[后面的章节](#序列)中讨论。
 
-Notice the use of the `end` keyword argument to the `print` function to indicate that we want to end the output with a space instead of the usual line break.
+注意，在`print`函数中使用`end`关键字参数，表明输出以一个空格结束而不是通常的换行。
+ 
+接下来，和前面讨论过的一样，我们使用列表对象的`append`方法向列表中添加一个项目。然后，我们只把列表简单地传递给`print`语句，整洁地打印列表的内容，以检查这个条目确实添加到了列表中。 
 
-Next, we add an item to the list using the `append` method of the list object, as already discussed before. Then, we check that the item has been indeed added to the list by printing the contents of the list by simply passing the list to the `print` statement which prints it neatly.
+然后，我们使用列表对象的`sort`方法为列表排序。 这个方法作用到列表本身，并不返回一个修改过的列表，理解这一点很很重要，它不同于对字符串的操作。这也是为什么我们列表是*可修改的*，而字符串是*不可修改的*原因。
 
-Then, we sort the list by using the `sort` method of the list. It is important to understand that this method affects the list itself and does not return a modified list - this is different from the way strings work. This is what we mean by saying that lists are *mutable* and that strings are *immutable*.
+然后，我们在超市购买了一个物品，我们想把它从购物清单中移除，通过使用`del`语句来实现。这里，我们提到我们想要移除清单中的哪个物品，`del`语句为我们将它从清单中移除。我们指定，我们想从清单移除第一项，因此，我们使用`del shoplist[0]`(记住，Python从0开始数数数）。 
 
-Next, when we finish buying an item in the market, we want to remove it from the list. We achieve this by using the `del` statement. Here, we mention which item of the list we want to remove and the `del` statement removes it from the list for us.  We specify that we want to remove the first item from the list and hence we use `del shoplist[0]` (remember that Python starts counting from 0).
+如果你想知道列表对象定义的所有方法，详见`help(list)`。
 
-If you want to know all the methods defined by the list object, see `help(list)` for details.
+## 元组
 
-## Tuple 
+元组是用来容纳多个对象。认为它们是类似于列表，但是没有列表给你的广泛功能。元组的一个主要特征是他们是**不可变**，像字符串，即您不能修改元组。
 
-Tuples are used to hold together multiple objects. Think of them as similar to lists, but without the extensive functionality that the list class gives you. One major feature of tuples is that they are **immutable** like strings i.e. you cannot modify tuples.
+元组是通过在一对可选的圆括号中，项目之间用逗号分隔来定义的。
 
-Tuples are defined by specifying items separated by commas within an optional pair of parentheses.
+元组通常用在，一个语句或一个用户定义的函数能够安全地假设为值的集合，即值的元组，不会改变。
 
-Tuples are usually used in cases where a statement or a user-defined function can safely assume that the collection of values i.e. the tuple of values used will not change.
-
-Example (save as `using_tuple.py`):
+例子 (保存为`using_tuple.py`):
 
 ~~~python
-zoo = ('python', 'elephant', 'penguin') # remember the parentheses are optional
-print('Number of animals in the zoo is', len(zoo))
+zoo = ('蟒蛇', '大象', '企鹅') # 记住圆括号是可选的
+print('动物园中动物有数量有', len(zoo))
 
-new_zoo = 'monkey', 'camel', zoo
-print('Number of cages in the new zoo is', len(new_zoo))
-print('All animals in new zoo are', new_zoo)
-print('Animals brought from old zoo are', new_zoo[2])
-print('Last animal brought from old zoo is', new_zoo[2][2])
-print('Number of animals in the new zoo is', len(new_zoo)-1+len(new_zoo[2]))
+new_zoo = '猴子', '骆驼', zoo
+print('在新动物园中笼子的数量是', len(new_zoo))
+print('在新动物园所有的动物是', new_zoo)
+print('从老动物园中带来的动物是', new_zoo[2])
+print('从老动物园带来最后的动物是', new_zoo[2][2])
+print('在新动物园中动物的数量有', len(new_zoo)-1+len(new_zoo[2]))
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 using_tuple.py
-Number of animals in the zoo is 3
-Number of cages in the new zoo is 3
-All animals in new zoo are ('monkey', 'camel', ('python', 'elephant', 'penguin'))
-Animals brought from old zoo are ('python', 'elephant', 'penguin')
-Last animal brought from old zoo is penguin
-Number of animals in the new zoo is 5
+动物园中动物有数量有 3
+在新动物园中笼子的数量是 3
+在新动物园所有的动物是 ('猴子', '骆驼', ('蟒蛇', '大象', '企鹅'))
+从老动物园中带来的动物是 ('蟒蛇', '大象', '企鹅')
+从老动物园带来最后的动物是 企鹅
+在新动物园中动物的数量有 5
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The variable `zoo` refers to a tuple of items. We see that the `len` function can be used to get the length of the tuple. This also indicates that a tuple is a [sequence](#sequence) as well.
+变量`zoo`指的是一个物品的元组。我们看到`len`函数可以用来获取元组的长度。这也表明，一个元组同样也是一个(序列)(#序列)。
 
-We are now shifting these animals to a new zoo since the old zoo is being closed. Therefore, the `new_zoo` tuple contains some animals which are already there along with the animals brought over from the old zoo. Back to reality, note that a tuple within a tuple does not lose its identity.
+因为老动物园zoo将要关闭，我们现在将这些动物迁移到一个新的动物园new_zoo。因此，（新动物园）`new_zoo`的tuple包含一些已经存在的动物以及从老动物园zoo带来的动物。回到现实，请注意，在一个元组中的元组不失去其特性。
 
-We can access the items in the tuple by specifying the item's position within a pair of square brackets just like we did for lists. This is called the *indexing* operator. We access the third item in `new_zoo` by specifying `new_zoo[2]` and we access the third item within the third item in the `new_zoo` tuple by specifying `new_zoo[2][2]`. This is pretty simple once you've understood the idiom.
+就像列表一样，我们可以通过在一对方括号中指定条目的位置，访问元组中的物品。这被称为*索引*操作符。我们通过指定`new_zoo[2]`访问新动物园new_zoo中的第三项，通过指定new_zoo[2][2]`访问新动物园new_zoo的第三项。一旦理解这个习语，这是非常简单的。
 
-Parentheses
+圆括号
 
-:   Although the parentheses are optional, I prefer always having them to make it obvious that it is a tuple, especially because it avoids ambiguity. For example, `print(1,2,3)` and `print( (1,2,3) )` mean two different things - the former prints three numbers whereas the latter prints a tuple (which contains three numbers).
+:   尽管括号是可选的，我总是使用它们以便使它是一个元组更明显，特别是因为，它避免歧义。例如`print(1,2,3)`和print( (1,2,3) )`两件不同意思的事情——前者打印3个数，而后者输出一个元组(包含三个数字)。
 
-Tuple with 0 or 1 items
+有0个或1个条目的元组
 
-:   An empty tuple is constructed by an empty pair of parentheses such as `myempty = ()`. However, a tuple with a single item is not so simple. You have to specify it using a comma following the first (and only) item so that Python can differentiate between a tuple and a pair of parentheses surrounding the object in an expression i.e. you have to specify `singleton = (2 , )` if you mean you want a tuple containing the item `2`.
+:   一个空的元组由一对空的括号如`myempty = ()`组成。 然而，只有一个对象的元组并非如此简单。你必须通过在第一个对象（唯一的一个）后紧跟一个逗号来指定它，这样Python可以区分是一个元组还是一个表达式中一个对象的括号，例如，如果你想定义一个只含一个对象这为`2`的元组，你必须使用 `singleton = (2 , )`。
 
-Note for Perl programmers
+Perl程序员应该注意
 
-:   A list within a list does not lose its identity i.e. lists are not flattened as in Perl. The same applies to a tuple within a tuple, or a tuple within a list, or a list within a tuple, etc. As far as Python is concerned, they are just objects stored using another object, that's all.
+:   在一个列表中的列表不会失去其特性，也就是说并不像在Perl中夷为平地。这同样适用于在一个元组中的一个元组，或在一个列表中的元组，或在一个元组中的列表等。就Python而言，他们只是存储在另一个对象中的一个对象。
 
-## Dictionary 
+## 字典
 
-A dictionary is like an address-book where you can find the address or contact details of a person by knowing only his/her name i.e. we associate **keys** (name) with **values** (details). Note that the key must be unique just like you cannot find out the correct information if you have two persons with the exact same name.
+字典就像一个地址簿，在那里你只通过知道他/她的名字，就可以找到地址或联系人详细信息。也就是说，我们使用**键*(姓名)与**值**(细节)相联系。注意，键必须是独一无二的，就像如果有两个完全相同的名字的人，你无法找到正确的信息。
 
-Note that you can use only immutable objects (like strings) for the keys of a dictionary but you can use either immutable or mutable objects for the values of the dictionary.  This basically translates to say that you should use only simple objects for keys.
+注意，字典的关键字你只能使用不可变的对象(比如字符串)，你可以使用不可变或可变的对象作为字典的值。这基本上意味着，简单地说，对于键你只能使用简单对象。
+ 
+在字典中的一对键和值是通过使用冒号指定的，如，`d = {key1 : value1, key2 : value2 }`。注意，键值对用冒号分隔，彼此之间以逗号分隔，所有这些都是包含在一对大括号中。
 
-Pairs of keys and values are specified in a dictionary by using the notation `d = {key1 : value1, key2 : value2 }`. Notice that the key-value pairs are separated by a colon and the pairs are separated themselves by commas and all this is enclosed in a pair of curly braces.
+记住，在字典中键-值对不以任何方式排序。如果你想要一个特定的顺序，那么你将不得不在使用前自己排序。
 
-Remember that key-value pairs in a dictionary are not ordered in any manner. If you want a particular order, then you will have to sort them yourself before using it.
+你将要使用的字典是`dict`类的对象或实例。
 
-The dictionaries that you will be using are instances/objects of the `dict` class.
-
-Example (save as `using_dict.py`):
+例子 (保存为 `using_dict.py`):
 
 ~~~python
-# 'ab' is short for 'a'ddress'b'ook
+# 'ab'是英文address　book(地址簿)的首个字母
 
 ab = {  'Swaroop'   : 'swaroop@swaroopch.com',
         'Larry'     : 'larry@wall.org',
@@ -155,243 +156,243 @@ ab = {  'Swaroop'   : 'swaroop@swaroopch.com',
         'Spammer'   : 'spammer@hotmail.com'
     }
 
-print("Swaroop's address is", ab['Swaroop'])
+print("Swaroop的地址是", ab['Swaroop'])
 
-# Deleting a key-value pair
+# 删除一个键-值对
 del ab['Spammer']
 
-print('\nThere are {0} contacts in the address-book\n'.format(len(ab)))
+print('\n地址薄中有 {0} 个联系人\n'.format(len(ab)))
 
 for name, address in ab.items():
-    print('Contact {0} at {1}'.format(name, address))
+    print('联系人 {0} 的地址是 {1}'.format(name, address))
 
-# Adding a key-value pair
+# 添加一个键-值对
 ab['Guido'] = 'guido@python.org'
 
 if 'Guido' in ab:
-    print("\nGuido's address is", ab['Guido'])
+    print("\nGuido的地址是", ab['Guido'])
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 using_dict.py
-Swaroop's address is swaroop@swaroopch.com
+Swaroop的地址是 swaroop@swaroopch.com
 
-There are 3 contacts in the address-book
+地址薄中有 3 个联系人
 
-Contact Swaroop at swaroop@swaroopch.com
-Contact Matsumoto at matz@ruby-lang.org
-Contact Larry at larry@wall.org
+联系人 Larry 的地址是 larry@wall.org
+联系人 Matsumoto 的地址是 matz@ruby-lang.org
+联系人 Swaroop 的地址是 swaroop@swaroopch.com
 
-Guido's address is guido@python.org
+Guido的地址是 guido@python.org
 ~~~
 
-How It Works:
+它是如何工作的：
 
-We create the dictionary `ab` using the notation already discussed. We then access key-value pairs by specifying the key using the indexing operator as discussed in the context of lists and tuples. Observe the simple syntax.
+我们使用已经讨论过的符号创建字典`ab`。然后我们通过使用在列表和元组中讨论过的索引操作符－－指定关键字来访问键-值对，遵守简单的语法。
 
-We can delete key-value pairs using our old friend - the `del` statement. We simply specify the dictionary and the indexing operator for the key to be removed and pass it to the `del` statement. There is no need to know the value corresponding to the key for this operation.
+我们可以使用我们的老朋友——`del`语句删除键值对，我们简单地指定字典和要删除的关键字的索引操作符，并将它传递给`del`语句。对于这个操作，没有必要知道对应于关键字的值。
 
-Next, we access each key-value pair of the dictionary using the `items` method of the dictionary which returns a list of tuples where each tuple contains a pair of items - the key followed by the value. We retrieve this pair and assign it to the variables `name` and `address` correspondingly for each pair using the `for..in` loop and then print these values in the for-block.
+接下来，我们我们使用字典的`items`方法，访问字典的每个键-值对的。它返回一个元组的列表，每个元组包含一对值--关键字及紧随其后的值。我们检索这对值并使用`for..in`循环为每一对分配给相应的变量`name`和`address`，然后在for块中打印这些值。
 
-We can add new key-value pairs by simply using the indexing operator to access a key and assign that value, as we have done for Guido in the above case.
+我们可以通过简单地使用索引操作符来访问一个键并分配值的方式添加新的键值对，像上面的例子中我们所做的添加Guido。
 
-We can check if a key-value pair exists using the `in` operator.
+我们可以使用`in`操作符来检查一个键值对是否存在。 
 
-For the list of methods of the `dict` class, see `help(dict)`.
+字典`dict`类的列表方法，请看`help(dict)`。
 
-Keyword Arguments and Dictionaries
+关键字参数和字典
 
-:   On a different note, if you have used keyword arguments in your functions, you have already used dictionaries! Just think about it - the key-value pair is specified by you in the parameter list of the function definition and when you access variables within your function, it is just a key access of a dictionary (which is called the *symbol table*in compiler design terminology).
+:   有一点不同需要注意，如果你在您已经在使用字典的函数中使用关键字参数，只是这样想，这个键值对是在函数定义的参数列表中指定的，而当你在函数中访问变量，它只是访问字典的一个键(在编译器设计术语中称为*符号表*)。
 
-## Sequence 
+## 序列
 
-Lists, tuples and strings are examples of sequences, but what are sequences and what is so special about them?
+列表、元组和字符串都序列的一个实例，但是什么是序列，它们为什么如此特殊呢 ？
 
-The major features are **membership tests**, (i.e. the `in` and `not in` expressions) and **indexing operations**, which allow us to fetch a particular item in the sequence directly.
+主要特点是**成员测试**，(即`in`(在)和`not in`(不在)表达式中)和**索引操作**，这使我们在一个序列中能够直接获取一个特定的对象。
 
-The three types of sequences mentioned above - lists, tuples and strings, also have a **slicing** operation which allows us to retrieve a slice of the sequence i.e. a part of the sequence.
+上面提到的——列表、元组和字符串这三种类型的序列，也有允许我们找回一彼序列即序列的一部分的**切片**操作。
 
-Example (save as `seq.py`):
+例子 (保存为`seq.py`):
 
 ~~~python
-shoplist = ['apple', 'mango', 'carrot', 'banana']
+shoplist = ['苹果', '芒果', '胡萝卜', '香蕉']
 name = 'swaroop'
 
 # Indexing or 'Subscription' operation
-print('Item 0 is', shoplist[0])
-print('Item 1 is', shoplist[1])
-print('Item 2 is', shoplist[2])
-print('Item 3 is', shoplist[3])
-print('Item -1 is', shoplist[-1])
-print('Item -2 is', shoplist[-2])
-print('Character 0 is', name[0])
+print('第0项是', shoplist[0])
+print('第1项是', shoplist[1])
+print('第2项是', shoplist[2])
+print('第3项是', shoplist[3])
+print('第-1项是', shoplist[-1])
+print('第-2项是', shoplist[-2])
+print('第0个字符是', name[0])
 
-# Slicing on a list
-print('Item 1 to 3 is', shoplist[1:3])
-print('Item 2 to end is', shoplist[2:])
-print('Item 1 to -1 is', shoplist[1:-1])
-print('Item start to end is', shoplist[:])
+# 一个列表的切片
+print('第1项到第3项是', shoplist[1:3])
+print('第2项到末尾是', shoplist[2:])
+print('第1到-1项是', shoplist[1:-1])
+print('开头到结尾是', shoplist[:])
 
-# Slicing on a string
-print('characters 1 to 3 is', name[1:3])
-print('characters 2 to end is', name[2:])
-print('characters 1 to -1 is', name[1:-1])
-print('characters start to end is', name[:])
+# 字符串的切片
+print('第1到第3个字符是', name[1:3])
+print('第2到末尾的字符是', name[2:])
+print('第1到-1的字符是', name[1:-1])
+print('从头到尾的字符是', name[:])
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 seq.py
-Item 0 is apple
-Item 1 is mango
-Item 2 is carrot
-Item 3 is banana
-Item -1 is banana
-Item -2 is carrot
-Character 0 is s
-Item 1 to 3 is ['mango', 'carrot']
-Item 2 to end is ['carrot', 'banana']
-Item 1 to -1 is ['mango', 'carrot']
-Item start to end is ['apple', 'mango', 'carrot', 'banana']
-characters 1 to 3 is wa
-characters 2 to end is aroop
-characters 1 to -1 is waroo
-characters start to end is swaroop
+第0项是 苹果
+第1项是 芒果
+第2项是 胡萝卜
+第3项是 香蕉
+第-1项是 香蕉
+第-2项是 胡萝卜
+第0个字符是 s
+第1项到第3项是 ['芒果', '胡萝卜']
+第2项到末尾是 ['胡萝卜', '香蕉']
+第1到-1项是 ['芒果', '胡萝卜']
+开头到结尾是 ['苹果', '芒果', '胡萝卜', '香蕉']
+第1到第3个字符是 wa
+第2到末尾的字符是 aroop
+第1到-1的字符是 waroo
+从头到尾的字符是 swaroop
 ~~~
 
-How It Works:
+它是如何工作的：
 
-First, we see how to use indexes to get individual items of a sequence. This is also referred to as the *subscription operation*. Whenever you specify a number to a sequence within square brackets as shown above, Python will fetch you the item corresponding to that position in the sequence. Remember that Python starts counting numbers from 0. Hence, `shoplist[0]` fetches the first item and `shoplist[3]` fetches the fourth item in the `shoplist`sequence.
+首先，我们看看如何使用索引来获得一个序列的个别项，这也称为*订阅操作*。当你在方括号中指定一个数字对应一个序列中的某项，如上所示，Python会为你取得序列中相对应位置的项。记住，Python从0开始数数。因此，在序列`shoplist`中， `shoplist[0]`取第一项和`shoplist[3]`获取第四项。
 
-The index can also be a negative number, in which case, the position is calculated from the end of the sequence. Therefore, `shoplist[-1]` refers to the last item in the sequence and `shoplist[-2]` fetches the second last item in the sequence.
+索引也可以是负数，在这种情况下，这个位置从序列的结尾开始计算。因此， `shoplist[-1]`指的是序列的最后一项， `shoplist[-2]`取倒数第二个项。
 
-The slicing operation is used by specifying the name of the sequence followed by an optional pair of numbers separated by a colon within square brackets. Note that this is very similar to the indexing operation you have been using till now. Remember the numbers are optional but the colon isn't.
+这个切片操作是通过指定序列的名称后面加上一个方括号，方括号中有一对可选的用冒号分隔的数。注意，这非常类似于你到现在一直使用的索引操作，记住这些数字是可选的但冒号不是。
 
-The first number (before the colon) in the slicing operation refers to the position from where the slice starts and the second number (after the colon) indicates where the slice will stop at. If the first number is not specified, Python will start at the beginning of the sequence. If the second number is left out, Python will stop at the end of the sequence. Note that the slice returned *starts* at the start position and will end just before the *end* position i.e. the start position is included but the end position is excluded from the sequence slice.
+在切片操作中的第一个数字(在冒号前)是切片开始的位置，第二个数字(在冒号后)是切片停止的位置。如果第一个数字没有指定，Python会从序列开头开始，如果第二个数字被冷落，Python会在序列的末尾停止。注意，返回的切片在开始位置*开始*，在*结束*位置前结束，也就是说，返回的切片包含开始位置，但不包含结束位置。
 
-Thus, `shoplist[1:3]` returns a slice of the sequence starting at position 1, includes position 2 but stops at position 3 and therefore a *slice* of two items is returned.  Similarly, `shoplist[:]` returns a copy of the whole sequence.
+因此， `shoplist[1:3]` 返回序列的切片从位置1开始，包括位置2，但是在位置3停止，因此，返回两个项目的*切片*。同样，`shoplist[:]`返回整个序列的一个副本。
 
-You can also do slicing with negative positions. Negative numbers are used for positions from the end of the sequence. For example, `shoplist[:-1]` will return a slice of the sequence which excludes the last item of the sequence but contains everything else.
+你也可以使用负位置做切片。负数用于从序列的结尾开始。例如，shoplist[:-1]` 将返回一个不包括序列最后一项，但包含了其它一切的切片。
 
-You can also provide a third argument for the slice, which is the *step* for the slicing (by default, the step size is 1):
+你也可以为切片提供第三个参数，这是切片的*步长*(默认情况下，步长为1)：
 
 ~~~
->>> shoplist = ['apple', 'mango', 'carrot', 'banana']
+>>> shoplist = ['苹果', '芒果', '胡萝卜', '香蕉']
 >>> shoplist[::1]
-['apple', 'mango', 'carrot', 'banana']
+['苹果', '芒果', '胡萝卜', '香蕉']
 >>> shoplist[::2]
-['apple', 'carrot']
+['苹果', '胡萝卜']
 >>> shoplist[::3]
-['apple', 'banana']
+['苹果', '香蕉']
 >>> shoplist[::-1]
-['banana', 'carrot', 'mango', 'apple']
+['香蕉', '胡萝卜', '芒果', '苹果']
 ~~~
 
-Notice that when the step is 2, we get the items with position 0, 2, ... When the step size is 3, we get the items with position 0, 3, etc.
+注意，当步长是2时，我们获得位置0、2、……的项目，当步长是3晨，我们获得位置是0、3、等等的项目。
 
-Try various combinations of such slice specifications using the Python interpreter interactively i.e. the prompt so that you can see the results immediately. The great thing about sequences is that you can access tuples, lists and strings all in the same way!
+使用Python解释器的交互式提示，尝试指定切片的不同组合，以便你可以立刻看到结果。序列的一大好处是，你可以以同样的方式访问元组、列表和字符串！
 
-## Set 
+## 集合 
 
-Sets are *unordered* collections of simple objects. These are used when the existence of an object in a collection is more important than the order or how many times it occurs.
+集合是简单对象的*无序*集合，用于一个集合中对象的存在比它的顺序或发生多少次更重要的时候。
 
-Using sets, you can test for membership, whether it is a subset of another set, find the intersection between two sets, and so on.
+使用集合，你可以测试成员，它是否是集合的子集以及找到两个集合的交集，等等。
 
 ~~~
->>> bri = set(['brazil', 'russia', 'india'])
->>> 'india' in bri
+>>> bri = set(['巴西', '俄罗斯', '印度'])
+>>> '印度' in bri
 True
 >>> 'usa' in bri
 False
 >>> bric = bri.copy()
->>> bric.add('china')
+>>> bric.add('中国')
 >>> bric.issuperset(bri)
 True
->>> bri.remove('russia')
->>> bri & bric # OR bri.intersection(bric)
-{'brazil', 'india'}
+>>> bri.remove('俄罗斯')
+>>> bri & bric # 或者 bri.intersection(bric)
+{'巴西', '印度'}
 ~~~
 
-How It Works:
+它是如何工作的：
 
-The example is pretty much self-explanatory because it involves basic set theory mathematics taught in school.
+这个例子是非常一目了然的，因为它涉及到学校教的数学的基本集合理论。
 
-## References 
+## 关联
 
-When you create an object and assign it to a variable, the variable only *refers* to the object and does not represent the object itself! That is, the variable name points to that part of your computer's memory where the object is stored. This is called **binding** the name to the object.
+当你创建一个对象，并赋给它一个值，该变量只是*指向*对象，并不代表对象本身！也就是说，变量名称指向你电脑中内存中的存储对象的那部分。这就是所谓的把名字**绑定**给对象。
 
-Generally, you don't need to be worried about this, but there is a subtle effect due to references which you need to be aware of:
+一般来说，你不需要担心这个，但是对引用有一个需要你注意的微妙的影响：：
 
 Example (save as `reference.py`):
 
 ~~~python
-print('Simple Assignment')
-shoplist = ['apple', 'mango', 'carrot', 'banana']
-mylist = shoplist # mylist is just another name pointing to the same object!
+print('简单的分配')
+shoplist = ['苹果', '芒果', '胡萝卜', '香蕉']
+mylist = shoplist # mylist是指向同一对象的另一个名字！
 
-del shoplist[0] # I purchased the first item, so I remove it from the list
+del shoplist[0] # 我买到了第一项物品，因此我从清单中移除它
 
-print('shoplist is', shoplist)
-print('mylist is', mylist)
-# notice that both shoplist and mylist both print the same list without
-# the 'apple' confirming that they point to the same object
+print('shoplist是', shoplist)
+print('mylist是', mylist)
+# 注意shoplist和mylist都打印没有‘苹果’的相同的清单
+# 证明它们指向相同的对象
 
-print('Copy by making a full slice')
-mylist = shoplist[:] # make a copy by doing a full slice
-del mylist[0] # remove first item
+print('通过制作完整的切片复制')
+mylist = shoplist[:] # 通过制作完整的切片复制
+del mylist[0] # 移除第一项
 
-print('shoplist is', shoplist)
-print('mylist is', mylist)
-# notice that now the two lists are different
+print('shoplist是', shoplist)
+print('mylist是', mylist)
+# 注意，现在两个清单不同
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 reference.py
-Simple Assignment
-shoplist is ['mango', 'carrot', 'banana']
-mylist is ['mango', 'carrot', 'banana']
-Copy by making a full slice
-shoplist is ['mango', 'carrot', 'banana']
-mylist is ['carrot', 'banana']
+简单的分配
+shoplist是 ['芒果', '胡萝卜', '香蕉']
+mylist是 ['芒果', '胡萝卜', '香蕉']
+通过制作完整的切片复制
+shoplist是 ['芒果', '胡萝卜', '香蕉']
+mylist是 ['胡萝卜', '香蕉']
 ~~~
 
-How It Works:
+它是如何工作的:
 
-Most of the explanation is available in the comments.
+在注释中有更多有用的解释。
 
-Remember that if you want to make a copy of a list or such kinds of sequences or complex objects (not simple *objects* such as integers), then you have to use the slicing operation to make a copy. If you just assign the variable name to another name, both of them will ''refer'' to the same object and this could be trouble if you are not careful.
+记住,如果你想要复制一个列表或这种类型的序列或复杂的对象(而不是简单的*对象*如整数)，那么您必须使用切片操作复制。如果你只是用另一个变量名指定，两个变量将“关联”到相同的对象，如果你不小心，这可能会引起麻烦。
 
-Note for Perl programmers
+Per程序员需要注意
 
-:   Remember that an assignment statement for lists does **not** create a copy. You have to use slicing operation to make a copy of the sequence.
+:   记住，列表的一个赋值语句并**不**创建一个副本。你必须使用切片操作复制序列。
 
-## More About Strings 
+## 关于字符串的更多
 
-We have already discussed strings in detail earlier. What more can there be to know?  Well, did you know that strings are also objects and have methods which do everything from checking part of a string to stripping spaces!
+之前，我们已经详细讨论了字符串。在这能了解更多吗？嗯，你知道吗，字符串也是对象和也有做任何事情的方法－－从检查的部分字符串到从字符串中分离。
 
-The strings that you use in program are all objects of the class `str`.  Some useful methods of this class are demonstrated in the next example. For a complete list of such methods, see `help(str)`.
+在程序中你使用的字符串都是`str`类的对象，在下面的例子中将演示这个类的一些有用的方法，这些方法的完整列表，请看`help(str)`。
 
-Example (save as `str_methods.py`):
+例子 (保存为 `str_methods.py`):
 
 ~~~python
-name = 'Swaroop' # This is a string object
+name = 'Swaroop' # 这是一个字符串对象
 
 if name.startswith('Swa'):
-    print('Yes, the string starts with "Swa"')
+    print('是的，字符串以"Swa"开始')
 
 if 'a' in name:
-    print('Yes, it contains the string "a"')
+    print('是的，它包含字符串"a"')
 
 if name.find('war') != -1:
-    print('Yes, it contains the string "war"')
+    print('是的，它包含字符串"war"')
 
 delimiter = '_*_'
-mylist = ['Brazil', 'Russia', 'India', 'China']
+mylist = ['巴西', '俄罗斯', '印度', '中国']
 print(delimiter.join(mylist))
 
 ~~~
@@ -400,20 +401,20 @@ Output:
 
 ~~~
 $ python3 str_methods.py
-Yes, the string starts with "Swa"
-Yes, it contains the string "a"
-Yes, it contains the string "war"
-Brazil_*_Russia_*_India_*_China
+是的，字符串以"Swa"开始
+是的，它包含字符串"a"
+是的，它包含字符串"war"
+巴西_*_俄罗斯_*_印度_*_中国
 ~~~
 
-How It Works:
+它是如何工作的：
 
-Here, we see a lot of the string methods in action. The `startswith` method is used to find out whether the string starts with the given string. The `in` operator is used to check if a given string is a part of the string.
+在这里，我们看到字符串的很多方法在起作用。`startswith`方法是用来找出字符串是否以给定的字符串开始的。`in`操作符是用来检查一个给定的字符串是否是一个字符串的一部分。
 
-The `find` method is used to locate the position of the given substring within the string; `find` returns -1 if it is unsuccessful in finding the substring. The `str` class also has a neat method to `join` the items of a sequence with the string acting as a delimiter between each item of the sequence and returns a bigger string generated from this.
+`find`方法用于定位给定的子字符串在字符串内的位置，如果不能成功找到子字符串它返回-1。`str`类也有一个整洁的方法来连接一个序列的字符串，用充当分隔符的字符串连接序列中每个条目，返回一个由它生成的巨大的字符串。
 
-## Summary 
+## 小结 
 
-We have explored the various built-in data structures of Python in detail. These data structures will be essential for writing programs of reasonable size.
+我们详细探索了Python各种内建的数据结构，写合理大小的程序，这些数据结构是至关重要的。
 
-Now that we have a lot of the basics of Python in place, we will next see how to design and write a real-world Python program.
+现在，我们有很多Python的基本知识已经到位，下面，我们看看如何设计和写一个真实的Python程序。
