@@ -4,15 +4,15 @@
 
 #  A Byte of Python
 
-《A Byte of Python》是一本介绍用Python语言编写程序的免费书籍。它为初学Python语言者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
+《A Byte of Python》是一本介绍用Python语言编写程序的免费书。它为初学Python语言者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
 
-本书是据Python最新版 3 编写的，尽管当今Python 2 仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
+本书是依据Python的最新版本 3 编写的，尽管当今Python 2仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
 
-## 谁读《A Byte of Python》?
+## 《A Byte of Python》为谁而写?
 
 这是一些人对本书的评价:
 
-> 我发现最好的事是我发现了《A Byte of Python》, 它是为初学者编写的杰出的一本书。它写的很好，概念都通过不言而喻的例子作了很好的解释。
+> 我发现最好的事，是我发现了《A Byte of Python》, 它是为初学者编写的一本杰出的书。它写的很好，概念都通过不言而喻的例子作了很好的解释。
 >
 > -- [_Syed Talal_ (19岁)](http://littlepancakes.wordpress.com/2010/01/30/python)
 
@@ -30,7 +30,7 @@
 
 >  
 
-> 为初学者作了Python编程的卓越介绍。
+> 为初学者做了Python编程的卓越介绍。
 >  
 > -- [Shan Rajasekaran](https://twitter.com/ShanRajasekaran/status/268910645842423809)
 
@@ -48,7 +48,7 @@
 
 >  
 
-> 亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次感谢！您“把知识掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。
+> 亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次感谢！您把知识“掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。
 >
 > -- _Joseph Duarte_ (jduarte1-at-cfl-dot-rr-dot-com)
 
@@ -60,7 +60,7 @@
 
 >  
 
-> 我给您发邮件，就是为了感谢您在线编写《A Byte of Python 》。在偶然发现您的书之前，我已经尝试学习Python有几个月了。虽然我对pyGame取得了有限的成绩，但我从来没有完成过一个程序。
+> 我给您发邮件，就是为了感谢您在线编写的《A Byte of Python 》。在偶然发现您的书之前，我已经尝试学习Python有几个月了。虽然我对pyGame取得了有限的成绩，但我从来没有完成过一个程序。
 >
 > 感谢你对分类的简单化，Python看起来确实是一个能够达到的目标。看起来我已经学会了基础知识，并能够继续我的真正目标——游戏开发。
 >
@@ -78,7 +78,7 @@
 
 >  
 
-> 初学者想更多的学习Python编程的最好的资源是Swaroop编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到绵最好的Python入门教程。
+> 初学者想更多的学习Python编程的最好的资源是Swaroop编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到的最好的Python入门教程。
 >
 > -- _Drew Ames_ 在Linux.com上发表的文章[Scripting Scribus](http://www.linux.com/feature/126522)中写道
 
@@ -90,7 +90,7 @@
 
 >  
 
-> 对我而言，@swaroopch 编写的《A Byte of Vim》和《A Byte of Python》是最棒的技术作品。读起来非常棒。#FeelGoodFactor
+> 对我而言，@swaroopch 编写的《A Byte of Vim》和《A Byte of Python》是最棒的技术作品，读起来非常棒。#FeelGoodFactor
 >
 > -- _Surendran_ 在其[微博](http://twitter.com/suren/status/12840485454)上说
 
