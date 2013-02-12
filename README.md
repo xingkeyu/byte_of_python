@@ -4,9 +4,9 @@
 
 确保已经安装Python (&gt;= 2.7)。
 
-从<http://johnmacfarlane.net/pandoc/installing.html> 安装了 Pandoc。
+从<http://johnmacfarlane.net/pandoc/installing.html> 安装 Pandoc。
 
-从 <http://www.tug.org/texlive/> 安装了　pdflatex。
+从 <http://www.tug.org/texlive/> 安装　pdflatex。
 注意：Mac用户可从<http://www.tug.org/mactex/2012/>安装 `MacTex.pkg` 。
 
 如果没安装 `pip` 请安装：
