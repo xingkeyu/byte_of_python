@@ -1,29 +1,29 @@
-# Colophon 
+# 跋
 
-Almost all of the software that I have used in the creation of this book are [FLOSS](#floss).
+本书用到的所有软件几乎都是[FLOSS](#floss)。
 
-## Birth of the Book 
+## 本书的诞生
 
-In the first draft of this book, I had used Red Hat 9.0 Linux as the foundation of my setup and in the sixth draft, I used Fedora Core 3 Linux as the basis of my setup.
+我用Linux的Red Hat 9.0作为组织本书初稿的基础，我使用Linux的Fedora Core 3作为组织本书第6草稿的基础。
 
-Initially, I was using KWord to write the book (as explained in the [history lesson](#history-lesson) in the preface).
+最初，我是使用KWord写这本书(在前言的[历史课程]中(#历史课程)中解释的)。
 
-## Teenage Years 
+## 初长成
 
-Later, I switched to DocBook XML using Kate but I found it too tedious. So, I switched to OpenOffice which was just excellent with the level of control it provided for formatting as well as the PDF generation, but it produced very sloppy HTML from the document.
+后来，我使用Kate转到了DocBook XML，但我发现太乏味。所以，我切换到带有级别控制的OpenOffice，它提供与生成PDF一样好的格式，但它从文档生成HTML非常浅陋。
 
-Finally, I discovered XEmacs and I rewrote the book from scratch in DocBook XML (again) after I decided that this format was the long term solution.
+最后，我发现XEmacs，当我决定把DocBook XML格式作为长远的解决方案后，我(再一次)重写了本书。
 
-In the sixth draft, I decided to use Quanta+ to do all the editing. The standard XSL stylesheets that came with Fedora Core 3 Linux were being used. However, I had written a CSS document to give color and style to the HTML pages. I had also written a crude lexical analyzer, in Python of course, which automatically provides syntax highlighting to all the program listings.
+在第六个草稿，我决定使用Quanta+做所有的编辑。来自Linux的Fedora Core 3 的标准XSL样式表正在被使用。然而，我为HTML页面的颜色和样式写了一个CSS文件。我也写了一个粗糙的词法分析程序，当然，Python为所有列出的程序自动提供语法高亮显示。
 
-For this seventh draft, I'm using [MediaWiki](http://www.mediawiki.org ) as the basis of my [setup](http://www.swaroopch.com/notes/). Now I edit everything online and the readers can directly read/edit/discuss within the wiki website.
+对于这个第七草稿中，我使用[MediaWiki)(http://www.mediawiki.org)为我[组织](http://www.swaroopch.com/notes/的基础)。现在，我在线编辑的任何东西，读者都可以在wiki网站直接读/编辑/讨论。
 
-I used Vim for editing thanks to the [ViewSourceWith extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/394) that integrates with Vim.
+我使用Vim编辑，感谢用 Vin整合的[为Firefox的扩展ViewSourceWith)(https://addons.mozilla.org/en-US/firefox/addon/394)。
 
-## Now
+## 现在
 
-Using [Vim](http://www.swaroopch.com/notes/vim), [Pandoc](http://johnmacfarlane.net/pandoc/README.html), and Mac OS X.
+使用 [Vim](http://www.swaroopch.com/notes/vim), [Pandoc](http://johnmacfarlane.net/pandoc/README.html), 和 Mac OS X.
 
-## About The Author 
+## 关于作者
 
 <http://www.swaroopch.com/about/>
