@@ -1,188 +1,186 @@
-# Modules
+# 模块
 
-You have seen how you can reuse code in your program by defining functions once. What if you wanted to reuse a number of functions in other programs that you write? As you might have guessed, the answer is modules.
+您已经看到如何通过一次定义函数在程序中重用代码。如果你想在其它程序中重用一定数量的函数，你将写什么？正如你可能已经猜到了，答案是模块。
 
-There are various methods of writing modules, but the simplest way is to create a file with a `.py` extension that contains functions and variables.
+编写模块有各种各样的方法，但是最简单的方法是创建一个以`.py` 为扩展名、包含函数和变量的文件。
 
-Another method is to write the modules in the native language in which the Python interpreter itself was written. For example, you can write modules in the [C programming language](http://docs.python.org/py3k/extending/index.html) and when compiled, they can be used from your Python code when using the standard Python interpreter.
+编写模块的另一种方式是使用编写Python解释器本身的本机语言，例如，你可以使用[C 编程语言)(http://docs.python.org/py3k/extending/index.html)编写模块，当它们被编译后，当使用标准的Python解释器时，在你Python代码中可以使用（这些模块）。
 
-A module can be *imported* by another program to make use of its functionality. This is how we can use the Python standard library as well. First, we will see how to use the standard library modules.
+一个模块可以因另一个程序使用其功能而被*imported(导入)*。同样，我们可以使用Python标准库。首先 ,我们将看到如何使用标准库模块。
 
-Example (save as `using_sys.py`):
+例子 (保存为 `using_sys.py`):
 
 ~~~python
 import sys
 
-print('The command line arguments are:')
+print('命令行参数是：')
 for i in sys.argv:
     print(i)
 
-print('\n\nThe PYTHONPATH is', sys.path, '\n')
+print('\n\nPYTHONPATH在', sys.path, '\n')
 ~~~
 
 Output:
 
 ~~~
 $ python3 using_sys.py we are arguments
-The command line arguments are:
+命令行参数是
 using_sys.py
 we
 are
 arguments
 
-The PYTHONPATH is [<nowiki>''</nowiki>, 'C:\\Windows\\system32\\python30.zip',
+PYTHONPATH在[<nowiki>''</nowiki>, 'C:\\Windows\\system32\\python30.zip',
 'C:\\Python30\\DLLs', 'C:\\Python30\\lib',
 'C:\\Python30\\lib\\plat-win', 'C:\\Python30', 
 'C:\\Python30\\lib\\site-packages']
 ~~~
 
-How It Works:
+它是如何工作的:
 
-First, we *import* the `sys` module using the `import` statement. Basically, this translates to us telling Python that we want to use this module. The `sys` module contains functionality related to the Python interpreter and its environment i.e. the *sys*tem.
+首先,我们使用`import`语句*import*导入`sys`（系统）模块。基本上，这意味着我们我们想告诉Python，我们想使用这个模块。`sys`模块包含了与Python解释器和其环境即*system系统*有关的函数。
 
-When Python executes the `import sys` statement, it looks for the `sys` module. In this case, it is one of the built-in modules, and hence Python knows where to find it.
+当Python执行`import sys`	语句时，它查找`sys`模块。在这里，它是一个内建模块，因此，Python知道到去哪里找到它。 
 
-If it was not a compiled module i.e. a module written in Python, then the Python interpreter will search for it in the directories listed in its `sys.path` variable. If the module is found, then the statements in the body of that module are run and the module is made *available* for you to use. Note that the initialization is done only the *first* time that we import a module.
+如果它不是一个编译的，也就是用Python写的模块，那么，Python解释器将在`sys.path`变量列表中的目录中搜索。如果模块被发现，那么，模块中的代码将运行，对你来说，使用模块变为*有效*。注意，初始化只有在我们*第一次*导入一个模块时完成。
 
-The `argv` variable in the `sys` module is accessed using the dotted notation i.e. `sys.argv`. It clearly indicates that this name is part of the `sys` module. Another advantage of this approach is that the name does not clash with any `argv` variable used in your program. 
+在`sys`模块中的`argv`变量是通过点符号访问的，例如，例如，`sys.argv`。它清楚地表明，这个名字是`sys`模块的一部分。这种方法的另一个优点是，这个名字与你的程序中使用的任何`argv`变量都不冲突。
 
-The `sys.argv` variable is a *list* of strings (lists are explained in detail in a [later chapter](#data-structures)). Specifically, the `sys.argv` contains the list of *command line arguments* i.e. the arguments passed to your program using the command line.
+`sys.argv`变量一个字符串*list(列表)*(list列表将在[后面章节](#数据结构)中详细解释）。具体来说，`sys.argv`包含*命令行参数*，也就是使用命令行向你的程序传递参数，的列表。 
 
-If you are using an IDE to write and run these programs, look for a way to specify command line arguments to the program in the menus.
+如果您正在使用IDE编写并运行这些程序，在菜单中寻找一种方法来指定命令行参数传递给你的程序。
 
-Here, when we execute `python using_sys.py we are arguments`, we run the module `using_sys.py` with the `python` command and the other things that follow are arguments passed to the program. Python stores the command line arguments in the `sys.argv` variable for us to use.
+这里，当我们执行`python using_sys.py we are arguments`时，我们使用 `python`命令和其后的传递给程序的参数运行`using_sys.py`模块。Python把命令行参数存储在 `sys.argv`变量中供我们使用。
 
-Remember, the name of the script running is always the first argument in the `sys.argv` list. So, in this case we will have `'using_sys.py'` as `sys.argv[0]`, `'we'` as `sys.argv[1]`, `'are'` as `sys.argv[2]` and `'arguments'` as `sys.argv[3]`. Notice that Python starts counting from 0 and not 1.
+记住，运行脚本的名字通常是`sys.argv`列表中的第一个参数。因此，在这里将有`'using_sys.py'`作为`sys.argv[0]`，`'we'`作为`sys.argv[1]`，`'are'`作为`sys.argv[2]`和`'arguments'`作为`sys.argv[3]`。注意，Python从0而不是1开始数数。  
 
-The `sys.path` contains the list of directory names where modules are imported from. Observe that the first string in `sys.path` is empty - this empty string indicates that the current directory is also part of the `sys.path` which is same as the `PYTHONPATH` environment variable. This means that you can directly import modules located in the current directory. Otherwise, you will have to place your module in one of the directories listed in `sys.path`.
+`sys.path`包含被导入的模块所在的目录名列表。观察到`sys.path`就是的第一个字符串是空的——这个空字符串表示当前目录是和`PYTHONPATH`环境变量相同的、`sys.path`变量的一部分。这意味着你可以直接导入位于当前目录中的模块。否则，你将不得不把你的模块存放在`sys.path`列表中的一个目录中。
 
-Note that the current directory is the directory from which the program is launched. Run `import os; print(os.getcwd())` to find out the current directory of your program.
+请注意，,当前目录是程序启动的目录。运行`import os; print(os.getcwd())`找到你的程序的当前目录。
 
-## Byte-compiled .pyc files 
+## 字节编译的.pyc文件 
 
-Importing a module is a relatively costly affair, so Python does some tricks to make it faster. One way is to create *byte-compiled* files with the extension `.pyc` which is an intermediate form that Python transforms the program into (remember the [introduction section](#introduction) on how Python works?). This `.pyc` file is useful when you import the module the next time from a different program - it will be much faster since a portion of the processing required in importing a module is already done. Also, these byte-compiled files are platform-independent.
+导入一个模块是一个相对昂贵的事情，所以Python做 了一些技巧使它更快。一种方法是创建扩展名为`.pyc`的*字节编译*文件，是Python将程序转换成的一种中间形式。(记得在Python如何工作的[简介部分)(#介绍))。当你下次从一个不同程序导入模块时，这种`.pyc`文件是有很用的--它将快得多，因为导入模块一部分需要的处理已经完成。同时，这些字节编译的文件是独立于平台的。
 
-Note
+注意
 
-:   These `.pyc` files are usually created in the same directory as the corresponding `.py` files. If Python does not have permission to write to files in that directory, then the `.pyc` files will not be created.
+:   这些`.pyc`文件通常在与之相应的`.py`文件的同一个目录中创建。如果Python在那个目录中没有写入权限，那么`.pyc`文件将不会创建。
 
-## The from ... import statement 
+## from ... import语句
 
-If you want to directly import the `argv` variable into your program (to avoid typing the `sys.` everytime for it), then you can use the `from sys import argv` statement.
+如果你想直接导入`argv`变量到程序中(为了避免每次为它键入`sys.`)，那么您可以使用`from sys import argv`语句。
 
-In general, you *should avoid* using this statement and use the `import` statement instead since your program will avoid name clashes and will be more readable.
+一般来说，你*应该避免*使用这个语句，而应该使用`import`语句，因为你的程序将避免名称冲突，将更具可读性。
 
-Example:
+例如：
 
 ~~~python
 from math import sqrt
-print("Square root of 16 is", sqrt(16))
+print("16的平方根是", sqrt(16))
 ~~~
 
-## A module's __name__ 
+## 模块的__name__ 
 
-Every module has a name and statements in a module can find out the name of their module. This is handy for the particular purpose of figuring out whether the module is being run standalone or being imported. As mentioned previously, when a module is imported for the first time, the code it contains gets executed. We can use this to make the module behave in different ways depending on whether it is being used by itself or being imported from another module. This can be achieved using the `__name__` attribute of the module.
+每个模块都有一个名字，在模块中的语句能够找出它所在的模块的名字。这对于搞清楚模块是否正在运行或被导入这样的特殊用途是很方便的。正如前面提到的，当一个模块被第一次导入时，其所包含的代码被执行。我们可以通过使用这个，根据模块是否被自己使用或从另一个 模块被导入，使模块以不同的方式起作用，这些可以通过使用模块的 `__name__`属性来实现。
 
-Example (save as `using_name.py`):
+例子 (保存为 `using_name.py`):
 
 ~~~python
 if __name__ == '__main__':
-    print('This program is being run by itself')
+    print('这个程序正在被自己运行')
 else:
-    print('I am being imported from another module')
+    print('我从别的模块被导入')
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 using_name.py
-This program is being run by itself
-
+这个程序正在被自己运行
 $ python3
 >>> import using_name
-I am being imported from another module
+我从别的模块被导入
 >>>
 ~~~
 
-How It Works:
+它是如何工作的：
 
-Every Python module has its `__name__` defined. If this is `'__main__'`, that implies that the module is being run standalone by the user and we can take appropriate actions.
+每个Python模块有其`__name__` 定义，如果是`__name__` ，这意味着模块在被用户独立的运行，我们可以采取适当的行动。
+## 制作属于你自己的模块
 
-## Making Your Own Modules 
+创建自己的模块是很容易的，你一直在这样做，始终都是！这是因为每个Python程序也是一个模块。 你只需要确保它有一个`.py`扩展名。下面的例子会让你明白。
 
-Creating your own modules is easy, you've been doing it all along! This is because every Python program is also a module. You just have to make sure it has a `.py` extension. The following example should make it clear.
-
-Example (save as `mymodule.py`):
+例子 (保存为`mymodule.py`):
 
 ~~~python
 def sayhi():
-    print('Hi, this is mymodule speaking.')
+    print('嗨，这是我的模块在讲话。')
 
 __version__ = '0.1'
 ~~~
 
-The above was a sample *module*. As you can see, there is nothing particularly special about it compared to our usual Python program. We will next see how to use this module in our other Python programs.
+上面的是*模块*的一个示例。正如您可以看到的，和我们通过的Python程序相比，没有什么特别的。接下来我们要看如何在我们的其它程序中使用这个模块。
 
-Remember that the module should be placed either in the same directory as the program from which we import it, or in one of the directories listed in `sys.path`.
+记住,该模块要么放置在我们导入它的程序相同的目录中，要么放置在`sys.path`目录列表中的一个目录中。
 
-Another module (save as `mymodule_demo.py`):
+另一个模块(保存为`mymodule_demo.py`):
 
 ~~~python
 import mymodule
 
 mymodule.sayhi()
-print ('Version', mymodule.__version__)
+print ('版本', mymodule.__version__)
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 mymodule_demo.py
-Hi, this is mymodule speaking.
-Version 0.1
+嗨，这是我的模块在讲话。
+版本 0.1
 ~~~
 
-How It Works:
+它是如何工作的：
 
-Notice that we use the same dotted notation to access members of the module. Python makes good reuse of the same notation to give the distinctive 'Pythonic' feel to it so that we don't have to keep learning new ways to do things.
+注意，我们使用相同的点符号来访问模块的成员。Python充分重用相同的符号产生了独特的'神谕的'的感觉，这样我们不需要不断学习新的方法来做事情。
 
-Here is a version utilising the `from..import` syntax (save as `mymodule_demo2.py`):
+这是使用`from..import`语法的一个版本(保存为`mymodule_demo2.py`):
 
 ~~~python
 from mymodule import sayhi, __version__
 
 sayhi()
-print('Version', __version__)
+print('版本', __version__)
 ~~~
 
-The output of `mymodule_demo2.py` is same as the output of `mymodule_demo.py`.
+`mymodule_demo2.py`和`mymodule_demo.py`的输出相同。
 
-Notice that if there was already a `__version__` name declared in the module that imports mymodule, there would be a clash. This is also likely because it is common practice for each module to declare it's version number using this name. Hence, it is always recommended to prefer the `import` statement even though it might make your program a little longer.
+注意，如果在导入模块中已经有一个`__version__`名字的声明，这里会有一个冲突。这也可能是因为它是常见的做法--对于每个模块使用这个名字声明它的版本号。因此，总是推荐选择`import`语句，虽然它可能让你的程序有点长。
 
-You could also use:
+你还可以使用：
 
 ~~~python
 from mymodule import *
 ~~~
 
-This will import all public names such as `sayhi` but would not import `__version__` because it starts with double underscores.
+这将导入所有的公共名称如 `sayhi`，但不会导入`__version__`，因为它始于双下划线。
 
-Zen of Python
+Python的禅
 
-:   One of Python's guiding principles is that "Explicit is better than Implicit". Run `import this` to learn more and see [this StackOverflow discussion](http://stackoverflow.com/questions/228181/zen-of-python) which lists examples for each of the principles.
+:   Python的一个指导原则是"显式优于隐式"。运行`import this`去学习更多，看[栈溢出讨论)(http://stackoverflow.com/questions/228181/zen-of-python)，那里列出了每个原则的例子。
 
-## The dir function 
+## dir函数
 
-You can use the built-in `dir` function to list the identifiers that an object defines. For example, for a module, the identifiers include the functions, classes and variables defined in that module.
+您可以使用内置的`dir`函数列出一个定义对象的标识符。例如,对于一个模块，包括在模块中定义的函数，类和变量。
 
-When you supply a module name to the`dir()` function, it returns the list of the names defined in that module. When no argument is applied to it, it returns the list of names defined in the current module.
+当你给`dir()`提供一个模块名字时，它返回在那个模块中定义的名字的列表。当没有为其提供参数时, 它返回当前模块中定义的名字的列表。
 
-Example:
+例如：
 
 ~~~
 $ python3
 
->>> import sys # get list of attributes, in this case, for the sys module
+>>> import sys # 获得属性列表，在这里是sys模块的属性列表
 
 >>> dir(sys)
 ['__displayhook__', '__doc__', '__excepthook__', '__name__', '__package__', '__s
@@ -198,15 +196,15 @@ m', 'prefix', 'ps1', 'ps2', 'setcheckinterval', 'setprofile', 'setrecursionlimit
 ', 'settrace', 'stderr', 'stdin', 'stdout', 'subversion', 'version', 'version_in
 fo', 'warnoptions', 'winver']
 
->>> dir() # get list of attributes for current module
+>>> dir() # 获得当前模块的属性列表
 ['__builtins__', '__doc__', '__name__', '__package__', 'sys']
 
->>> a = 5 # create a new variable 'a'
+>>> a = 5 # 创建了一个新变量 'a'
 
 >>> dir()
 ['__builtins__', '__doc__', '__name__', '__package__', 'a', 'sys']
 
->>> del a # delete/remove a name
+>>> del a # 删除/移除一个名字
 
 >>> dir()
 ['__builtins__', '__doc__', '__name__', '__package__', 'sys']
@@ -214,30 +212,29 @@ fo', 'warnoptions', 'winver']
 >>>
 ~~~
 
-How It Works:
+它是如何工作的：
 
-First, we see the usage of `dir` on the imported `sys` module. We can see the huge list of attributes that it contains.
+首先，我们看到在导入`sys`模块上使用使用`dir`。我们能看到模块包含的巨大的属性列表。
+ 
+然后，我们使用没有传递参数的`dir`函数。默认情况下，它返回模块的属性的列表。注意，导入模块的列表仍然是这个列表的一部分。
 
-Next, we use the `dir` function without passing parameters to it. By default, it returns the list of attributes for the current module. Notice that the list of imported modules is also part of this list.
+为了看到 `dir`在起作用，我们定义了一个新的变量，并为其赋值，然后检查`dir`，我们发现列表中添加了一个同名变量。我们使用`del`语句移除当前模块的变量或属性，在 `del`函数的输出中变化再次得到体现。
 
-In order to observe the `dir` in action, we define a new variable `a` and assign it a value and then check `dir`and we observe that there is an additional value in the list of the same name. We remove the variable/attribute of the current module using the `del` statement and the change is reflected again in the output of the `dir` function.
+关于`del`的一点注意事项--这个语句用于*删除*一个变量/属性，语句运行后，这里是`del a`，你不能再访问变量`a`--就像它从来根本没有存在过。
 
-A note on `del` - this statement is used to *delete* a variable/name and after the statement has run, in this case `del a`, you can no longer access the variable `a` - it is as if it never existed before at all.
+注意，`dir()`函数对*任何*对象都起作用。例如，运行`dir('print')`来学习print函数的属性的更多知识，或运行`dir(str)`学习str类的属性的更多知识。
 
-Note that the `dir()` function works on *any* object. For example, run `dir('print')` to learn about the attributes of the print function, or `dir(str)` for the attributes of the str class.
+## 打包（封装）
 
-## Packages 
+现在，你必须开始观察组织你的程序的层次结构。变量通常在函数内部。函数和全局变量通常在模块内部。如果你想组织模块？这就到了牵涉到打包的地方了。
 
-By now, you must have started observing the hierarchy of organizing your programs. Variables usually go inside functions. Functions and global variables usually go inside modules. What if you wanted to organize modules? That's where packages come into the picture.
+包只是模块的文件夹，使用一个特殊的`__init__.py` 文件，指示Python，这个文件夹是特殊的，因为它包含Python模块。
 
-Packages are just folders of modules with a special `__init__.py` file that indicates to Python that this folder is special because it contains Python modules.
+假设你想创建一个叫做'世界'的程序包，分装'亚洲'、'非洲'等等，分包按序包含'印度'、'马达加斯加'等等。 
 
-Let's say you want to create a package called 'world' with subpackages 'asia', 'africa', etc. and these subpackages in turn contain modules like 'india', 'madagascar', etc.
-
-This is how you would structure the folders:
-
+这是你将组织的文件夹：
 ~~~
-- <some folder present in the sys.path>/
+- <在sys.path中现有的一些文件夹>/
     - world/
         - __init__.py
         - asia/
@@ -252,12 +249,12 @@ This is how you would structure the folders:
                 - bar.py
 ~~~
 
-Packages are just a convenience to hierarchically organize modules. You will see many instances of this in the [standard library](#standard-library).
+包只是为了分层次组织模块的方便。在[标准库](#标准库)中，你会看到包的许多实例。
 
-## Summary 
+## 小结
 
-Just like functions are reusable parts of programs, modules are reusable programs. Packages are another hierarchy to organize modules. The standard library that comes with Python is an example of such a set of packages and modules.
+就像函数是可重用的部分的程序一样，模块也是可重用的程序。包是组织模块的另一个层次结构。来自Python的标准库，是包和模块的集合中的一个例子。
 
-We have seen how to use these modules and create our own modules.
+我们已经看到了如何使用这些模块和创建我们自己的模块。
 
-Next, we will learn about some interesting concepts called data structures.
+接下来，我们将学习一些有趣的称为数据结构的概念。
