@@ -1,6 +1,6 @@
 # A Byte of Python
 
-## Installation
+## 安装
 
 Ensure Python (&gt;= 2.7) is installed.
 
