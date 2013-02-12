@@ -1,71 +1,69 @@
-# What Next
+# 下一步做什么
 
-If you have read this book thoroughly till now and practiced writing a lot of programs, then you must have become comfortable and familiar with Python. You have probably created some Python programs to try out stuff and to exercise your Python skills as well. If you have not done it already, you should. The question now is 'What Next?'.
+到现在为止，如果你彻底读过这本书和练习写作过大量的程序，那么你一定变得舒服而且熟悉Python。你可能已经创建了一些Python程序去尝试这些东西，去锻炼你的Python技能。如果你还没有这样做了，你应该去做。现在的问题是“下一步做什么呢?”。
 
-I would suggest that you tackle this problem:
+我建议你处理这个问题：
 
-> Create your own command-line *address-book* program using which you can browse, add, modify, delete or search for your contacts such as friends, family and colleagues and their information such as email address and/or phone number. Details must be stored for later retrieval.
+> 创建你自己的命令行*地址簿*程序，使用它可以浏览、添加、修改、删除和搜索你的联系人如朋友、家人和同事及他们的信息，如电子邮件地址和/或电话号码。细节必须存储供以后检索。
 
-This is fairly easy if you think about it in terms of all the various stuff that we have come across till now. If you still want directions on how to proceed, then here's a hint.
+如果你想依据直到现在我们遇到的各种各样的材料中考虑它，这是相当容易的。如果你仍然想知道如何处理的方向，那么这是一个提示。
 
-Hint (Don't read without trying first)
+提示(不先试不要看)
 
-:   Create a class to represent the person's information. Use a dictionary to store person objects with their name as the key. Use the pickle module to store the objects persistently on your hard disk. Use the dictionary built-in methods to add, delete and modify the persons.
+:   创建一个代表人们信息的类。使用字典存储成员对象，用他们的名字做键。使用pickle模块将对象存储在你的硬盘中，使用字典的内建方法添加、删除和修改成员信息。
 
-Once you are able to do this, you can claim to be a Python programmer. Now, immediately [send me an email](http://www.swaroopch.com/contact/) thanking me for this great book ;-). This step is optional but recommended. Also, please consider [buying a printed copy](http://www.swaroopch.com/buybook/) to support the continued development of this book.
+一旦你能做这个，你可以声明是一名Python程序员了。现在，立即[发电子邮件给我](http://www.swaroopch.com/contact/)感谢我的这本伟大的书;-). 这个步骤是可选 的但是推荐的。同样，请考虑[购买一个印刷版](http://www.swaroopch.com/buybook/)来支持这本书的可持续发展。
 
-If you found that program easy, here's another one:
+如果你发现这个程序简单，这有另外一个：
 
-> Implement the [replace command](http://unixhelp.ed.ac.uk/CGI/man-cgi?replace). This command will replace one string with another in the list of files provided.
+> 编写[替换命令](http://unixhelp.ed.ac.uk/CGI/man-cgi?replace). 这个命令将使用指定文件列表中的字符串替换一个字符串。
 
-The replace command can be as simple or as sophisticated as you wish, from simple string substitution to looking for patterns (regular expressions).
+replace命令可以是简单或复杂的，这随你所愿，从简单的字符串替换到寻找模式(正则表达式)。
 
-After that, below are some ways to continue your journey with Python:
+在那之后，下面是一些继续使用Python旅程的一些方法：
 
-## Example Code 
+## 示例代码
 
-The best way to learn a programming language is to write a lot of code and read a lot of code:
+学习一门程序语言的最好方式是写许多代码和读许多代码：
 
-- [Python Cookbook](http://code.activestate.com/recipes/langs/python/) is an extremely valuable collection of recipes or tips on how to solve certain kinds of problems using Python. This is a must-read for every Python user.
-- [Python Module of the Week](http://www.doughellmann.com/PyMOTW/contents.html) is another excellent must-read guide to the [Python Standard Library](#standard-library).
+- [Python Cookbook](http://code.activestate.com/recipes/langs/python/) 是使用Python解决某些问题的技巧和秘诀的非常有用的集合，这是每个Python使用者必读的。
+- [Python Module of the Week](http://www.doughellmann.com/PyMOTW/contents.html)是另一本杰出的[Python标准库](#标准库)必读指南。
 
-## Questions and Answers
+## 问题及解答
 
-- [Official Python Dos and Don'ts](http://docs.python.org/py3k/howto/doanddont.html)
-- [Official Python FAQ](http://www.python.org/doc/faq/general/)
-- [Norvig's list of Infrequently Asked Questions](http://norvig.com/python-iaq.html)
-- [Python Interview Q & A](http://dev.fyicenter.com/Interview-Questions/Python/index.html)
-- [StackOverflow questions tagged with python](http://beta.stackoverflow.com/questions/tagged/python)
+- [Official Python Dos and Don'ts（Python官方的注意事项）](http://docs.python.org/py3k/howto/doanddont.html)
+- [Official Python FAQ(Python官方的问题解答)](http://www.python.org/doc/faq/general/)
+- [Norvig's list of Infrequently Asked Questions(很少发生的提问列表)](http://norvig.com/python-iaq.html)
+- [Python Interview Q & A(Python问题解答访谈)](http://dev.fyicenter.com/Interview-Questions/Python/index.html)
+- [StackOverflow questions tagged with python(使用Python标记的堆栈溢出问题)](http://beta.stackoverflow.com/questions/tagged/python)
 
-## Tutorials
+## 学习指南
 
-- [Awaretek's comprehensive list of Python tutorials](http://www.awaretek.com/tutorials.html)
+- [Awaretek's comprehensive list of Python tutorials(Awaretek的Python学习指南的综合列表)](http://www.awaretek.com/tutorials.html)
 
-## Videos 
+## 视频
 
 - [PyVideo](http://www.pyvideo.org/category)
 
-## Discussion 
+## 讨论
 
-If you are stuck with a Python problem, and don't know whom to ask, then the [python-tutor list](http://mail.python.org/mailman/listinfo/tutor) is the best place to ask your question.
+当你遇到一个Python问题而无法进行下去时，不知道去问谁，那么 [python-tutor list(Python辅导列表)](http://mail.python.org/mailman/listinfo/tutor) 是你提问的最好的地方。
 
-Make sure you do your homework and have tried solving the problem yourself first.
+前提是确保你做你的家庭作业和你自己试图解决问题。
 
-## News 
+## 新闻
 
-If you want to learn what is the latest in the world of Python, then follow the [Official Python Planet](http://planet.python.org).
+如果你想了解世界是最新的Python，那么请跟随[Python的官方行星](http://planet.python.org。
 
-## Installing libraries 
+## 安装库
 
-There are a huge number of open source libraries at the [Python Package Index](http://pypi.python.org/pypi) which you can use in your own programs.
+在[Python包索引)(http://pypi.python.org/pypi)中有一个巨大的数量的，你可以在你自己的程序中使用的开源库。安装和使用这些库，你可以使用[pip](http://www.pip-installer.org/en/latest/)。
 
-To install and use these libraries, you can use [pip](http://www.pip-installer.org/en/latest/).
+## 图形软件
 
-## Graphical Software 
+假设您想要使用Python创建自己的图形程序，这可以通过使用一个GUI(图形用户接口）库与Python绑定来实现。绑定是允许你用Python编写程序和使用用C或C++语言编写的库。
 
-Suppose you want to create your own graphical programs using Python. This can be done using a GUI (Graphical User Interface) library with their Python bindings. Bindings are what allow you to write programs in Python and use the libraries which are themselves written in C or C++ or other languages.
-
-There are lots of choices for GUI using Python:
+使用Python有很多GUI可供选择：
 
 Kivy
 
@@ -73,60 +71,59 @@ Kivy
 
 PyGTK
 
-:   This is the Python binding for the GTK+ toolkit which is the foundation upon which GNOME is built. GTK+ has many quirks in usage but once you become comfortable, you can create GUI apps fast. The Glade graphical interface designer is indispensable. The documentation is yet to improve. GTK+ works well on Linux but its port to Windows is incomplete. You can create both free as well as proprietary software using GTK+. To get started, read the [PyGTK tutorial](http://www.pygtk.org/tutorial.html).
+:   这是Python为GTK+工具包的绑定，GTK+工具包是GNOME建立的基础。GTK+在使用上有许多怪癖，但一旦你适应，您可以快速创建GUI应用程序。这是图形界面设计者必不可少的。文档是没有改善。GTK+在Linux上工作良好，但它转到Windows是不完整的。您可以使用GTK+创建自由以及专有软件。 要开始使用,阅读[PyGTK教程)(http://www.pygtk.org/tutorial.html)。
 
 PyQt
 
-:   This is the Python binding for the Qt toolkit which is the foundation upon which the KDE is built. Qt is extremely easy to use and very powerful especially due to the Qt Designer and the amazing Qt documentation. PyQt is free if you want to create open source (GPL'ed) software and you need to buy it if you want to create proprietary closed source software. Starting with Qt 4.5 you can use it to create non-GPL software as well. To get started, read the [PyQt tutorial](http://zetcode.com/tutorials/pyqt4/) or the [PyQt book](http://www.qtrac.eu/pyqtbook.html).
+:   这是Python为Qt工具包绑定的，Qt工具包是KDE建立的基础。由于Qt设计器和惊人的Qt文档，Qt非常易用、非常强大。如果你想创建开源(GPL'ed)软件，PyQt是免费的。如果你想创建专有的闭源软件，你需要购买它。从Qt4.5开始你同样可以使用它创建非gpl软件。要开始使用，首先阅读[PyQt教程](http://zetcode.com/tutorials/pyqt4/)或(PyQt书)(http://www.qtrac.eu/pyqtbook.html)。
 
 wxPython
 
-:   This is the Python bindings for the wxWidgets toolkit. wxPython has a learning curve associated with it. However, it is very portable and runs on Linux, Windows, Mac and even embedded platforms. There are many IDEs available for wxPython which include GUI designers as well such as [SPE (Stani's Python Editor)](http://spe.pycs.net/) and the [wxGlade](http://wxglade.sourceforge.net/) GUI builder. You can create free as well as proprietary software using wxPython. To get started, read the [wxPython tutorial](http://zetcode.com/wxpython/).
+:   这是Python为wxWidgets工具包绑定的。wxPython有一个与之关联的学习曲线。然而，它是非常轻便，运行在Linux、Windows、Mac和甚至嵌入式平台。有许多可供wxPython使用的ide，包括GUI设计师,例如[SPE(Stani的Python编辑器)](http://spe.pycs.net/)和[wxGlade](http://wxglade.sourceforge.net/)GUI构建器。使用wxPython您可以创建自由以及专有软件。首先,阅读[wxPython教程)(http://zetcode.com/wxpython/)。
 
-### Summary of GUI Tools 
+### GUI工具小结
 
-For more choices, see the [GuiProgramming wiki page at the official python website](http://www.python.org/cgi-bin/moinmoin/GuiProgramming).
+更多选择，请参见[Python官方网站的GuiProgramming wiki页面)(http://www.python.org/cgi-bin/moinmoin/GuiProgramming)。
 
-Unfortunately, there is no one standard GUI tool for Python. I suggest that you choose one of the above tools depending on your situation. The first factor is whether you are willing to pay to use any of the GUI tools. The second factor is whether you want the program to run only on Windows or on Mac and Linux or all of them. The third factor, if Linux is a chosen platform, is whether you are a KDE or GNOME user on Linux.
+不幸的是，对于Python没有一个标准的GUI工具。我建议你根据你的情况，从以上工具中选择一个。第一个因素是，你是否愿意为使用GUI工具支付费用。第二个因素是，你是否想让程序只在Windows、或Mac或Linux上运行，还是所有这些都可以。第三个因素，如果Linux是选择的平台，你是Linux上的KDE用户，还是GNOME用户。
 
-For a more detailed and comprehensive analysis, see Page 26 of the [The Python Papers, Volume 3, Issue 1](http://archive.pythonpapers.org/ThePythonPapersVolume3Issue1.pdf).
+对于更详细和全面的分析,请看[The Python Paper,Volume 3, Issue 1](http://archive.pythonpapers.org/ThePythonPapersVolume3Issue1.pdf)的第26页。
 
-## Various Implementations 
+## 各种实现
 
-There are usually two parts a programming language - the language and the software. A language is *how* you write something. The software is *what* actually runs our programs.
+一个编程语言通常有两部分,语言和软件。语言是你*怎样*写点东西。软件是程序实际运行*什么*。
 
-We have been using the *CPython* software to run our programs. It is referred to as CPython because it is written in the C language and is the *Classical Python interpreter*.
-
-There are also other software that can run your Python programs:
+我们一直使用*CPython*软件来运行我们程序。因为它写是用C语言编写的，*Classical(经典)的Python解释器*,因此被称为CPython。还有其它的软件可以运行你的程序：
 
 [Jython](http://www.jython.org)
 
-:   A Python implementation that runs on the Java platform. This means you can use Java libraries and classes from within Python language and vice-versa.
+:   运行在Java平台上的一个Python实现。这意味着您可以在Python语言中使用Java库和类，反之亦然。
 
 [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)
 
-:   A Python implementation that runs on the .NET platform. This means you can use .NET libraries and classes from within Python language and vice-versa.
+:   运行在.NET平台的一个Python实现，这意味着您可以在Python中使用.NET库和类，反之亦然。
+
 
 [PyPy](http://codespeak.net/pypy/dist/pypy/doc/home.html)
 
-:   A Python implementation written in Python! This is a research project to make it fast and easy to improve the interpreter since the interpreter itself is written in a dynamic language (as opposed to static languages such as C, Java or C# in the above three implementations)
+:   用Python写的一个Python实现！这是一个研究项目，使改进解释器又快又好，因为解释器本身是用一种动态语言编写的(与静态语言相反(如C、Java或c#)在上面的三个实现)
 
 [Stackless Python](http://www.stackless.com)
 
-:   A Python implementation that is specialized for thread-based performance.
+:  一个Python实现,是专门基于线程性能的。
 
-There are also others such as [CLPython](http://common-lisp.net/project/clpython/) - a Python implementation written in Common Lisp and [IronMonkey](http://wiki.mozilla.org/Tamarin:IronMonkey) which is a port of IronPython to work on top of a JavaScript interpreter which could mean that you can use Python (instead of JavaScript) to write your web-browser ("Ajax") programs.
+还有其它的，例如，[CLPython](http://common-lisp.net/project/clpython/) - 用 Common Lisp语言编写的一个Python实现、[IronMonkey]，这是一个工作在JavaScript解释器上的IronPython端口，这可能意味着您可以使用Python(而不是JavaScript)来写你的网络浏览器("Ajax")程序。 
 
-Each of these implementations have their specialized areas where they are useful.
+每一种实现都有自己的有用的专业领域。
 
-## Functional Programming (for advanced readers)
+## 函数程序设计(为高级读者)
 
-When you start writing larger programs, you should definitely learn more about a functional approach to programming as opposed to the class-based approach to programming that we learned in the [object-oriented programming chapter](#object-oriented-programming):
+当你开始编写大型程序,你应该明确地了解更多我们在(面向对象编程一章)(#面向对象编程)学会的，关于函数编程方法与基于类的编程方法。
 
-- [Functional Programming Howto by A.M. Kuchling](http://docs.python.org/dev/howto/functional.html)
-- [Functional programming chapter in 'Dive Into Python' book](http://www.diveintopython.net/functional_programming/index.html)
-- [Functional Programming with Python presentation](http://ua.pycon.org/static/talks/kachayev/index.html)
+- [Functional Programming Howto by A.M. Kuchling(A.M. Kuchling编写的如何进行函数编程)](http://docs.python.org/dev/howto/functional.html)
+- [Functional programming chapter in 'Dive Into Python' book('Dive Into Python' 书中函数编程一章)](http://www.diveintopython.net/functional_programming/index.html)
+- [Functional Programming with Python presentation（使用Python描述的函数编程）](http://ua.pycon.org/static/talks/kachayev/index.html)
 
-## Summary 
+## 小结 
 
-We have now come to the end of this book but, as they say, this is the *the beginning of the end*!. You are now an avid Python user and you are no doubt ready to solve many problems using Python. You can start automating your computer to do all kinds of previously unimaginable things or write your own games and much much more. So, get started!
+现在，我们到了本书尽头，但是，正如他们所说，这是*结束的开始*!。你现在是一个狂热的Python用户,毫无疑问，你准备使用Python解决许多问题。你可以让你的计算机自动开始做各种各样的，从前不可想象的事情或编写自己的游戏和许许多多。所以，开始吧!
