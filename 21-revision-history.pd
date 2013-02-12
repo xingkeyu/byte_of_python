@@ -1,59 +1,59 @@
-# Revision History
+# 修订历史
 
 - 2.0
-    - 20 Oct 2012
-    - Rewritten in [Pandoc format](http://johnmacfarlane.net/pandoc/README.html), thanks to my wife who did most of the conversion from the Mediawiki format
-    - Simplifying text, removing non-essential sections such as `nonlocal` and metaclasses
+    - 2012年10月20日
+    - 用[Pandoc格式]重写(http://johnmacfarlane.net/pandoc/README.html), 这要归功于我的妻子做了大部分从Mediawiki格式的转换
+    - 简化文本，删除不必要的部分如`nonlocal`(非局部的)和元类
 - 1.90 
-    - 04 Sep 2008 and still in progress 
-    - Revival after a gap of 3.5 years! 
-    - Rewriting for Python 3.0
-    - Rewrite using [MediaWiki](http://www.mediawiki.org) (again) 
+    - 2008年9月4日并仍在改进
+    - 空闲3年半后复兴！
+    - 为Python 3.0重写
+    - (再一次)用[MediaWiki](http://www.mediawiki.org)重写
 - 1.20 
-    - 13 Jan 2005
-    - Complete rewrite using [Quanta+](https://en.wikipedia.org/wiki/Quanta_Plus) on [Fedora](http://fedoraproject.org/) Core 3 with lot of corrections and updates. Many new examples. Rewrote my DocBook setup from scratch. 
+    - 2005年1月13日
+    - 在[Fedora](http://fedoraproject.org/)Core(核心)3上使用[Quanta+](https://en.wikipedia.org/wiki/Quanta_Plus) 完全重写，大量的修正和更新和许多新的例 子。我从头重写资料收集库设置。
 - 1.15 
-    - 28 Mar 2004
-    - Minor revisions 
+    - 2004年3月28日
+    - 次要的修正
 - 1.12 
-    - 16 Mar 2004
-    - Additions and corrections. 
+    - 2004年3月16日
+    - 补充和修正
 - 1.10 
-    - 09 Mar 2004
-    - More typo corrections, thanks to many enthusiastic and helpful readers. 
+    - 2004年3月9日
+    - 许多排印错误，感谢许多热心的助人的读者。More typo corrections, thanks to many enthusiastic and helpful readers. 
 - 1.00 
-    - 08 Mar 2004
-    - After tremendous feedback and suggestions from readers, I have made significant revisions to the content along with typo corrections. 
+    - 2004年3月8日
+    - 来自读者的巨大的反馈和建议，我做了很多重要的内容修订以及错误更正。
 - 0.99 
-    - 22 Feb 2004
-    - Added a new chapter on modules. Added details about variable number of arguments in functions. 
+    - 2004年2月22日
+    - 添加了一个新的关于模块的章节，在函数中数量可变参数的细节。
 - 0.98 
-    - 16 Feb 2004
-    - Wrote a Python script and CSS stylesheet to improve XHTML output, including a crude-yet-functional lexical analyzer for automatic VIM-like syntax highlighting of the program listings. 
+    - 2004年2月16日
+    - 为改进XHTML输出，写了一个Python脚本和CSS样式表，包括为自动VIM像程序列表的语法高亮显示而编写的粗糙但具有功能的词汇分析器，
 - 0.97 
-    - 13 Feb 2004
-    - Another completely rewritten draft, in DocBook XML (again). Book has improved a lot - it is more coherent and readable. 
+    - 2014年2月13日
+    - 再一次使用 DocBook XML完全重写的另一个草稿。书已经有了很大改善,更具连贯性和可读性。
 - 0.93 
-    - 25 Jan 2004
-    - Added IDLE talk and more Windows-specific stuff 
+    - 2004年1月25日
+    - 增加了IDLE讨论和Windonws特定的东西 
 - 0.92 
-    - 05 Jan 2004
-    - Changes to few examples. 
+    - 2004年1月5日
+    - 换了几个例子
 - 0.91 
-    - 30 Dec 2003
-    - Corrected typos. Improvised many topics. 
+    - 2003年12月30日
+    - 纠正拼写错误，简易许多话题。
 - 0.90 
-    - 18 Dec 2003
-    - Added 2 more chapters. [OpenOffice](https://en.wikipedia.org/wiki/OpenOffice) format with revisions. 
+    - 2003年12月18日
+    - 添加2章。校正使用[OpenOffice(办公套件)](https://en.wikipedia.org/wiki/OpenOffice)格式。
 - 0.60 
-    - 21 Nov 2003
-    - Fully rewritten and expanded. 
+    - 2003年11月21日
+    - 完全重写和扩展。
 - 0.20 
-    - 20 Nov 2003
-    - Corrected some typos and errors. 
+    - 2003年11月20日
+    - 纠正打字错误和其它错误
 - 0.15 
-    - 20 Nov 2003
-    - Converted to [DocBook XML](https://en.wikipedia.org/wiki/DocBook). 
+    - 2003年11月20日
+    - 转换为[DocBook XML](https://en.wikipedia.org/wiki/DocBook). 
 - 0.10 
-    - 14 Nov 2003
-    - Initial draft using [KWord](https://en.wikipedia.org/wiki/Kword).
+    - 2003年11月14日
+    - 最初的草稿使用[KWord](https://en.wikipedia.org/wiki/Kword).
