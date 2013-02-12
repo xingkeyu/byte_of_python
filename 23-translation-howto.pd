@@ -1,11 +1,11 @@
-# Translation Howto
+# 翻译的基本知识
 
-The full source of the book is available from the Git repository <https://github.com/swaroopch/byte_of_python>.
+Git<https://github.com/swaroopch/byte_of_python>的资源库有本书的所有原始资料。
 
-Please [fork the repository](https://help.github.com/articles/fork-a-repo).
+请[forkthe repository(叉资源)](https://help.github.com/articles/fork-a-repo).
 
-Then, fetch the repository to your computer. You need to know how to use [Git](http://www.git-scm.com) to do that.
+然后，提取资源到你的电脑，你需要知道怎样使用[Git](http://www.git-scm.com) 来做它。
 
-Start editing the `.pd` files to your local language. Please read the [Pandoc README](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown) to understand the formatting of the text.
+开始用你的本土语言编辑`.pd`文件。请阅读[Pandoc README](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown)来了解文本的格式。
 
-Then follow the instructions in the [README](http://github.com/swaroopch/byte_of_python#README) to install the software required to be able to convert the raw source files into PDFs, etc.
+然后，按照[README](http://github.com/swaroopch/byte_of_python#README)安装需要的能将原始文件转换为PDF等格式的软件。
