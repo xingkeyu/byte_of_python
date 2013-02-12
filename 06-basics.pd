@@ -1,69 +1,69 @@
-# Basics
+# 基础
 
-Just printing 'Hello World' is not enough, is it? You want to do more than that - you want to take some input, manipulate it and get something out of it. We can achieve this in Python using constants and variables, and we'll learn some other concepts as well in this chapter.
+只是打印“Hello World”是不够的，是吗？你想要做的不仅仅是这些，你想带一些输入，操纵它，得到些输出。在Python中，我们使用常量和变量可以实现这些。在这一章，我们还将学习一些其他的概念。
 
-## Comments
+## 注释
 
-*Comments* are any text to the right of the `#` symbol and is mainly useful as notes for the reader of the program.
+*注释*是#符号右边的任何文字，它对读程序的人有很大注释用处。
 
-For example:
+例如：
 
 ~~~python
-print('Hello World') # Note that print is a function
+print('Hello World') # 注意：print是一个函数
 ~~~
 
-or:
+或者:
 
 ~~~python
-# Note that print is a function
+# 注意：print是一个函数
 print('Hello World')
 ~~~
 
-Use as many useful comments as you can in your program to:
+在你的程序中，你尽可能使用有用的注释:
 
-- explain assumptions
-- explain important decisions
-- explain important details
-- explain problems you're trying to solve
-- explain problems you're trying to overcome in your program, etc.
+- 解释设想
+- 解释重要决策
+- 解释重要细节
+- 解释你在试图解决的问题
+- 解释程序中你在努力克服的问题，等等。
 
-[*Code tells you how, comments should tell you why.*](http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html)
+[*代码告诉你怎样做，注释告诉你这样做的原因。*](http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html)
 
-This is useful for readers of your program so that they can easily understand what the program is doing. Remember, that person can be yourself after six months!
+这对你的程序的读者是有用的，他们可以很容易地理解程序做什么。记住，六个月后这个人可以是你自己！
 
-## Literal Constants
+## 字面常量
 
-An example of a literal constant is a number like `5`, `1.23`, or a string like `'This is a string'`or `"It's a string!"`. It is called a literal because it is *literal* - you use its value literally. The number `2` always represents itself and nothing else - it is a *constant* because its value cannot be changed. Hence, all these are referred to as literal constants.
+字面常量的一个例子是一个数字就像“5”、“1.23”，或一个字符串像“这是一个字符串”或“它一个字符串!”。它被称为字面，因为它是*字面的*——你使用它的字面值。数字'2'总是代表本身并没有什么其他的——它是一个*常数*，因为它的价值是不能改变的，因此，所有这些被称为字面常量。
 
-## Numbers
+## 数字
 
-Numbers are mainly of two types - integers and floats.
+数字主要有两种类型--整型和浮点数。
 
-An examples of an integer is `2` which is just a whole number.
+‘2’是整数的一个例子，它只是一个完整的数。
 
-Examples of floating point numbers (or *floats* for short) are `3.23` and `52.3E-4`. The `E` notation indicates powers of 10. In this case, `52.3E-4` means `52.3 * 10^-4^`.
+浮点数(或简称为*浮点*)的例子有`3.23`和`52.3E-4。符号`E`表示10的次方。在这种情况下，`52.3E-4`的意思是`52.3 * 10^-4^`。
 
-Note for Experienced Programmers
+有经验的程序要注意：
 
-:   There is no separate `long` type. The `int` type can be an integer of any size.
+:   Python中没有单独的`long`(长)整型。`int`(整型)可以是任意大小的整数。
 
-## Strings
+## 字符串
 
-A string is a *sequence* of *characters*. Strings are basically just a bunch of words.
+字符串是*字符*的一个*序列*，字符串通常只是一串单词。
 
-You will be using strings in almost every Python program that you write, so pay attention to the following part.
+在你写的每一个Python程序中都要使用字符串，因此要注意以下部分：
 
-### Single Quote
+### 单引号
 
-You can specify strings using single quotes such as `'Quote me on this'`. All white space i.e. spaces and tabs are preserved as-is.
+你可以使用单引号例如`'Quote me on this'`指定字符串。所有的空白，例如空格和制表符都按原样保留。
 
-### Double Quotes
+### 双引号
 
-Strings in double quotes work exactly the same way as strings in single quotes. An example is `"What's your name?"`
+在双引号中的字符串和在单引号中的字符串工作起来完全一样。例如`"What's your name?"`
 
-### Triple Quotes
+### 三重引号
 
-You can specify multi-line strings using triple quotes - (`"""` or `'''`). You can use single quotes and double quotes freely within the triple quotes. An example is:
+您可以使用三重引号-(`"""`或`'''`)指定多行字符串。在三重引号中您可以自由使用单引号和双引号。例如:
 
 ~~~python
 '''This is a multi-line string. This is the first line.
@@ -73,23 +73,23 @@ He said "Bond, James Bond."
 '''
 ~~~
 
-### Strings Are Immutable
+### 字符串是不可改变的
 
-This means that once you have created a string, you cannot change it. Although this might seem like a bad thing, it really isn't. We will see why this is not a limitation in the various programs that we see later on.
+这意味着，一旦您已经创建了一个字符串，你就不能改变它。虽然这看起来似乎是一件坏事，但它真不是(坏事)。在我们后面看到的各种程序中，将会明白这不是一个限制。
 
-Note for C/C++ Programmers
+C/C++程序员要注意
 
-:   There is no separate `char` data type in Python. There is no real need for it and I am sure you won't miss it.
+:   在Python中没有单独的“char”(字符型)数据。这里没有真正的需要它，我相信你不会错过它。
 
-Note for Perl/PHP Programmers
+Perl/PHP程序员要注意
 
-:   Remember that single-quoted strings and double-quoted strings are the same - they do not differ in any way.
+:   记住，单引号字符串和双引号字符串是相同的——他们不以任何方式不同。
 
-### The format method
+### 格式方法
 
-Sometimes we may want to construct strings from other information. This is where the `format()` method is useful.
+有时，我们可能想要从其它信息构建字符串。这就是“format()”方法有用之处。
 
-Save the following lines as a file `str_format.py`:
+保存下面几行到文件"`str_format.py`"中:
 
 ~~~python
 age = 20
@@ -107,15 +107,15 @@ Swaroop was 20 years old when he wrote this book
 Why is Swaroop playing with that python?
 ~~~
 
-How It Works:
+它是如何工作的:
 
-A string can use certain specifications and subsequently, the *format* method can be called to substitute those specifications with corresponding arguments to the `format` method.
+一个字符串可以使用特定的格式，随后调用*format*方法，用`format`方法替代那些使用适当参数的格式。
 
-Observe the first usage where we use `{0}` and this corresponds to the variable `name` which is the first argument to the format method. Similarly, the second specification is `{1}` corresponding to `age` which is the second argument to the format method. Note that Python starts counting from 0 which means that first position is at index 0, second position is at index 1, and so on.
+观察使用第一处，我们使用“{0}”对应于变量‘name’,这是format(格式)方法的第一个参数。类似的,第二个格式是“{1}”对应的“age”,这是格式方法的第二个参数。注意，Python从0开始计数，这意味着第一位置的索引是0，第二个位置的索引是1，等等。
 
-Notice that we could have achieved the same using string concatenation: `name + ' is ' + str(age) + ' years old'` but that is much uglier and error-prone. Second, the conversion to string would be done automatically by the `format` method instead of the explicit conversion to strings needed in this case. Third, when using the `format` method, we can change the message without having to deal with the variables used and vice-versa.
+注意，我们可以使用字符串的连接，`name+'is'+str(age)+'years old'` 实现同样的目的，但这非常讨厌、容易出错。第二，在这种情况下，通过`format`方法自动转换为字符串，而不是显式地转换为需要的字符串。第三，当使用的`format` 方法，我们可以改变消息，而无需处理使用的变量，反之亦然。
 
-Also note that the numbers are optional, so you could have also written as:
+还要注意，这些数字(索引)都是可选的，所以你也可以写成:
 
 ~~~python
 age = 20
@@ -125,9 +125,9 @@ print('{} was {} years old when he wrote this book'.format(name, age))
 print('Why is {} playing with that python?'.format(name))
 ~~~
 
-which will give the same exact output as the previous program.
+这将给与前面的程序相同的输出。
 
-What Python does in the `format` method is that it substitutes each argument value into the place of the specification. There can be more detailed specifications such as:
+Python在`format`方法中做的是，用每个参数值替代规格的地方。这里有更详细的规格，如:
 
 ~~~python
  decimal (.) precision of 3 for float '0.333'
@@ -139,43 +139,43 @@ What Python does in the `format` method is that it substitutes each argument val
 >>> '{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python')
 ~~~
 
-## Variable
+## 变量
 
-Using just literal constants can soon become boring - we need some way of storing any information and manipulate them as well. This is where *variables* come into the picture. Variables are exactly what the name implies - their value can vary, i.e.,  you can store anything using a variable. Variables are just parts of your computer's memory where you store some information. Unlike literal constants, you need some method of accessing these variables and hence you give them names.
+仅仅使用字面常量会很快变得无聊——我们需要某种方式存储任何信息，同样操作它们。这就要引入*变量*。变量是它的名字所指示的东西——他们的值会有所不同。例如，你可以用变量存储任何值。变量是你电脑中存储信息的内存的一部分。不像字面常量，您需要某种方法来访问这些变量，因此你要给出他们的名字。
 
-## Identifier Naming
+## 标识符命名
 
-Variables are examples of identifiers. *Identifiers* are names given to identify *something*. There are some rules you have to follow for naming identifiers:
+变量是标识符的一个示例。*标识符*是用来识别一些*东西*的名字。这里有一些你必须遵循的标识符命名规则:
 
-- The first character of the identifier must be a letter of the alphabet (uppercase ASCII or lowercase ASCII or Unicode character) or an underscore ('_').
-- The rest of the identifier name can consist of letters (uppercase ASCII or lowercase ASCII or Unicode character), underscores ('_') or digits (0-9).
-- Identifier names are case-sensitive. For example, `myname` and `myName` are **not** the same. Note the lowercase `n` in the former and the uppercase `N` in the latter.
-- Examples of *valid* identifier names are `i`, `__my_name`, `name_23`. Examples of ''invalid'' identifier names are `2things`, `this is spaced out`, `my-name`, `>a1b2_c3` and `"this_is_in_quotes"`.
+- 标识符的第一个字符必须是字母表中的一个字母(大写或小写的ASCII或Unicode字符)或下划线(“_”)。
+- 标识符名称的其余部分可以包含字母(大写或小写的ASCII或Unicode字符)、下划线(“_”)或数字(0 - 9)。
+- 标识符的名称都是区分大小写的。例如,“myname”和“myName**不**相同。注意前者中“n”小写和后者中'N'大写。
+- **有效*的标识符名称的例子有：“i”,“__my_name”,“name_23”。“无效”的标识符名字的例子有：“2things”,“this is spaced out”,“my-name”、“>a1b2_c3”和`"this_is_in_quotes"`。
 
-## Data Types
+## 数据类型
 
-Variables can hold values of different types called **data types**. The basic types are numbers and strings, which we have already discussed. In later chapters, we will see how to create our own types using [classes](#object-oriented-programming).
+变量可以保存不同的被称为**数据类型**的数值。基本类型是数字和字符串，我们已经讨论了。在后面的章节中，我们将看到如何使用(类)(#面向对象的程序设计)创建自己的类型。
 
-## Object
+## 对象
 
-Remember, Python refers to anything used in a program as an *object*.  This is meant in the generic sense. Instead of saying 'the *something*', we say 'the *object*'.
+记住，Python把程序中使用的任何东西作为一个*对象*。在常识中这意味着，我们说‘*对象*’，而不是说‘*一些东西*’,
 
-Note for Object Oriented Programming users
+面向对象编程的用户要注意
 
-:   Python is strongly object-oriented in the sense that everything is an object including numbers, strings and functions.
+:   一切东西都是对象，包括数字、字符串和函数，在这个意义上讲，Python是坚定的面向对象的。
 
-We will now see how to use variables along with literal constants. Save the following example and run the program.
+现在，我们将看到如何使用变量以及字面常量。保存下面的示例，运行这个程序。
 
-## How to write Python programs
+## 怎样写Python程序
 
-Henceforth, the standard procedure to save and run a Python program is as follows:
+从此以后，保存和运行一个Python程序的标准过程如下:
 
-#. Open your editor of choice, such as Komodo Edit.
-#. Type the program code given in the example.
-#. Save it as a file with the filename mentioned.
-#. Run the interpreter with the command `python3 program.py` to run the program.
+#. 打开选择的编辑器，例如Komodo Edit。
+#. 输入例子中给出的程序代码。
+#. 用提到的文件名保存为文件。
+#. 在命令行使用`python3 program.py`命令运行程序。
 
-## Example: Using Variables And Literal Constants
+## 例如: 使用变量和常量
 
 ~~~python
  Filename : var.py
@@ -184,8 +184,8 @@ print(i)
 i = i + 1
 print(i)
 
-s = '''This is a multi-line string.
-This is the second line.'''
+s = '''这是一个多行字符串。
+这是第2行。'''
 print(s)
 ~~~
 
@@ -195,102 +195,105 @@ Output:
 $ python3 var.py
 5
 6
-This is a multi-line string.
-This is the second line.
+这是一个多行字符串。
+这是第2行。
 ~~~
 
-How It Works:
+它是如何工作的:
 
-Here's how this program works. First, we assign the literal constant value `5` to the variable `i` using the assignment operator (`=`). This line is called a statement because it states that something should be done and in this case, we connect the variable name `i` to the value `5`.  Next, we print the value of `i` using the `print` function which, unsurprisingly, just prints the value of the variable to the screen.
+下面介绍这个程序如何工作的。首先，我们使用赋值运算符('=')为变量'i'指定了文字常量值‘5’,这一行叫做一个声明，因为它指出应该做一些事情，在这个例子中，我们将名为'i'的变量与值‘5’相联系。接下来,我们使用'print'函数打印'i'的值，不出所料，恰恰打印变量的值到屏幕上。
 
-Then we add `1` to the value stored in `i` and store it back. We then print it and expectedly, we get the value `6`.
+然后，我们给存储在变量'i'中的值加'1'后，再存回到'i'中。然后，我们把它打印出来，我我们想的一样，我们得到值'6'。
 
-Similarly, we assign the literal string to the variable `s` and then print it.
+同样，我们为字符串变量's'指定了文字字符串，然后打印它。
 
-Note for static language programmers
+静态语言程序员应注意
 
-:   Variables are used by just assigning them a value. No declaration or data type definition is needed/used.
+:   变量的使用只是通过给他们指定一个价。不需要/不使用声明或数据类型定义。
 
-### Logical And Physical Line
+### 逻辑行与物理行
 
-A physical line is what you *see* when you write the program. A logical line is what *Python sees* as a single statement. Python implicitly assumes that each *physical line* corresponds to a *logical line*.
+物理行是当你写程序时*看到*的一行。逻辑行是*Python 看和*的一个单独语句。Python默认一个*物理行*为一个*逻辑行*。
 
-An example of a logical line is a statement like `print('Hello World')` - if this was on a line by itself (as you see it in an editor), then this also corresponds to a physical line.
+一个逻辑行是一个语句，像`print('Hello World')`－－如果它本身在一行上（像你在一个编辑器中看到的），那么，它也是一个物理行。
 
-Implicitly, Python encourages the use of a single statement per line which makes code more readable.
+默认情况下，Python鼓励一行写一个语句的用法，这使代码更可读。
 
-If you want to specify more than one logical line on a single physical line, then you have to explicitly specify this using a semicolon (`;`) which indicates the end of a logical line/statement. For example,
+如果您想要在一个物理行列举多个逻辑行，那么您必须使用一个表示逻辑行/语句结束的分号(“;”)显式地指明。例如：
 
 ~~~python
 i = 5
 print(i)
 ~~~
 
-is effectively same as
+与
 
 ~~~python
 i = 5;
 print(i);
 ~~~
+等效。
 
-and the same can be written as
+同样可写成：
 
 ~~~python
 i = 5; print(i);
 ~~~
 
-or even
+甚至是
 
 ~~~python
 i = 5; print(i)
 ~~~
 
-However, I **strongly recommend** that you stick to **writing a maximum of a single logical line on each single physical line**. The idea is that you should never use the semicolon. In fact, I have *never* used or even seen a semicolon in a Python program.
+然而，我**强烈建议**你坚持**在每一个物理行编写一个最大的逻辑行**。这就是你永远都不要使用分号。事实上，我**从未**使用，甚至在python程序中从来没有见过一个分号。
 
-There is one kind of situation where this concept is really useful : if you have a  long line of code, you can break it into multiple physical lines by using the backslash. This is referred to as **explicit line joining**:
+这个观念是很有用的，还有一种情况：如果你有一个长代码行，你可以通过使用反斜杠把它分解为多个物理行。这是被称为**显式行连接**:
 
 ~~~python
-s = 'This is a string. \
-This continues the string.'
+s = '这是一个字符串。 \
+这是字符串的继续。'
 print(s)
 ~~~
 
-This gives the output:
+输出结果为：
 
 ~~~
-This is a string. This continues the string.
+这是一个字符串。这是字符串的继续。
 ~~~
 
-Similarly,
+同样的，
 
 ~~~python
 print\
 (i)
 ~~~
 
-is the same as
+与
 
 ~~~python
 print(i)
 ~~~
 
-Sometimes, there is an implicit assumption where you don't need to use a backslash. This is the case where the logical line has a starting parentheses, starting square brackets or a starting curly braces but not an ending one. This is called **implicit line joining**. You can see this in action when we write programs using [lists](#list) in later chapters.
+相同
 
-### Indentation
+有时有一种隐含的假设，您不需要使用一个反斜杠。在这种情况下，逻辑行有一个开始圆括号、开始方括号或开始花括号，但不是一个结束的括号。这被称为**隐式连接**。当我们在以后的章节－－编写程序使用[列表](#列表)时，你可以看到它的作用。
 
-Whitespace is important in Python. Actually, **whitespace at the beginning of the line is important**. This is called **indentation**. Leading whitespace (spaces and tabs) at the beginning of the logical line is used to determine the indentation level of the logical line, which in turn is used to determine the grouping of statements.
+### 缩进
 
-This means that statements which go together **must** have the same indentation. Each such set of statements is called a **block**. We will see examples of how blocks are important in later chapters.
+在Python中的空白是重要的。实际上，**在一行开始的空格是重要的**。这被称为**缩进**。在逻辑行开头的前导空白(空格和制表符)用于确定逻辑行的缩进级别，它用于依次确定语句的分组。
 
-One thing you should remember is that wrong indentation can give rise to errors. For example:
+这意味着一起的语句**必须**有相同的缩进。每一个这样的语句组被称为**块**。在后面的章节，我们将看到的块是何等重要的例子。
+
+你应该记住的一件事是，错误的缩进可以产生错误。例如:
 
 ~~~python
 i = 5
- print('Value is ', i) # Error! Notice a single space at the start of the line
-print('I repeat, the value is ', i)
+ print('值是 ', i) # 错误! 注意在行的开头有一个空格
+print('重复，值是 ', i)
 ~~~
 
-When you run this, you get the following error:
+当运行它时，将会发生下面的错误：
 
 ~~~
   File "whitespace.py", line 4
@@ -299,16 +302,16 @@ When you run this, you get the following error:
 IndentationError: unexpected indent
 ~~~
 
-Notice that there is a single space at the beginning of the second line. The error indicated by Python tells us that the syntax of the program is invalid i.e. the program was not properly written. What this means to you is that *you cannot arbitrarily start new blocks of statements* (except for the default main block which you have been using all along, of course). Cases where you can use new blocks will be detailed in later chapters such as the [Control Flow](#control-flow).
+请注意，这里第二行的开头有一个空格。这个错误表明：Python告诉我们程序的语法是无效的，即程序写的不正确。这意味着，*你不能任意开始语句中的新块*(当然，除了默认的主块，您一直已经使用的)。您可以使用新块的情况，将在后面的章节详细，如(控制流](#控制流)。
 
-How to indent
+如何缩进
 
-:   Use only spaces for indentation, with a tab stop of 4 spaces. Good editors like Komodo Edit will automatically do this for you. Make sure you use a consistent number of spaces for indentation, otherwise your program will show errors.
+:   缩进只使用空白，用制表符使用4个空格。好的编辑器如Komodo Edit会为你自动这样做。确保你使用一致的数量的缩进空格，否则你的程序将显示错误。
 
-Note to static language programmers
+静态语言程序员应注意
 
-:   Python will always use indentation for blocks and will never use braces. Run `from __future__ import braces` to learn more.
+:   Python为块总是使用缩进，从来不用花括号。运行`from __future__ import braces`可以了解更多。
 
-## Summary
+## 小结
 
-Now that we have gone through many nitty-gritty details, we can move on to more interesting stuff such as control flow statements. Be sure to become comfortable with what you have read in this chapter.
+现在，我们已经经历了许多细节,我们可以转到更有趣的东西，如控制流语句。一定要熟悉这一章你所读的。
