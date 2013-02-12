@@ -1,14 +1,14 @@
-# Operators and Expressions
+# 操作符和表达式
 
-Most statements (logical lines) that you write will contain *expressions*. A simple example of an expression is `2 + 3`. An expression can be broken down into operators and operands.
+你编写的大多数语句（逻辑行）都将包含*表达式*。一个表达式的简单例子是`2+3`。一个表达式可分解成操作符和操作对象。
 
-*Operators* are functionality that do something and can be represented by symbols such as `+` or by special keywords. Operators require some data to operate on and such data is called *operands*. In this case, `2` and `3` are the operands.
+*操作符* 的功能是做一些事，通过符号，如`+`或特别的关键字表现。操作符需要一些数据来操作，这些数据被你作*操作对象*。在这个例子中`2`和`3`是操作对象。
 
-## Operators
+## 操作对象
 
-We will briefly take a look at the operators and their usage:
+我们将简单地看一下操作符和它的用法：
 
-Note that you can evaluate the expressions given in the examples using the interpreter interactively. For example, to test the expression `2 + 3`, use the interactive Python interpreter prompt:
+注意，您可以使用交互式解释器计算例子中给出的表达式。例如,为了测试表达式“2 + 3”,使用交互式Python解释器提示符:
 
 ~~~python
 >>> 2 + 3
@@ -18,154 +18,152 @@ Note that you can evaluate the expressions given in the examples using the inter
 >>>
 ~~~
 
-`+` (plus)
+`+` (加号)
 
-:   Adds two objects
+:   两个对象相加
 
-    `3 + 5` gives `8`. `'a' + 'b'` gives `'ab'`.
+    `3 + 5` 得 `8`. `'a' + 'b'` 得 `'ab'`.
 
-`-` (minus)
+`-` (减号)
 
-:   Gives the subtraction of one number from the other; if the first operand is absent it is assumed to be zero.
+:   给出一个数减去另一数的差；如果缺少第一个操作数，它默认为是0。
 
-    `-5.2` gives a negative number and `50 - 24` gives `26`.
+    `-5.2` 得到一个负数，`50 - 24` 得 `26`.
 
-`*` (multiply)
+`*` (乘法)
 
-:   Gives the multiplication of the two numbers or returns the string repeated that many times.
+:   给出两个数的乘积或返回重复多次的字符串。
 
-    `2 * 3` gives `6`. `'la' * 3` gives `'lalala'`.
+    `2 * 3` 得 `6`. `'la' * 3` 得到 `'lalala'`.
 
-`**` (power)
+`**` (幂)
 
-:   Returns x to the power of y
+:   返回x的y次幂
 
-    `3 ** 4` gives `81` (i.e. `3 * 3 * 3 * 3`)
+    `3 ** 4` 得 `81` (也就是`3*3*3*3`)
 
-`/` (divide)
+`/` (除法)
 
-:   Divide x by y
+:   用y分x（x除以y）
 
-    `4 / 3` gives `1.3333333333333333`.
+    `4 / 3` 得`1.3333333333333333`.
 
-`//` (floor division)
+`//` (整除)
 
-:   Returns the floor of the quotient
+:   得到除法的商
 
-    `4 // 3` gives `1`.
+    `4 // 3` 得 `1`.
 
-`%` (modulo)
+`%` (取模)
 
-:   Returns the remainder of the division
+:   返回除法的余数
 
-    `8 % 3` gives `2`. `-25.5 % 2.25` gives `1.5`.
+    `8 % 3` 得 `2`. `-25.5 % 2.25` 得 `1.5`.
 
-`<<` (left shift)
+`<<` (向左移位)
 
-:   Shifts the bits of the number to the left by the number of bits specified. (Each number is represented in memory by bits or binary digits i.e. 0 and 1)
+:   数字向左移动指定位数。(在内存中每个数字由比特或二进制数表示，例如：0和1）。
+    `2 << 2` 得 `8`. `2` 用二进制表示为`10`。
 
-    `2 << 2` gives `8`. `2` is represented by `10` in bits.
+    左移两位得到 `1000`，它表示数字`8`。
 
-    Left shifting by 2 bits gives `1000` which represents the decimal `8`.
+`>>` (向右移位)
 
-`>>` (right shift)
+:   数字向右移动指定位数。
 
-:   Shifts the bits of the number to the right by the number of bits specified.
+    `11 >> 1` 得 `5`.
 
-    `11 >> 1` gives `5`.
+    `11` 用二进制表示为`1011`，向右移动1位后得到二进制`101`，表示数字`5`。
 
-    `11` is represented in bits by `1011` which when right shifted by 1 bit
-    gives `101`which is the decimal `5`.
+`&` (位与)
 
-`&` (bit-wise AND)
+:   数字的位相与
 
-:   Bit-wise AND of the numbers
+    `5 & 3`得 `1`。
 
-    `5 & 3` gives `1`.
+`|` (位或)
 
-`|` (bit-wise OR)
+:   数字的位相或
 
-:   Bitwise OR of the numbers
+    `5 | 3`得 `7`
 
-    `5 | 3` gives `7`
+`^` (位异或)
 
-`^` (bit-wise XOR)
+:   数字的位相异或
 
-:   Bitwise XOR of the numbers
+    `5 ^ 3` 得 `6`
 
-    `5 ^ 3` gives `6`
+`~` (位求反)
 
-`~` (bit-wise invert)
+:   x的位求反结果为-(x+1)
 
-:   The bit-wise inversion of x is -(x+1)
+    `~5` 得 `-6`.
 
-    `~5` gives `-6`.
+`<` (小于)
 
-`<` (less than)
+:   返回x是否小于y。所有的比较运算符返回`True`或`False`。注意这些名字的大小写。
 
-:   Returns whether x is less than y. All comparison operators return `True` or `False`. Note the capitalization of these names.
+    `5 &lt; 3` 返回 `False` 而 `3 &lt; 5` 返回 `True`.
 
-    `5 &lt; 3` gives `False` and `3 &lt; 5` gives `True`.
+    比较运算符可以任意连接：`3 &lt; 5 &lt; 7` 返回 `True`.
 
-    Comparisons can be chained arbitrarily: `3 &lt; 5 &lt; 7` gives `True`.
+`>` (大于)
 
-`>` (greater than)
+:  返回x是否大于y
 
-:   Returns whether x is greater than y
+    `5 &gt; 3` 返回 `True`。如果操作对象都是数字，它们首先转换为普通型，否则，将返回`False`。
 
-    `5 &gt; 3` returns `True`. If both operands are numbers, they are first converted to a common type. Otherwise, it always returns `False`.
+`<=` (小于等于)
 
-`<=` (less than or equal to)
+:   返回x是否小于等于y
 
-:   Returns whether x is less than or equal to y
+    `x = 3; y = 6; x &lt;= y` 返回 `True`.
 
-    `x = 3; y = 6; x &lt;= y` returns `True`.
+`>=` (大于等于)
 
-`>=` (greater than or equal to)
+:   返回x是否大于等于y
 
-:   Returns whether x is greater than or equal to y
+    `x = 4; y = 3; x &gt;= 3` 返回 `True`。
 
-    `x = 4; y = 3; x &gt;= 3` returns `True`.
+`==` (等于)
 
-`==` (equal to)
+:   比较操作对象是否相等
 
-:   Compares if the objects are equal
+    `x = 2; y = 2; x == y` 返回 `True`.
 
-    `x = 2; y = 2; x == y` returns `True`.
+    `x = 'str'; y = 'stR'; x == y` 返回 `False`.
 
-    `x = 'str'; y = 'stR'; x == y` returns `False`.
+    `x = 'str'; y = 'str'; x == y` 返回 `True`.
 
-    `x = 'str'; y = 'str'; x == y` returns `True`.
+`!=` (不等于)
 
-`!=` (not equal to)
+:   比较操作对象是否不相等
 
-:   Compares if the objects are not equal
+    `x = 2; y = 3; x != y` 返回 `True`.
 
-    `x = 2; y = 3; x != y` returns `True`.
+`not` (逻辑非)
 
-`not` (boolean NOT)
+:   如果 x 是 `True`,它返回 `False`。如果 x 是 `False`，它返回 `True`。
 
-:   If x is `True`, it returns `False`. If x is `False`, it returns `True`.
+    `x = True; not x` 返回 `False`.
 
-    `x = True; not x` returns `False`.
+`and` (逻辑与)
 
-`and` (boolean AND)
+:   如果x是`False`, `x and y` 返回 `False`，否则它返回y的值。
 
-:   `x and y` returns `False` if x is `False`, else it returns evaluation of y
+    `x = False; y = True; x and y` 返回 `False`，因为 x 为假。在这种情况下，Python将不计算y，因为它知道and左边表达式是 `False` ，这意味着整个表达式将为 `False` ，而不论其它值为什么。这叫做求值捷径。
 
-    `x = False; y = True; x and y` returns `False` since x is False. In this case, Python will not evaluate y since it knows that the left hand side of the 'and' expression is `False` which implies that the whole expression will be `False` irrespective of the other values. This is called short-circuit evaluation.
+`or` (逻辑或)
 
-`or` (boolean OR)
+:   如果 x 为 `True`, 它返回真，否则它返回y的值。
 
-:   If x is `True`, it returns True, else it returns evaluation of y
+    `x = True; y = False; x or y` 返回 `True`。求值捷径这也适用。
 
-    `x = True; y = False; x or y` returns `True`. Short-circuit evaluation applies here as well.
+### 数学操作和赋值的快捷方式
 
-### Shortcut for math operation and assignment
+对一个变量进行数学操作是常见的。然后将操作的结果返回给变量，今后，对这样的表达式有一个快捷方式:
 
-It is common to run a math operation on a variable and then assign the result of the operation back to the variable, hence there is a shortcut for such expressions:
-
-You can write:
+你可以把：
 
 ~~~python
 a = 2
@@ -173,132 +171,132 @@ a = a * 3
 ~~~
 
 
-as:
+写成：
 
 ~~~python
 a = 2
 a *= 3
 ~~~
 
-Notice that `var = var operation expression` becomes `var operation= expression`.
+注意：将 `var = var operation expression` 写成 `var operation= expression`。
 
-## Evaluation Order
+## 运算顺序
 
-If you had an expression such as `2 + 3 * 4`, is the addition done first or the multiplication? Our high school maths tells us that the multiplication should be done first. This means that the multiplication operator has higher precedence than the addition operator.
+如果你有一个表达式如 `2 + 3 * 4`, 是先做加法还是先做乘法呢？我们的高中数学告诉我们，应该先做乘法。这意味着乘法操作符比加法操作符具有更高的优先级。
 
-The following table gives the precedence table for Python, from the lowest precedence (least binding) to the highest precedence (most binding). This means that in a given expression, Python will first evaluate the operators and expressions lower in the table before the ones listed higher in the table.
+下面的表给出了Python运算顺序的优先表，从最低（最小约束力）到最高(最高约束力)。 意思是说，在给定的表达式中，Python将在计算表上方列出的对象和表达式之前，首先运算表下方的。
 
-The following table, taken from the [Python reference manual](http://docs.python.org/py3k/reference/expressions.html#summary), is provided for the sake of completeness. It is far better to use parentheses to group operators and operands appropriately in order to explicitly specify the precedence. This makes the program more readable. See [Changing the Order of Evaluation](#changing-the-order-of-evaluation) below for details.
+下面的表取自Python参考手册](http://docs.python.org/py3k/reference/expressions.html#summary)，是为了提供完整性。为了显式地指定优先级，更好的做法是使用圆括号组织运算符和操作对象。这可使程序更加可读。详见下面[更改运算顺序](#改变运算顺序)。
 
 `lambda`
 
-:   Lambda Expression
+:   Lambda表达式
 
 `or`
 
-:   Boolean OR
+:   逻辑或
 
 `and`
 
-:   Boolean AND
+:  逻辑与
 
 `not x`
 
-:   Boolean NOT
+:   逻辑非
 
 `in, not in`
 
-:   Membership tests
+:   成员检测
 
 `is, is not`
 
-:   Identity tests
+:   鉴别检测
 
 `<, <=, >, >=, !=, ==`
 
-:   Comparisons
+:  比较
 
 `|`
 
-:   Bitwise OR
+:   位或
 
 `^`
 
-:   Bitwise XOR
+:   位异或
 
 `&`
 
-:   Bitwise AND
+:   位与
 
 `<<, >>`
 
-:   Shifts
+:   移位
 
 `+, -`
 
-:   Addition and subtraction
+:   加和减
 
 `*, /, //, %`
 
-:   Multiplication, Division, Floor Division and Remainder
+:   乘法，除法，浮点除和余数
 
 `+x, -x`
 
-:   Positive, Negative
+:   正，负
 
 `~x`
 
-:   Bitwise NOT
+:   按位非
 
 `**`
 
-:   Exponentiation
+:   乘方
 
 `x.attribute`
 
-:   Attribute reference
+:   属性引用
 
 `x[index]`
 
-:   Subscription
+:   索引
 
 `x[index1:index2]`
 
-:   Slicing
+:   切片
 
 `f(arguments ...)`
 
-:   Function call
+:   函数调用
 
 `(expressions, ...)`
 
-:   Binding or tuple display
+:  显示 Binding 或元组
 
 `[expressions, ...]`
 
-:   List display
+:   显示列表
 
 `{key:datum, ...}`
 
-:   Dictionary display
+:   显示字典
 
-The operators which we have not already come across will be explained in later chapters.
+我们没有遇到的操作符将在后面的章节解释。
 
-Operators with the *same precedence* are listed in the same row in the above table. For example, `+` and `-` have the same precedence.
+上表中在同一行列出的操作符具有*相同优先级*。例如，“+”和“-”具有相同的优先级。
 
-## Changing the Order Of Evaluation
+## 改变运算顺序
 
-To make the expressions more readable, we can use parentheses. For example, `2 + (3 * 4)` is definitely easier to understand than `2 + 3 * 4` which requires knowledge of the operator precedences. As with everything else, the parentheses should be used reasonably (do not overdo it) and should not be redundant, as in `(2 + (3 * 4))`.
+为使表达式更具可读性，我们可以使用圆括号。例如`2 + (3 * 4)` 肯定比需要知道操作符运算优先级的 `2 + 3 * 4` 更容易理解。与其他方面一样，应该合理使用括号不应该冗余(不要过分使用),如`(2 + (3 * 4))`。
 
-There is an additional advantage to using parentheses - it helps us to change the order of evaluation. For example, if you want addition to be evaluated before multiplication in an expression, then you can write something like `(2 + 3) * 4`.
+使用括号有一个额外的优势——它帮助我们更改运算顺序。例如，如果您想要在一个表达式中加法在乘法之前运算，那么你可以这样写 `(2 + 3) * 4`。
 
-## Associativity
+## 结合性
 
-Operators are usually associated from left to right. This means that operators with the same precedence are evaluated in a left to right manner. For example, `2 + 3 + 4` is evaluated as `(2 + 3) + 4`. Some operators like assignment operators have right to left associativity i.e. `a = b = c` is treated as `a = (b = c)`.
+操作符通常从左到右。这意味着具有相同优先级的操作符从左到右的方式计算。例如`2 + 3 + 4`计算为 `(2 + 3) + 4`。一些操作符，像赋值操作符，有从右到左的结合性，即 `a = b = c` 被视为 `a = (b = c)`。
 
-## Expressions
+## 表达式
 
-Example (save as `expression.py`):
+例子 (保存为`expression.py`):
 
 ~~~python
 length = 5
@@ -309,7 +307,7 @@ print('Area is', area)
 print('Perimeter is', 2 * (length + breadth))
 ~~~
 
-Output:
+输出:
 
 ~~~
 $ python3 expression.py
@@ -317,12 +315,13 @@ Area is 10
 Perimeter is 14
 ~~~
 
-How It Works:
+它是如何工作的
 
-The length and breadth of the rectangle are stored in variables by the same name. We use these to calculate the area and perimeter of the rectangle with the help of expressions. We store the result of the expression `length * breadth` in the variable `area` and then print it using the `print` function. In the second case, we directly use the value of the expression `2 * (length + breadth)` in the print function.
+矩形的长度和宽度以同样的名字存储在变量中，在表达式的帮助下，我们使用这些计算矩形的面积和周长。我们存储表达式`length * breadth` 的结果在变量area`中，然后使用 `print` 函数打印它。在第二种情况下,在打印函数中我们直接使用表达式 `2 * (length + breadth)` 的值。
 
-Also, notice how Python 'pretty-prints' the output. Even though we have not specified a space between `'Area is'` and the variable `area`, Python puts it for us so that we get a clean nice output and the program is much more readable this way (since we don't need to worry about spacing in the strings we use for output). This is an example of how Python makes life easy for the programmer.
+同样要注意，Python'完美打印'是如何输出的。即使我们没有在`'Area is'` 和变量`area`,之间指定一个空间，Python为我们得到一个干净漂亮的输出，而且这种方式使用程序的可读性更强(因为我们不需要担心为输入我们在字符串中间使用的空格)。这只是让Python程序员的生活更方便的一个例子。
 
-## Summary
 
-We have seen how to use operators, operands and expressions - these are the basic building blocks of any program. Next, we will see how to make use of these in our programs using statements.
+## 小结
+
+我们已经看到了如何使用操作符，操作对象和表达式——这是任何程序的基石。接下来,我们将看到在使用语句的程序中如何利用这些。
