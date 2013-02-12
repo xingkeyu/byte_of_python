@@ -2,164 +2,163 @@
 % Swaroop C H
 % $$date$$
 
-# A Byte of Python
+#  A Byte of Python
 
-'A Byte of Python' is a free book on programming using the Python language. It serves as a tutorial or guide to the Python language for a beginner audience. If all you know about computers is how to save text files, then this is the book for you.
+《A Byte of Python》是一本介绍用Python语言编写程序的免费书籍。它为初学Python语言者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
 
-This book is written for the latest Python 3, even though Python 2 is the commonly found version of Python today (read more about it in [Python 2 versus 3 section](#python-2-versus-3)).
+本书是据Python最新版 3 编写的，尽管当今Python 2 仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
 
-## Who Reads A Byte of Python?
+## 谁读《A Byte of Python》?
 
-Here are what people are saying about the book:
+这是一些人对本书的评价:
 
-> The best thing i found was "A Byte of Python", which is simply a brilliant book for a beginner. It's well written, the concepts are well explained with self evident examples.
+> 我发现最好的事是我发现了《A Byte of Python》, 它是为初学者编写的杰出的一本书。它写的很好，概念都通过不言而喻的例子作了很好的解释。
 >
-> -- [_Syed Talal_ (19 years old)](http://littlepancakes.wordpress.com/2010/01/30/python)
+> -- [_Syed Talal_ (19岁)](http://littlepancakes.wordpress.com/2010/01/30/python)
 
 >  
 
-> This is the best beginner's tutorial I've ever seen! Thank you for your effort.
+> 这是我见到的最好的初学者指南！感谢你的努力。
 >
 > -- _Walt Michalik_ (wmich50-at-theramp-dot-net)
 
 >  
 
-> You've made the best Python tutorial I've found on the Net. Great work. Thanks!
+> 你做了我在网上发现的最好的Python指南，伟大的工作，谢谢！
 >
 > -- _Joshua Robin_ (joshrob-at-poczta-dot-onet-dot-pl)
 
 >  
 
-> Excellent gentle introduction to programming #Python for beginners
+> 为初学者作了Python编程的卓越介绍。
 >  
 > -- [Shan Rajasekaran](https://twitter.com/ShanRajasekaran/status/268910645842423809)
 
 >  
 
-> Hi, I'm from Dominican Republic. My name is Pavel, recently I read your book 'A Byte of Python' and I consider it excellent!!  :). I learnt much from all the examples. Your book is of great help for newbies like me...
+> 嗨，我来自多米尼加共和国，我叫Pavel。最近，我读了你的《A Byte of Python》，我认为它是极好的!!  :)。从例子中我尝到了很多，你的书对像我这样的初学者帮助很大...
 >
 > -- _Pavel Simo_ (pavel-dot-simo-at-gmail-dot-com)
 
 >  
 
-> I recently finished reading Byte of Python, and I thought I really ought to thank you. I was very sad to reach the final pages as I now have to go back to dull, tedious oreilly or etc.  manuals for learning about python. Anyway, I really appreciate your book.
+> 我读完了《A Byte of Python》，我想我真的应该感谢你，当我读到最后，我感到非常难过，因为我不得不再回到无趣的、乏味的学习笔记等。不论如何，作为Python学习手册，我的欣赏你的书。
 >
 > --  _Samuel Young_ (sy-one-three-seven-at-gmail-dot-com)
 
 >  
 
-> Dear Swaroop, I am taking a class from an instructor that has no interest in teaching. We are using Learning Python, second edition, by O'Reilly. It is not a text for beginner without any programming knowledge, and an instructor that should be working in another field.  Thank you very much for your book, without it I would be clueless about Python and programming. Thanks a million, you are able to 'break the message down' to a level that beginners can understand and not everyone can.
+> 亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次感谢！您“把知识掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。
 >
 > -- _Joseph Duarte_ (jduarte1-at-cfl-dot-rr-dot-com)
 
 >  
 
-> I love your book! It is the greatest Python tutorial ever, and a very useful reference. Brilliant, a true masterpiece! Keep up the good work!
+> 我喜欢你的书！这是最好的Python教程，非常有用的参考手册。才华横溢，真正的杰作！请继续这种好的工作！
 >
 > -- _Chris-André Sommerseth_
 
 >  
 
-> I'm just e-mailing you to thank you for writing Byte of Python online.  I had been attempting Python for a few months prior to stumbling across your book, and although I made limited success with pyGame, I never completed a program.
+> 我给您发邮件，就是为了感谢您在线编写《A Byte of Python 》。在偶然发现您的书之前，我已经尝试学习Python有几个月了。虽然我对pyGame取得了有限的成绩，但我从来没有完成过一个程序。
 >
-> Thanks to your simplification of the categories, Python actually seems a reachable goal. It seems like I have finally learned the foundations and I can continue into my real goal, game development.
+> 感谢你对分类的简单化，Python看起来确实是一个能够达到的目标。看起来我已经学会了基础知识，并能够继续我的真正目标——游戏开发。
 >
 > ...
 >
-> Once again, thanks VERY much for placing such a structured and helpful guide to basic programming on the web.  It shoved me into and out of OOP with an understanding where two text books had failed.
+> 再一次，非常感谢你将如此结构良好而且有用的编程基础教程放到网上。它帮助我彻底理解了OOP，这之前两本书都没行。
 >
 > -- _Matt Gallivan_ (m-underscore-gallivan12-at-hotmail-dot-com)
 
 >  
 
-> I would like to thank you for your book 'A byte of python' which i myself find the best way to learn python. I am a 15 year old i live in egypt my name is Ahmed. Python was my second programming language i learn visual basic 6 at school but didn't enjoy it, however i really enjoyed learning python. I made the addressbook program and i was sucessful. i will try to start make more programs and read python programs (if you could tell me source that would be helpful). I will also start on learning java and if you can tell me where to find a tutorial as good as yours for java that would help me a lot. Thanx.
+> 我感谢您以及您的《A Byte of Python》，我发现这是学习Python最好的途径。我现在15岁，住在埃及，我的名字叫Ahmed。Python是我学习的第二个编程语言，我6岁时在学校学习了Visual Basic，但我并不喜欢它，可是我真的喜欢学习Python。我成功地编写了地址簿程序。我打算尝试编写更多程序、阅读Python程序（如果您有意给我推荐一些有帮助的源代码）。我也将开始学习Java，如果您能告诉我在哪里可以找到向您的教程一样好的Java教程，那将对我有很大帮助。多谢。
 >
 > -- _Ahmed Mohammed_ (sedo-underscore-91-at-hotmail-dot-com)
 
 >  
 
-> A wonderful resource for beginners wanting to learn more about Python is the 110-page PDF tutorial A Byte of Python by Swaroop C H. It is well-written, easy to follow, and may be the best introduction to Python programming available.
+> 初学者想更多的学习Python编程的最好的资源是Swaroop编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到绵最好的Python入门教程。
 >
-> -- _Drew Ames_ in an article on [Scripting Scribus](http://www.linux.com/feature/126522) published on Linux.com
+> -- _Drew Ames_ 在Linux.com上发表的文章[Scripting Scribus](http://www.linux.com/feature/126522)中写道
 
 >  
 
-> Yesterday I got through most of Byte of Python on my Nokia N800 and it's the easiest and most concise introduction to Python I have yet encountered. Highly recommended as a starting point for learning Python.
+> 昨天，我在Nokia N800上浏览了《A Byte of Python》的大部分内容，这是我至今遇到的最简明扼要的Python教程。极力推荐作为学习Python的一个起点。
 >
-> -- _Jason Delport_ on his [weblog](http://paxmodept.com/telesto/blogitem.htm?id=627)
+> -- _Jason Delport_ 发表在[博客](http://paxmodept.com/telesto/blogitem.htm?id=627)
 
 >  
 
-> Byte of Vim and Python by @swaroopch is by far the best works in technical writing to me. Excellent reads #FeelGoodFactor
+> 对我而言，@swaroopch 编写的《A Byte of Vim》和《A Byte of Python》是最棒的技术作品。读起来非常棒。#FeelGoodFactor
 >
-> -- _Surendran_ says in a [tweet](http://twitter.com/suren/status/12840485454)
+> -- _Surendran_ 在其[微博](http://twitter.com/suren/status/12840485454)上说
 
 >  
 
-> "Byte of python" best one by far man
+> 《A Byte of python》至今最好
 >
-> (in response to the question "Can anyone suggest a good, inexpensive resource for learning the basics of Python? ")
+> （在回答“谁能推荐一个又好又便宜的学习Python基础的资源？”中答道）
 >
-> -- _Justin LoveTrue_ says in a [Facebook community page](http://www.facebook.com/pythonlang/posts/406873916788)
+> -- _Justin LoveTrue_ 在其[Facebook 社区页面](http://www.facebook.com/pythonlang/posts/406873916788)说
 
-> "The Book Byte of python was very helpful ..Thanks bigtime :)"
+> “《A Byte of Python》非常有用，多谢 :)”
 >
 > -- [Chinmay](https://twitter.com/a_chinmay/status/258822633741762560)
 
 >
 
-> Always been a fan of A Byte of Python - made for both new and experienced programmers.
+> 永远是对新手和有经验的程序员都适合的《A BYte of Python》的爱好者。
 >
-> -- [Patrick Harrington, in a StackOverflow answer](http://stackoverflow.com/a/457785/4869)
+> -- [Patrick Harrington, 在StackOverflow回答](http://stackoverflow.com/a/457785/4869)
 
-Even NASA
+甚至 NASA 也这么说：
+:   NASA甚至也使用这本书！在他们的[喷气推进实验室](http://dsnra.jpl.nasa.gov/software/Python/byte-of-python/output/byteofpython_html/)的深空网项目中使用。
 
-:   The book is even used by NASA! It is being used in their [Jet Propulsion Laboratory](http://dsnra.jpl.nasa.gov/software/Python/byte-of-python/output/byteofpython_html/) with their Deep Space Network project.
+## 学术课程
 
-## Academic Courses
+本书正在或曾经在多个院校作为教材使用：
 
-This book is/was being used as instructional material in various educational institutions:
+- '编程语言原理'，课程在[自由大学, 阿姆斯特丹](http://www.few.vu.nl/~nsilvis/PPL/2007/index.html)
+- '计算的基本概念'课程在[加州大学戴维斯分校](http://www.cs.ucdavis.edu/courses/exp_course_desc/10.html)
+- '使用Python编程'课程在[哈佛大学](http://www.people.fas.harvard.edu/~preshman/python_winter.html)
+- '编程导论'课程在[英国利兹大学](http://www.comp.leeds.ac.uk/acom1900/)
+- '应用程序编程导论'课程在[波士顿大学](http://www.cs.bu.edu/courses/cs108/materials.html)
+- '气象学信息技术'课程在[奥克拉荷马大学](http://gentry.metr.ou.edu/byteofpython/)
+- '地理数据处理'课程在[密歇根州立大学](http://www.msu.edu/~ashton/classes/825/index.html)
+- '多代理语义网络系统'课程在[英国爱丁堡大学](http://homepages.inf.ed.ac.uk/ewan/masws/)
 
-- 'Principles of Programming Languages' course at [Vrije Universiteit, Amsterdam](http://www.few.vu.nl/~nsilvis/PPL/2007/index.html)
-- 'Basic Concepts of Computing' course at [University of California, Davis](http://www.cs.ucdavis.edu/courses/exp_course_desc/10.html)
-- 'Programming With Python' course at [Harvard University](http://www.people.fas.harvard.edu/~preshman/python_winter.html)
-- 'Introduction to Programming' course at [University of Leeds](http://www.comp.leeds.ac.uk/acom1900/)
-- 'Introduction to Application Programming' course at [Boston University](http://www.cs.bu.edu/courses/cs108/materials.html)
-- 'Information Technology Skills for Meteorology' course at [University of Oklahoma](http://gentry.metr.ou.edu/byteofpython/)
-- 'Geoprocessing' course at [Michigan State University](http://www.msu.edu/~ashton/classes/825/index.html)
-- 'Multi Agent Semantic Web Systems' course at the [University of Edinburgh](http://homepages.inf.ed.ac.uk/ewan/masws/)
+## 协议
 
-## License
+本书基于[Creative Commons Attribution-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)协议。
 
-This book is licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US) license.
+这意味着：
 
-This means:
+- 允许自由共享（例如复制）、分发以及传播本书
+- 允许自由混合（例如改编）本书
+- 允许商业目的自由使用
 
-- You are free to Share i.e. to copy, distribute and transmit this book
-- You are free to Remix i.e. to adapt this book
-- You are free to use it for commercial purposes
+请注意:
 
-Please note:
+- 请*不要*出售本书的电子或纸质版本，除非你在说明书中清晰而明显地声明，这些不是来自本书原作者。
+- 归属*必须*在序言以及文档的扉页以链接到<http://www.swaroopch.com/notes/Python>的形式标明，并明确指出原始文本可以在此地址获得。
+- 本书中提供的所有代码/脚本基于[3-clause BSD License](http://www.opensource.org/licenses/bsd-license.php)协议许可，除非额外声明。
 
-- Please do *not* sell electronic or printed copies of the book unless you have clearly and prominently mentioned in the description that these are not from the original author of this book.
-- Attribution *must* be shown in the introductory description and front page of the document by linking back to <http://www.swaroopch.com/notes/Python> and clearly indicating that the original text can be fetched from this location.
-- All the code/scripts provided in this book is licensed under the [3-clause BSD License](http://www.opensource.org/licenses/bsd-license.php) unless otherwise noted.
+## 开始阅读
 
-## Read Now
+你可以[在线阅读本书](http://www.swaroopch.com/notes/Python_en-Preface).
 
-You can [read the book online](http://www.swaroopch.com/notes/Python_en-Preface).
+## 购买本书
 
-## Buy the Book
+为了离线愉快阅读并支持本书的持续发展和改善，[可以购买纸质印刷书籍](http://www.swaroopch.com/buybook)。
 
-[A printed hardcopy of the book can be purchased](http://www.swaroopch.com/buybook) for your offline reading pleasure, and to support the continued development and improvement of this book.
-
-## Download
+## 下载
 
 - [PDF](http://files.swaroopch.com/python/byte_of_python.pdf)
-- [Full source](https://github.com/swaroopch/byte_of_python)
+- [完整源码](https://github.com/swaroopch/byte_of_python)
 
-**If you wish to support the continued development of this book, please consider [buying a hardcopy](http://www.swaroopch.com/buybook)**.
+** 如果您想支持本书的持续发展，请考虑[购买本书](http://www.swaroopch.com/buybook)**.
 
-## Read the book in your native language
+## 阅读本书的母语版
 
-If you are interested in reading or contributing translations of this book to other human languages, please see the [Translations page](#translations).
+如果您对阅读或参与本书的翻译感兴趣，请看[翻译](#translations)。
