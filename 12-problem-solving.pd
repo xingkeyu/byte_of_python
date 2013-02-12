@@ -1,200 +1,201 @@
-# Problem Solving
+# 解决问题
 
-We have explored various parts of the Python language and now we will take a look at how all these parts fit together, by designing and writing a program which *does* something useful. The idea is to learn how to write a Python script on your own.
+我们已经探索过了Python语言的各种部分，现在我们通过设计和编写一个*做*有用事情的程序，看一看如何将所有这些组合在一起，学习如何自己编写一个Python脚本可以实现这个想法。
 
-## The Problem
+## 问题
 
-The problem we want to solve is *"I want a program which creates a backup of all my important files"*.
+我们想要解决的问题是*"我需要一个为我所有重要的程序创建备份的一个程序"*。
 
-Although, this is a simple problem, there is not enough information for us to get started with the solution. A little more **analysis** is required. For example, how do we specify *which* files are to be backed up? *How* are they stored? *Where* are they stored?
 
-After analyzing the problem properly, we **design** our program. We make a list of things about how our program should work. In this case, I have created the following list on how *I* want it to work. If you do the design, you may not come up with the same kind of analysis since every person has their own way of doing things, so that is perfectly okay.
+尽管这是一个简单的问题，但是我们没有着手解决这个问题的足够的信息。多一点的**分析**是必需的，例如，我们如何指定*哪一个*文件需要备份？他们是*怎样*存储的？
 
-- The files and directories to be backed up are specified in a list.
-- The backup must be stored in a main backup directory.
-- The files are backed up into a zip file.
-- The name of the zip archive is the current date and time.
-- We use the standard `zip` command available by default in any standard Linux/Unix distribution. Windows users can [install](http://gnuwin32.sourceforge.net/downlinks/zip.php) from the [GnuWin32 project page](http://gnuwin32.sourceforge.net/packages/zip.htm) and add `C:\Program Files\GnuWin32\bin` to your system PATH environment variable, similar to [what we did for recognizing the python command itself](#dos-prompt). Note that you can use any archiving command you want as long as it has a command line
+在得当的问题分析后，我们**设计**我们的程序。我们为程序如何工作列一个列表，在本例中，我创建了*我*希望它如何工作的以下列表。如果你做这个设计，你可能不会拿出同样的分析，因为每个人都有自己做事的方式，这是非常好的。
 
-## The Solution 
+- 在列表中指出需要备份的文件和目录。
+- 备份必须存储在一个主备份目录中。
+- 备份的文件压缩到一个压缩文件中。
+- 压缩文件的名称是当前的日期和时间。
+- 在标准的 Linux/Unix 发行版上，我们默认使用标准的`zip`命令，Windows用户可以从[GnuWin32项目页](http://gnuwin32.sourceforge.net/packages/zip.htm) [安装](http://gnuwin32.sourceforge.net/downlinks/zip.php)，并向你的系统环境变量 PATH追加`C:\Program Files\GnuWin32\bin`，这和[为识别Python命令我们所做的](#dos提示符)类似。注意，只要它有一个命令行，你可以使用任何你想要归档的命令。
 
-As the design of our program is now reasonably stable, we can write the code which is an **implementation** of our solution.
+## 解决方案
 
-Save as `backup_ver1.py`:
+由于我们的程序的设计现在相当稳定，我们可以写*实现*解决方案的代码。
+
+保存为`backup_ver1.py`:
 
 ~~~python
 import os
 import time
 
-# 1. The files and directories to be backed up are specified in a list.
+# 1. 在列表中指出需要备份的文件和目录。
 source = ['"C:\\My Documents"', 'C:\\Code']
-# Notice we had to use double quotes inside the string for names with spaces in it.
+# 注意我们在有空格的名字的字符串内不得不使用双引号。
 
-# 2. The backup must be stored in a main backup directory
-target_dir = 'E:\\Backup' # Remember to change this to what you will be using
+# 2. 备份必须存储在一个主备份目录中。
+target_dir = 'E:\\Backup' # 记住把它改为你要使用的目录
 
-# 3. The files are backed up into a zip file.
-# 4. The name of the zip archive is the current date and time
+# 3. 备份的文件压缩到一个压缩文件中。
+# 4. 压缩文件的名称是当前的日期和时间。
 target = target_dir + os.sep + time.strftime('%Y%m%d%H%M%S') + '.zip'
 
-# 5. We use the zip command to put the files in a zip archive
+# 5. 我们使用zip命令把文件压缩到一个压缩文件中
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
-# Run the backup
+# 运行备份
 if os.system(zip_command) == 0:
-    print('Successful backup to', target)
+    print('成功备份到', target)
 else:
-    print('Backup FAILED')
+    print('备份失败')
 ~~~
 
 Output:
 
 ~~~
 $ python backup_ver1.py
-Successful backup to E:\Backup\20080702185040.zip
+成功备份到 E:\Backup\20080702185040.zip
 ~~~
 
-Now, we are in the **testing** phase where we test that our program works properly. If it doesn't behave as expected, then we have to **debug** our program i.e. remove the *bugs* (errors) from the program.
+现在，我们是在测试我们的程序能否正常工作的**测试**阶段。如果它不像预期的那样,则我们必须**调试**我们的程序，也就是从程序中去掉*bug*(错误)。
 
-If the above program does not work for you, put a `print(zip_command)` just before the `os.system` call and run the program. Now copy/paste the printed zip_command to the shell prompt and see if it runs properly on its own. If this command fails, check the zip command manual on what could be wrong. If this command succeeds, then check the Python program if it exactly matches the program written above.
+如果上面的程序不为你工作，在`os.system`调用之前放置一个`print(zip_command)`，然后运行程序。 现在复制/粘贴`print(zip_command)`到shell提示符，看看它自己是否正常运行。如果这个命令失败,检查压缩命令手册，是什么可能是错的。如果这个命令成功，然后检查Python程序是否和上面的程序完全匹配。
 
-How It Works:
+它是如何工作的：
 
-You will notice how we have converted our *design* into *code* in a step-by-step manner.
+你会注意到，我们是如何以一个循序渐进的方式将我们的**设计**转换成**代码**的。
 
-We make use of the `os` and `time` modules by first importing them. Then, we specify the files and directories to be backed up in the `source` list. The target directory is where we store all the backup files and this is specified in the `target_dir` variable. The name of the zip archive that we are going to create is the current date and time which we generate using the `time.strftime()` function. It will also have the `.zip` extension and will be stored in the `target_dir` directory.
+我们通过先导入和使用`os`和`time`模块，然后，我们在`source`清单中指定要备份的文件和目录，目标目录存储在变量 `target_dir`中，是我们要存储的所有的备份文件的地方，我们将要创建的压缩文件的名称是使用 `time.strftime()` 函数由当前日期和时间生成的。它也包含 `.zip`扩展名，将存储在`target_dir`目录中。
 
-Notice the use of the `os.sep` variable - this gives the directory separator according to your operating system i.e. it will be `'/'` in Linux and Unix, it will be `'\\'` in Windows and `':'` in Mac OS. Using `os.sep` instead of these characters directly will make our program portable and work across all of these systems.
+注意，变量`os.sep`的使用--目录的分隔符依你的操作系统而定，即，在Linux和 Unix中是`'/'`，在Windows中是`'\\'`，在Mac OS中是`':'`。使用`os.sep`而不是直接使用这些字符将使我们的程序更具可移植性，在所有这些系统上都能工作。
 
-The `time.strftime()` function takes a specification such as the one we have used in the above program. The `%Y` specification will be replaced by the year with the century. The `%m` specification will be replaced by the month as a decimal number between  `01` and `12` and so on. The complete list of such specifications can be found in the [Python Reference Manual](http://docs.python.org/py3k/library/time.html#time.strftime).
+`time.strftime()`函数获取一个技术参数，像在上面的程序中我们已经使用过的。`%Y`参数将被替换为带着世纪的年份数字。`%m`参数将被一个位于`01`到`12`的数字替换，如此等等。这种参数的完整列表可[Python参考手册](http://docs.python.org/py3k/library/time.html #time.strftime)中找到。
 
-We create the name of the target zip file using the addition operator which *concatenates* the strings i.e. it joins the two strings together and returns a new one. Then, we create a string `zip_command` which contains the command that we are going to execute. You can check if this command works by running it in the shell (Linux terminal or DOS prompt).
+我们创建目标文件的名称zip文件使用了加法操作符。加法操作符*连接*字符串，也就是，它将两个字符串连接在一起，并返回一个新的。然后,我们创建一个包含我们要执行的命令的字符串`zip_command`。你可以通过在shell(Linux终端或DOS提示符)运行来检查这个命令的工作。
 
-The `zip` command that we are using has some options and parameters passed. The `-q` option is used to indicate that the zip command should work **q**uietly.  The `-r` option specifies that the zip command should work **r**ecursively for directories i.e. it should include all the subdirectories and files. The two options are combined and specified in a shortcut as `-qr`. The options are followed by the name of the zip archive to create followed by the list of files and directories to backup. We convert the `source` list into a string using the `join` method of strings which we have already seen how to use.
+我们使用了有一些选项并传递参数的`zip`命令。`-q`选项用于表明zip命令应该**quietly(默默地)**工作，`-r`选项指定zip命令应该**rrecursively(递归地)**工作，即它应该包括所有的子目录和文件。这两个选项组合在一起可缩写为`-qr`。要创建的压缩文件名后的选项后面紧跟要备份的文件和目录列表，我们使用字符串的`join`方法，这种方法我们已经知道如何使用，将`source`列表转换成一个字符串。
 
-Then, we finally *run* the command using the `os.system` function which runs the command as if it was run from the *system* i.e. in the shell - it returns `0` if the command was successfully, else it returns an error number.
+然后，我们终于使用`os.system`函数*运行*命令。`os.system`函数运行命令就仿佛在*系统*上也就是shell上运行它，如果命令运行成功，它返回`0`，否则返回一个错误号。
 
-Depending on the outcome of the command, we print the appropriate message that the backup has failed or succeeded.
+根据命令的结果，我们打印相应的消息，备份失败或成功。
 
-That's it, we have created a script to take a backup of our important files!
+就是这样，我们已经创建了一个备份我们重要文件的一个脚本!
 
-Note to Windows Users
+Windows用户应注意
 
-:   Instead of double backslash escape sequences, you can also use raw strings. For example, use `'C:\\Documents'` or `r'C:\Documents'`. However, do **not** use `'C:\Documents'` since you end up using an unknown escape sequence `\D`.
+:   您还可以使用原始字符串，而不是双反斜杠转义序列，例如，使用`'C:\\Documents'`或`r'C:\Documents'`。然而，**不要**使用`'C:\Documents'`，因为你最终用一个未知的转义序列`\D`。
 
-Now that we have a working backup script, we can use it whenever we want to take a backup of the files. Linux/Unix users are advised to use the [executable method](#executable-python-programs) as discussed earlier so that they can run the backup script anytime anywhere. This is called the **operation** phase or the **deployment** phase of the software.
+现在，我们有一个能够工作的备份脚本，当我们想要备份文件时，我们可以用它。正如前面所讨论的，建议Linux/Unix用户使用(可执行方式)(#可执行的python程序)，这样他们可以随时随地运行备份脚本。这被称为软件的**操作**阶段或**部署**阶段。
 
-The above program works properly, but (usually) first programs do not work exactly as you expect. For example, there might be problems if you have not designed the program properly or if you have made a mistake when typing the code, etc. Appropriately, you will have to go back to the design phase or you will have to debug your program.
+上面的程序正常工作，但(通常)第一个程序不会像你期望的那么样工作。例如，如果没有正确地设计程序或当键入代码时如果你犯了一个错误等，可能出现问题。相应地，你将不得不回到设计阶段或你需要调试您的程序。
 
-## Second Version
+## 第二版
 
-The first version of our script works. However, we can make some refinements to it so that it can work better on a daily basis. This is called the **maintenance** phase of the software.
+第一个版本的脚本工作了。然而，我们还可以做一些改进，以便每天工作得更好。这被称为软件的**维护**阶段。
 
-One of the refinements I felt was useful is a better file-naming mechanism - using the *time* as the name of the file within a directory with the current *date* as a directory within the main backup directory. The first advantage is that your backups are stored in a hierarchical manner and therefore it is much easier to manage. The second advantage is that the filenames are much shorter. The third advantage is that separate directories will help you check if you have made a backup for each day since the directory would be created only if you have made a backup for that day.
+我觉得有用的改进之一是有一个更好的文件命名机制——在一个目录中，使用*时间*作为文件的名称，使用当前*日期*作为主备份目录中的一个目录。第一个优势是，你的备份以分层以方式存储，因此它更容易管理。第二个优势是，文件名短得多。第三个优势是单独的目录将帮助你检查每天是否创建了一个备份，如果某一天你备份了，将会创建一个目录。
 
-Save as `backup_ver2.py`:
+保存为 `backup_ver2.py`:
 
 ~~~python
 import os
 import time
 
-# 1. The files and directories to be backed up are specified in a list.
+# 1. 在列表中指出需要备份的文件和目录。
 source = ['"C:\\My Documents"', 'C:\\Code']
-# Notice we had to use double quotes inside the string for names with spaces in it.
+# 注意，因为名字字符串中有空格，我们不得不使用双引号。
 
-# 2. The backup must be stored in a main backup directory
-target_dir = 'E:\\Backup' # Remember to change this to what you will be using
+# 2. 备份必须存储在一个主备份目录中。
+target_dir = 'E:\\Backup' # 记住把它改为你要使用的目录
 
-# 3. The files are backed up into a zip file.
-# 4. The current day is the name of the subdirectory in the main directory
+# 3. 备份的文件压缩到一个压缩文件中。
+# 4. 当前日期是主备份目录中子目录的名字
 today = target_dir + os.sep + time.strftime('%Y%m%d')
-# The current time is the name of the zip archive
+# 当前时间是压缩文件的名字
 now = time.strftime('%H%M%S')
 
-# Create the subdirectory if it isn't already there
+# 如果子目录不存在，创建它
 if not os.path.exists(today):
-    os.mkdir(today) # make directory
-    print('Successfully created directory', today)
+    os.mkdir(today) # 建立目录
+    print('成功创建目录', today)
 
-# The name of the zip file
+# 压缩文件的名字
 target = today + os.sep + now + '.zip'
 
-# 5. We use the zip command to put the files in a zip archive
+# 5. 我们使用zip命令把文件压缩到一个压缩文件中
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
-# Run the backup
+# 运行备份
 if os.system(zip_command) == 0:
-    print('Successful backup to', target)
+    print('成功备份到', target)
 else:
-    print('Backup FAILED')
+    print('备份失败')
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 backup_ver2.py
-Successfully created directory E:\Backup\20080702
-Successful backup to E:\Backup\20080702\202311.zip
+成功创建目录 E:\Backup\20080702
+成功备份到 E:\Backup\20080702\202311.zip
 
 $ python3 backup_ver2.py
-Successful backup to E:\Backup\20080702\202325.zip
+成功备份到 E:\Backup\20080702\202325.zip
 ~~~
 
-How It Works:
+它是如何工作的:
 
-Most of the program remains the same. The changes are that we check if there is a directory with the current day as its name inside the main backup directory using the `os.path.exists` function. If it doesn't exist, we create it using the `os.mkdir` function.
+大部分程序还保留了原样，变化是，我们使用`os.path.exists`函数检查在主备份目录中是否存在以当前日期为名字的目录，如果不存在，我们使用`os.mkdir`函数创建它。
 
-## Third Version
+## 第三版
 
-The second version works fine when I do many backups, but when there are lots of backups, I am finding it hard to differentiate what the backups were for! For example, I might have made some major changes to a program or presentation, then I want to associate what those changes are with the name of the zip archive. This can be easily achieved by attaching a user-supplied comment to the name of the zip archive.
+当我们做一些备份时，第二版工作起来很好了。但当有许多备份时，我发现区分为什么备份是很困难的。例如，对一个程序或描述做一些重要的改变，然后我想知道这些变化与压缩文件的名字有什么联系。这个可以通过为压缩文件的名字附加上一个用户提供的注释而轻易实现。
 
-Note
+注意
 
-:   The following program does not work, so do not be alarmed, please follow along because there's a lesson in here.
+:   下面的程序不工作，所以不要惊慌，请继续，因为在这里有一个教训。
 
-Save as `backup_ver3.py`:
+保存为 `backup_ver3.py`:
 
 ~~~python
 import os
 import time
 
-# 1. The files and directories to be backed up are specified in a list.
+# 1.  在列表中指出需要备份的文件和目录。
 source = ['"C:\\My Documents"', 'C:\\Code']
-# Notice we had to use double quotes inside the string for names with spaces in it.
+# 注意，因为名字字符串中有空格，我们不得不使用双引号。
 
-# 2. The backup must be stored in a main backup directory
-target_dir = 'E:\\Backup' # Remember to change this to what you will be using
+# 2. 备份必须存储在一个主备份目录中。
+target_dir = 'E:\\Backup' # 记住把它改为你要使用的目录
 
-# 3. The files are backed up into a zip file.
-# 4. The current day is the name of the subdirectory in the main directory
+# 3. 备份的文件压缩到一个压缩文件中。
+# 4. 当前日期是主备份目录中子目录的名字
 today = target_dir + os.sep + time.strftime('%Y%m%d')
-# The current time is the name of the zip archive
+# 当前时间是压缩文件的名字
 now = time.strftime('%H%M%S')
 
-# Take a comment from the user to create the name of the zip file
+# 为创建一个压缩文件的名字从用户取得一个注释
 comment = input('Enter a comment --> ')
-if len(comment) == 0: # check if a comment was entered
+if len(comment) == 0: # 检查是否输入注释
     target = today + os.sep + now + '.zip'
 else:
     target = today + os.sep + now + '_' +
         comment.replace(' ', '_') + '.zip'
 
-# Create the subdirectory if it isn't already there
+# 如果子目录不存在，创建它
 if not os.path.exists(today):
-    os.mkdir(today) # make directory
-    print('Successfully created directory', today)
+    os.mkdir(today) # 建立目录
+    print('成功创建目录', today)
 
-# 5. We use the zip command to put the files in a zip archive
+# 5. 我们使用zip命令把文件压缩到一个压缩文件中
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
-# Run the backup
+# 运行备份
 if os.system(zip_command) == 0:
-    print('Successful backup to', target)
+    print('成功备份到', target)
 else:
-    print('Backup FAILED')
+    print('备份失败')
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 backup_ver3.py
@@ -204,101 +205,101 @@ $ python3 backup_ver3.py
 SyntaxError: invalid syntax
 ~~~
 
-How This (does not) Work:
+这怎么（不）工作：
 
-**This program does not work!** Python says there is a syntax error which means that the script does not satisfy the structure that Python expects to see. When we observe the error given by Python, it also tells us the place where it detected the error as well. So we start *debugging* our program from that line.
+**这个程序不工作！**Python说有语法错误这意味着脚本不满足Python预计的结构。当我们观察Python给出的错误，它还告诉我们它检测到错误的地方。所以我们从那一行开始*调试*我们的程序。
 
-On careful observation, we see that the single logical line has been split into two physical lines but we have not specified that these two physical lines belong together. Basically, Python has found the addition operator (`+`) without any operand in that logical line and hence it doesn't know how to continue. Remember that we can specify that the logical line continues in the next physical line by the use of a backslash at the end of the physical line. So, we make this correction to our program. This correction of the program when we find errors is called **bug fixing**.
+在仔细观察后，我们发现单一的逻辑行被分成两个物理行，但我们没有指定这两个物理行属于同一个逻辑行。基本上，Python发现在那个逻辑行添加操作符(`+`)没有任何操作对象，因此不知道如何继续。记住，我们可以通过在物理行的结束位置使用反斜杠指定当前行与下一物理行是连续的。所以，我们要改正我们的程序。我们找到错误时的这样修正叫做**修复bug**。
 
-## Fourth Version
+## 第四版
 
-Save as `backup_ver4.py`:
+保存为 `backup_ver4.py`:
 
 ~~~python
 import os
 import time
 
-# 1. The files and directories to be backed up are specified in a list.
+# 1. 在列表中指出需要备份的文件和目录。
 source = ['"C:\\My Documents"', 'C:\\Code']
-# Notice we had to use double quotes inside the string for names with spaces in it.
+# 注意，因为名字字符串中有空格，我们不得不使用双引号。
 
-# 2. The backup must be stored in a main backup directory
-target_dir = 'E:\\Backup' # Remember to change this to what you will be using
+# 2. 备份必须存储在一个主备份目录中。
+target_dir = 'E:\\Backup' #记住把它改为你要使用的目录
 
-# 3. The files are backed up into a zip file.
-# 4. The current day is the name of the subdirectory in the main directory
+# 3. 备份的文件压缩到一个压缩文件中。
+# 4. 当前日期是主备份目录中子目录的名字
 today = target_dir + os.sep + time.strftime('%Y%m%d')
-# The current time is the name of the zip archive
+# 当前时间是压缩文件的名字
 now = time.strftime('%H%M%S')
 
-# Take a comment from the user to create the name of the zip file
-comment = input('Enter a comment --> ')
-if len(comment) == 0: # check if a comment was entered
+# 为创建一个压缩文件的名字从用户取得一个注释
+comment = input('输入注释--> ')
+if len(comment) == 0: # 检查是否输入注释
     target = today + os.sep + now + '.zip'
 else:
     target = today + os.sep + now + '_' + \
         comment.replace(' ', '_') + '.zip'
 
-# Create the subdirectory if it isn't already there
+# 如果子目录不存在，创建它
 if not os.path.exists(today):
-    os.mkdir(today) # make directory
-    print('Successfully created directory', today)
+    os.mkdir(today) #  建立目录
+    print('成功创建目录', today)
 
-# 5. We use the zip command to put the files in a zip archive
+# 5. 我们使用zip命令把文件压缩到一个压缩文件中
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
-# Run the backup
+# 运行备份
 if os.system(zip_command) == 0:
-    print('Successful backup to', target)
+    print('成功备份到 ', target)
 else:
-    print('Backup FAILED')
+    print('备份失败')
 ~~~
 
-Output:
+输出：
 
 ~~~
 $ python3 backup_ver4.py
-Enter a comment --> added new examples
-Successful backup to E:\Backup\20080702\202836_added_new_examples.zip
+输入注释--> added new examples
+成功备份到 E:\Backup\20080702\202836_added_new_examples.zip
 
 $ python3 backup_ver4.py
-Enter a comment -->
-Successful backup to E:\Backup\20080702\202839.zip
+输入注释-->
+成功备份到 E:\Backup\20080702\202839.zip
 ~~~
 
-How It Works:
+它是如何工作的：
 
-This program now works! Let us go through the actual enhancements that we had made in version 3. We take in the user's comments using the `input` function and then check if the user actually entered something by finding out the length of the input using the `len` function. If the user has just pressed `enter` without entering anything (maybe it was just a routine backup or no special changes were made), then we proceed as we have done before.
+这个程序现在工作了！让我们仔细检查第三版的实际增强，我们使用`input`函数获取 用户的注解，然后通过使用`len`函数找到输入的长度检查用户确实输入了一些东西。如果用户只是按`enter`（回车键），没有输入任何东西(也许这只是一个常规备份或没有特殊的改变)，那么，我们按照我们之前所做的处理。
 
-However, if a comment was supplied, then this is attached to the name of the zip archive just before the `.zip` extension.  Notice that we are replacing spaces in the comment with underscores - this is because managing filenames without spaces is much easier.
+然而，如果提供了一个注释，那么，它将附加到压缩文档名字中、 `.zip`扩展名前。请注意，我们将注释中的空格用开线正在取代空间在评论中用下划线——这是因为管理没有空格的文件名容易得多。
 
-## More Refinements
+## 更细化
 
-The fourth version is a satisfactorily working script for most users, but there is always room for improvement. For example, you can include a *verbosity* level for the program where you can specify a `-v` option to make your program become more talkative.
+第四版对于大多数用户来说是一个令人满意的工作脚本，但总有改进的余地。例如，您可以为程序包括一个*冗长*级别，在那里你可以指定一个`-v`选项，从而使你的程序变得更加健谈。
 
-Another possible enhancement would be to allow extra files and directories to be passed to the script at the command line. We can get these names from the `sys.argv` list and we can add them to our `source` list using the `extend`method provided by the `list` class.
+另一个可能的优化处理是将允许额外的文件和目录被传递给该脚本的命令行。我们可从`sys.argv`列表得到这些文件名，我们可以使用`list`类提供的`extend`方法将它们添加到我们的`source`列表中。
 
-The most important refinement would be to not use the `os.system` way of creating archives and instead using the `zipfile` or `tarfile` built-in module to create these archives. They are part of the standard library and available already for you to use without external dependencies on the zip program to be available on your computer.
+最重要的改进是不使用的创建文档的`os.system` 方式，而是使用转而使用内建的 `zipfile` 或 `tarfile`模块创建文档。他们是标准库的一部分，在你的计算机上已经为您提供使用没有外部依赖的压缩程序。
 
-However, I have been using the `os.system` way of creating a backup in the above examples purely for pedagogical purposes, so that the example is simple enough to be understood by everybody but real enough to be useful.
+然而，在上面的例子中，纯粹是为教学的目的，我一直使用 `os.system`的方式创建一个备份，这样的例子对每个人的理解足够简单，但不是真正足够的有效。
 
-Can you try writing the fifth version that uses the [zipfile](http://docs.python.org/py3k/library/zipfile.html) module instead of the `os.system` call?
+你能使用[zipfile(压缩文件)](http://docs.python.org/py3k/library/zipfile.html)模块，而不是`os.system`调用尝试写第五版吗？
 
-## The Software Development Process
+## 软件开发过程
 
-We have now gone through the various **phases** in the process of writing a software. These phases can be summarised as follows:
+我们已经经历了编写一个软件过程中的各种**阶段**。这些阶段可以概括如下：
 
-#. What (Analysis)
-#. How (Design)
-#. Do It (Implementation)
-#. Test (Testing and Debugging)
-#. Use (Operation or Deployment)
-#. Maintain (Refinement)
+#. 什么 (分析)
+#. 怎样 (设计)
+#. 做 (实现)
+#. 测试 (测试和调试)
+#. 使用 (操作和部署)
+#. 维护 (优化)
 
-A recommended way of writing programs is the procedure we have followed in creating the backup script: Do the analysis and design. Start implementing with a simple version. Test and debug it. Use it to ensure that it works as expected. Now, add any features that you want and continue to repeat the Do It-Test-Use cycle as many times as required. Remember, **Software is grown, not built**.
+编写程序的推荐方法是我们创建备份脚本的过程：做了分析和设计，开始实现用一个简单的版本，测试和调试它，来确保它能按预期工作。现在，添加你想要的任何功能，继续重复需要次数的做－试验循环。记住，**软件是在成长，而不是建立**。
 
-## Summary
+## 小结
 
-We have seen how to create our own Python programs/scripts and the various stages involved in writing such programs. You may find it useful to create your own program just like we did in this chapter so that you become comfortable with Python as well as problem-solving.
+我们已经看到了如何创建我们自己的Python程序/脚本和编写这种程序的不同阶段。你可能会发现创建你自己的程序就像我们在这一章做的是有用的，以便你熟悉Python以及解决问题。
 
-Next, we will discuss object-oriented programming.
+接下来，我们将讨论面向对象编程。
