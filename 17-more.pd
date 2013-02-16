@@ -1,25 +1,25 @@
 # 更多
 
-So far we have covered a majority of the various aspects of Python that you will use. In this chapter, we will cover some more aspects that will make our knowledge of Python more well-rounded.
+到目前为止，我们已经涵盖了您将使用的Python各个方面的大部分。在这一章，我们将介绍使我们的Python知识更全面的更多方面。
 
 ## Passing tuples around 
 
-Ever wished you could return two different values from a function? You can. All you have to do is use a tuple.
+你是否一直希望可以从一个函数返回两个不同的值？你可以，你所要做的就是使用一个元组。
 
 ~~~
 >>> def get_error_details():
-...     return (2, 'second error details')
+...     return (2, '第2个错误的细节')
 ...
 >>> errnum, errstr = get_error_details()
 >>> errnum
 2
 >>> errstr
-'second error details'
+'第2个错误的细节'
 ~~~
 
-Notice that the usage of `a, b = <some expression>` interprets the result of the expression as a tuple with two values.
+注意，`a, b = <some expression>`的用法是表示将表达式的结果作为一个有两个值的元组。
 
-If you want to interpret the results as `(a, <everything else>)`, then you just need to star it just like you would in function parameters:
+如果你想将结果解释为`(a, <其它的一切>)`，那么你只需要以星号开始，就像你在函数参数中做的：
 
 ~~~
 >>> a, *b = [1, 2, 3, 4]
@@ -29,7 +29,7 @@ If you want to interpret the results as `(a, <everything else>)`, then you just 
 [2, 3, 4]
 ~~~
 
-This also means the fastest way to swap two variables in Python is:
+这也意味着，在Python中以最快的方式交换两个变量是:
 
 ~~~
 >>> a = 5; b = 8
@@ -38,55 +38,55 @@ This also means the fastest way to swap two variables in Python is:
 (8, 5)
 ~~~
 
-## Special Methods 
+## 特别的方法 
 
-There are certain methods such as the `__init__` and `__del__` methods which have special significance in classes.
+有一些特别的方法，比如`__init__`和`__del__`方法在类中有特殊意义。
 
-Special methods are used to mimic certain behaviors of built-in types. For example, if you want to use the `x[key]` indexing operation for your class (just like you use it for lists and tuples), then all you have to do is implement the `__getitem__()` method and your job is done. If you think about it, this is what Python does for the `list` class itself!
+特殊的方法用于模拟内置类型的某些行为，例如，如果您想要使用`x[key]`索引操作你的类(就像你用在列表和元组中使用的)，那么你所要做的就是实现`__getitem__()`的方法，做你的工作。如果你仔细想想，这就是Python为`list`类本身所做的!
 
-Some useful special methods are listed in the following table. If you want to know about all the special methods, [see the manual](http://docs.python.org/py3k/reference/datamodel.html#specialnames).
+在下面的表中列出了一些有用的特别的方法。如果你想知道所有的特殊方法，[参见手册](http://docs.python.org/py3k/reference/datamodel.html#specialnames)。
 
 `__init__(self, ...)`
 
-:   This method is called just before the newly created object is returned for usage.
+:   这个方法在新创建对象返回用法之前被调用。
 
 `__del__(self)`
 
-:   Called just before the object is destroyed
+:   在对象被销毁前调用
 
 `__str__(self)`
 
-:   Called when we use the `print` function or when `str()`is used.
+:   当使用`print`函数或`str()`函数时调用。
 
 `__lt__(self, other)`
 
-:   Called when the *less than* operator (&lt;) is used. Similarly, there are special methods for all the operators (+, &gt;, etc.)
+:   当使用*小于*(&lt;)操作符时调用，同样的，所有的操作符(+, &gt;,等。)都有特别的方法。
 
 `__getitem__(self, key)`
 
-:   Called when `x[key]` indexing operation is used.
+:   当使用`x[key]`索引操作时调用。
 
 `__len__(self)`
 
-:   Called when the built-in `len()` function is used for the sequence object.
+:   当序列对象的内建`len()`函数使用时调用。
 
-## Single Statement Blocks 
+## 单语句块 
 
-We have seen that each block of statements is set apart from the rest by its own indentation level. Well, there is one caveat. If your block of statements contains only one single statement, then you can specify it on the same line of, say, a conditional statement or looping statement. The following example should make this clear: 
+我们已经看到,每个块语句以它自己的缩进级别与其它部分分离。嗯，有一个警告。如果你的块语句只包含一个单独的语句，那么您可以指定在同一行，例如，一个条件语句和循环语句。下面的示例应该清楚地说明这一点:
 
 ~~~
 >>> flag = True
->>> if flag: print('Yes')
-Yes
+>>> if flag: print('是的')
+是的
 ~~~
 
-Notice that the single statement is used in-place and not as a separate block.  Although, you can use this for making your program *smaller*, I strongly recommend avoiding this short-cut method, except for error checking, mainly because it will be much easier to add an extra statement if you are using proper indentation.
+请注意，单个语句用于原地而不是作为一个单独的块。虽然，你这可以让你的程序*较小*，我强烈建议避免这种简化方法，除非是错误检查，主要因为如果你正在使用适当的缩进，它会更容易添加一个额外的声明。
 
-## Lambda Forms 
+## Lambda 形式 
 
-A `lambda` statement is used to create new function objects. Essentially, the `lambda` takes a parameter followed by a single expression only which becomes the body of the function and the value of this expression is returned by the new function.
+一个`lambda`语句是用来创建新的函数对象。从本质上讲，`lambda`取得一个参数，后面有一个函数主体的表达式，而表达式表达式的值由新函数返回。
 
-Example (save as `lambda.py`):
+例子 (保存为 `lambda.py`):
 
 ~~~python
 points = [ { 'x' : 2, 'y' : 3 }, { 'x' : 4, 'y' : 1 } ]
@@ -94,21 +94,21 @@ points.sort(key=lambda i : i['y'])
 print(points)
 ~~~
 
-Output:
+输出:
 
 ~~~
 [{'x': 4, 'y': 1}, {'x': 2, 'y': 3}]
 ~~~
 
-How It Works:
+它是如何工作的:
 
-Notice that the `sort` method of a `list` can take a `key` parameter which determines how the list is sorted (usually we know only about ascending or descending order). In our case, we want to do a custom sort, and for that we need to write a function but instead of writing a separate `def` block for a function that will get used in only this one place, we use a lambda expression to create a new function.
+注意，`list`的`sort`方法可以取一个`key`(键)参数，用于确定列表如何排序(通常我们知道只有升序或降序)。在我们的例子中，我们要做一个自定义排序，为此，我们需要编写一个函数，我们只使用一个lambda表达式创建一个新的函数，而不是为只在这一个地方使用的函数写一个单独的`def`块。
 
-## List Comprehension 
+## 列表解析 
 
-List comprehensions are used to derive a new list from an existing list. Suppose you have a list of numbers and you want to get a corresponding list with all the numbers multiplied by 2 only when the number itself is greater than 2. List comprehensions are ideal for such situations.
+列表解析用于从现有的列表派生一个新列表。假设您有一个数字列表，你想要得到一个相应的列表：只有当数字本身大于2时所有的数字乘以2，列表解析非常适合这种情况。
 
-Example (save as `list_comprehension.py`):
+例子 (保存为`list_comprehension.py`):
 
 ~~~python
 listone = [2, 3, 4]
@@ -116,26 +116,26 @@ listtwo = [2*i for i in listone if i > 2]
 print(listtwo)
 ~~~
 
-Output:
+输出:
 
 ~~~
 $ python3 list_comprehension.py
 [6, 8]
 ~~~
 
-How It Works:
+它是如何工作的:
 
-Here, we derive a new list by specifying the manipulation to be done (`2*i`) when some condition is satisfied (`if i > 2`). Note that the original list remains unmodified. 
+这里，我们在满足一些条件的情况下(`if i > 2`)通过指定的操作(`2*i`)得到一个新列表。注意，原始列表仍未修改。
 
-The advantage of using list comprehensions is that it reduces the amount of boilerplate code required when we use loops to process each element of a list and store it in a new list.
+使用列表解析的优势是：当我们使用循环来处理列表中的每个元素，并将其存储在一个新的列表时，它可以减少需要代码的引用数量。
 
-## Receiving Tuples and Dictionaries in Functions 
+## 在函数中接受元组和字典
 
-There is a special way of receiving parameters to a function as a tuple or a dictionary using the * or ** prefix respectively. This is useful when taking variable number of arguments in the function.
+函数有一种特殊的方式接收参数--分别使用*和**前缀标识元组或字典。当函数获取数量可变的参数时这很有用。
 
 ~~~
 >>> def powersum(power, *args):
-...     '''Return the sum of each argument raised to        specified power.'''
+...     '''返回每个参数指定次方的和。'''
 ...     total = 0
 ...     for i in args:
 ...         total += pow(i, power)
@@ -148,17 +148,17 @@ There is a special way of receiving parameters to a function as a tuple or a dic
 100
 ~~~
 
-Because we have a `*` prefix on the `args` variable, all extra arguments passed to the function are stored in `args` as a tuple.  If a ** prefix had been used instead, the extra parameters would be considered to be key/value pairs of a dictionary.
+因为我们有一个`*`前缀在`args`变量前，所有额外的传递给函数的参数存储作为元组的`args` 中。如果使用**前缀，额外的参数将被认为是键/值对的字典。
 
-## The assert statement 
+## assert(断言)语句 
 
-The `assert` statement is used to assert that something is true. For example, if you are very sure that you will have at least one element in a list you are using and want to check this, and raise an error if it is not true, then `assert` statement is ideal in this situation. When the assert statement fails, an `AssertionError` is raised.
+`assert`语句是用来声称某样东西是确实的。例如，如果你很确定你将使用的列表中至少有一个元素，而你想检查如果它不是真实的出现一个错误。那么`assert`语句在这种情况下是一个好主意。当断言语句失败，出现一个`AssertionError`(断言错误)。
 
 ~~~
->>> mylist = ['item']
+>>> mylist = ['条款']
 >>> assert len(mylist) >= 1
 >>> mylist.pop()
-'item'
+'条款'
 >>> mylist
 []
 >>> assert len(mylist) >= 1
@@ -167,39 +167,39 @@ File "<stdin>", line 1, in <module>
 AssertionError
 ~~~
 
-The `assert` statement should be used judiciously. Most of the time, it is better to catch exceptions, either handle the problem or display an error message to the user and then quit.
+`assert`语句应该明智而审慎地使用。大多数时候，它能很好地捕捉异常，要么处理问题或向用户显示一条错误消息，然后退出。
 
-## Escape Sequences
+## 转义字符
 
-Suppose, you want to have a string which contains a single quote (`'`), how will you specify this string? For example, the string is `What's your name?`. You cannot specify `'What's your name?'` because Python will be confused as to where the string starts and ends. So, you will have to specify that this single quote does not indicate the end of the string. This can be done with the help of what is called an *escape sequence*. You specify the single quote as `\'` - notice the backslash. Now, you can specify the string as `'What\'s your name?'`.
+假设,你想有一个包含单引号(`'`)的字符串，你将如何指定该字符串呢？例如，字符串是`What's your name?`，你不能指定为`'What's your name?'`因为Python会对在哪里开始和结束字符串感到困惑。所以，你必须指定这个单引号不表示是字符串的末尾。这可以在叫做*转义字符*的帮助下实现。你将单引号指定为`\'`——注意，反斜杠。现在，您可以指定字符串为`'What\'s your name?'`。
 
-Another way of specifying this specific string would be `"What's your name?"` i.e. using double quotes. Similarly, you have to use an escape sequence for using a double quote itself in a double quoted string. Also, you have to indicate the backslash itself using the escape sequence `\\`.
+指定这个特定的字符串的另一种方式是`"What's your name?"`，即使用双引号。同样的，在一个双引号的字符串中为双引号本身必须使用一个转义字符。另外，对反斜杠本身要使用转义字符 `\\`。
 
-What if you wanted to specify a two-line string? One way is to use a triple-quoted string as shown [previously](#triple-quotes) or you can use an escape sequence for the newline character - `\n` to indicate the start of a new line. An example is `This is the first line\nThis is the second line`. Another useful escape sequence to know is the tab - `\t`. There are many more escape sequences but I have mentioned only the most useful ones here.
+如果你想指定一个两行的字符串该怎样在做呢？一种方法是使用[前面]](#三重引号) 介绍的三重引号，或者您可以使用新行转义字符--`\n`来表示一个新行开始。一个例子是 `这是第1行\n这是第2行`。另一个要知道的有用的转义字符是制表符 `\t`。有更多的转义字符，但在这我只提到最有用的几个。
 
-One thing to note is that in a string, a single backslash at the end of the line indicates that the string is continued in the next line, but no newline is added. For example:
-
-~~~python
-"This is the first sentence. \
-This is the second sentence."
-~~~
-
-is equivalent to 
+需要注意的是，在一个字符串中，在一行结束处的反斜杠表明字符串在下一行仍在继续，并没有换行。例如:
 
 ~~~python
-"This is the first sentence. This is the second sentence."
+"这是第1个句子。\
+这是第2个句子。"
 ~~~
 
-### Raw String
+相当于
 
-If you need to specify some strings where no special processing such as escape sequences are handled, then what you need is to specify a *raw* string by prefixing `r` or `R` to the string. An example is `r"Newlines are indicated by \n"`.
+~~~python
+"这是第1个句子。这是第2个句子。"
+~~~
 
-Note for Regular Expression Users
+### 原始字符串
 
-:   Always use raw strings when dealing with regular expressions. Otherwise, a lot of backwhacking may be required. For example, backreferences can be referred to as `'\\1'` or `r'\1'`.
+如果你需要指定没有经过像转义字符一样进行处理的字符串，那么，你需要通过对字符串前加前缀`r`或`R`来指定一个*原始*的字符串。一个例子是 `r"\n表明新行"`。
 
-## Summary 
+正则表达式用户需要注意
 
-We have covered some more features of Python in this chapter and yet we haven't covered all the features of Python. However, at this stage, we have covered most of what you are ever going to use in practice. This is sufficient for you to get started with whatever programs you are going to create.
+:   在处理正则表达式时总是使用原始字符串，否则，需要大量的反斜杠。例如，反向引用可以被指向`'\\1'`或`r'\1'`。
 
-Next, we will discuss how to explore Python further.
+## 小结
+
+在这一章，我们讨论了一些Python的更多功能，然而我们还没有覆盖所有Python的特点。然而，,在这个阶段，我们已经覆盖了在实践中你会用到的大部分。对于你开始创造任何程序是足够的。
+
+接下来，我们将讨论如何深入探索Python。
