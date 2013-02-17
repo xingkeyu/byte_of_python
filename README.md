@@ -2,7 +2,7 @@
 
 ## 安装
 
-确保已经安装Python 2.7或更高版本。
+确保已经安装Python 2.7 或更高版本。
 
 从<http://johnmacfarlane.net/pandoc/installing.html>安装Pandoc。
 
