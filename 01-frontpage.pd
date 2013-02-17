@@ -6,13 +6,13 @@
 
 《A Byte of Python》是一本介绍用Python语言编写程序的免费书。它为初学Python语言者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
 
-本书是依据Python的最新版本 3 编写的，尽管当今Python 2仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
+本书是依据最新版本Python 3编写的，尽管当今Python 2仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
 
-## 《A Byte of Python》为谁而写?
+## 《A Byte of Python》读者对象?
 
 这是一些人对本书的评价:
 
-> 我发现最好的事，是我发现了《A Byte of Python》, 它是为初学者编写的一本杰出的书。它写的很好，概念都通过不言而喻的例子作了很好的解释。
+> 我发现最好的事，是我发现了《A Byte of Python》, 它是为初学者编写的一本杰出的书。它写的很好，通过不言而喻的例子对概念作了很好的解释。
 >
 > -- [_Syed Talal_ (19岁)](http://littlepancakes.wordpress.com/2010/01/30/python)
 
@@ -36,7 +36,7 @@
 
 >  
 
-> 嗨，我来自多米尼加共和国，我叫Pavel。最近，我读了你的《A Byte of Python》，我认为它是极好的!!  :)。从例子中我尝到了很多，你的书对像我这样的初学者帮助很大...
+> 嗨，我来自多米尼加共和国，我叫Pavel。最近，我读了你的《A Byte of Python》，我认为它是极好的!!  :)。从例子中我学到了很多，你的书对像我这样的初学者有很大帮助...
 >
 > -- _Pavel Simo_ (pavel-dot-simo-at-gmail-dot-com)
 
@@ -48,13 +48,13 @@
 
 >  
 
-> 亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次感谢！您把知识“掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。
+> 亲爱的Swaroop，我正跟着一个对教学没兴趣的老师上课。我们使用的是 O'Reilly 的《Python学习手册（第二版）》，它不是没有任何编程知识的初学者学习的教材，而且我们的老师也应该以另外一种方式教学。非常感谢您的书籍，如果没有它，我就不能学会Python和编程。一百万次地感谢！您把知识“掰开揉碎”到初学者能够理解的水平，这不是所有人都能做到的。
 >
 > -- _Joseph Duarte_ (jduarte1-at-cfl-dot-rr-dot-com)
 
 >  
 
-> 我喜欢你的书！这是最好的Python教程，非常有用的参考手册。才华横溢，真正的杰作！请继续这种好的工作！
+> 我喜欢你的书！这是最好的Python教程，非常有用的参考手册，才华横溢，真正的杰作！请继续这种好的工作！
 >
 > -- _Chris-André Sommerseth_
 
@@ -66,25 +66,25 @@
 >
 > ...
 >
-> 再一次，非常感谢你将如此结构良好而且有用的编程基础教程放到网上。它帮助我彻底理解了OOP，这之前两本书都没行。
+> 再一次，非常感谢你将如此结构良好而且有用的编程基础教程放到网上，它帮助我彻底理解了OOP，这之前两本书都没行。
 >
 > -- _Matt Gallivan_ (m-underscore-gallivan12-at-hotmail-dot-com)
 
 >  
 
-> 我感谢您以及您的《A Byte of Python》，我发现这是学习Python最好的途径。我现在15岁，住在埃及，我的名字叫Ahmed。Python是我学习的第二个编程语言，我6岁时在学校学习了Visual Basic，但我并不喜欢它，可是我真的喜欢学习Python。我成功地编写了地址簿程序。我打算尝试编写更多程序、阅读Python程序（如果您有意给我推荐一些有帮助的源代码）。我也将开始学习Java，如果您能告诉我在哪里可以找到向您的教程一样好的Java教程，那将对我有很大帮助。多谢。
+> 我感谢您以及您的《A Byte of Python》，我发现这是学习Python最好的途径。我现在15岁，住在埃及，我的名字叫Ahmed。Python是我学习的第二个编程语言，我在学校学习了Visual Basic 6，但我并不喜欢它，可是我真的喜欢学习Python。我成功地编写了地址簿程序。我打算尝试编写更多程序、阅读Python程序（如果您有意给我推荐一些有帮助的源代码）。我也将开始学习Java，如果您能告诉我在哪里可以找到向您的教程一样好的Java教程，那将对我有很大帮助。多谢。
 >
 > -- _Ahmed Mohammed_ (sedo-underscore-91-at-hotmail-dot-com)
 
 >  
 
-> 初学者想更多的学习Python编程的最好的资源是Swaroop编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到的最好的Python入门教程。
+> 初学者想更多的学习Python编程的最好的资源是Swaroop C H编写的110页的PDF教程《A Byte of Python》。这本书写得很好，跟随它学习很容易，或许是当前可以得到的最好的Python入门教程。
 >
 > -- _Drew Ames_ 在Linux.com上发表的文章[Scripting Scribus](http://www.linux.com/feature/126522)中写道
 
 >  
 
-> 昨天，我在Nokia N800上浏览了《A Byte of Python》的大部分内容，这是我至今遇到的最简明扼要的Python教程。极力推荐作为学习Python的一个起点。
+> 昨天，我在Nokia N800上浏览了《A Byte of Python》的大部分内容，这是我至今遇到的最简明扼要的Python教程,极力推荐作为学习Python的一个起点。
 >
 > -- _Jason Delport_ 发表在[博客](http://paxmodept.com/telesto/blogitem.htm?id=627)
 
@@ -161,4 +161,4 @@
 
 ## 阅读本书的母语版
 
-如果您对阅读或参与本书的翻译感兴趣，请看[翻译](#translations)。
+如果您对阅读或参与本书的翻译感兴趣，请看[翻译](#翻译)。
