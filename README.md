@@ -2,7 +2,7 @@
 
 ## 安装
 
-确保已经安装Python 2.7 或更高版本。
+确保已经安装了Python 2.7 或更高版本。
 
 从<http://johnmacfarlane.net/pandoc/installing.html>安装Pandoc。
 
@@ -33,4 +33,4 @@
 
 ## 编辑
 
-如果你使用 Vim 编辑器，那么或许你会喜欢 [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc) 插件。但是，对长文章它有一个缺点，变得确实很慢。因此，我只在纯文本模式(`:set ft=`)编辑，使用`pandoc`(`:set ft=pandoc`)模式检查。
+如果你使用 Vim 编辑器，那么或许你会喜欢 [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc) 插件。但是对大文章它有一个缺点，变得确实很慢。因此，我只在纯文本模式(`:set ft=`)下编辑，在`pandoc`(`:set ft=pandoc`)模式下检查。
