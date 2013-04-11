@@ -2,15 +2,15 @@
 % Swaroop C H
 % $$date$$
 
-#  A Byte of Python
+#A Byte of Python
 
-《A Byte of Python》是一本介绍用Python语言编写程序的免费书。它为Python语言初学者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
+《A Byte of Python》是一本介绍用Python语言编写程序的免费书。它为Python初学者提供指导或指南。如果你对计算机的知识仅限于知道如何保存文本文件，那么这本书非常适合你。
 
-本书是依据最新版本Python 3编写的，尽管当今Python 2仍被普遍使用。(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3)).
+尽管当今Python 2仍被普遍使用,本书还是依据最新版Python 3编写的(更多请看[Python 2 ＆ 3 一节](#python-2-＆-3))。
 
 ## 《A Byte of Python》的读者对象?
 
-这是一些人对本书的评价:
+下面是一些人对本书的评价:
 
 > 我发现的最好的事，是我发现了《A Byte of Python》, 它是为初学者编写的一本杰出的书，它写的很好，通过不言而喻的例子对概念作了很好的解释。
 >
@@ -42,7 +42,7 @@
 
 >  
 
-> 我读完了《A Byte of Python》，我想我真的应该感谢你，当我读到最后，我感到非常难过，因为我不得不再回到无趣的、乏味的学习笔记等。不论如何，作为Python学习手册，我欣赏你的书。
+> 我读完了《A Byte of Python》，我想我真的应该感谢你，当我读到最后，我感到非常难过，因为我不得不再回到无趣的、乏味的学习笔记等中去。不论如何，作为Python学习手册，我欣赏你的书。
 >
 > --  _Samuel Young_ (sy-one-three-seven-at-gmail-dot-com)
 
@@ -146,7 +146,7 @@
 
 ## 开始阅读
 
-你可以[在线阅读本书](http://www.swaroopch.com/notes/Python_en-Preface).
+你可以[在线阅读本书](http://www.swaroopch.com/notes/Python_en-Preface)。
 
 ## 购买本书
 
@@ -157,7 +157,7 @@
 - [PDF](http://files.swaroopch.com/python/byte_of_python.pdf)
 - [完整源码](https://github.com/swaroopch/byte_of_python)
 
-** 如果您想支持本书的持续发展，请考虑[购买本书](http://www.swaroopch.com/buybook)**.
+** 如果您想支持本书的持续发展，请考虑[购买本书](http://www.swaroopch.com/buybook)**。
 
 ## 阅读本书的母语版
 
