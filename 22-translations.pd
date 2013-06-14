@@ -39,14 +39,19 @@ Moises Gomez (moisesgomezgiron-at-gmail-dot-com)志愿把本书翻译为加泰�
 
 ## 中文
 
-这里[http://www.swaroopch.org/notes/Python_cn:Table_of_Contents](http://www.swaroopch.org/notes/Python_cn:Table_of_Contents)有一个中文版。
+当前版本:
 
-Juan Shen (orion-underscore-val-at-163-dot-com)志愿把本书翻译为中文，
-在[http://www.pycn.org/python%E5%9C%A8%E7%BA%BF%E6%89%8B%E5%86%8C](http://www.pycn.org/python%E5%9C%A8%E7%BA%BF%E6%89%8B%E5%86%8C)可以看到。
+- [A Byte of Python @ 珠海GDG](http://zhgdg.gitcafe.com/static/doc/byte_of_python.html)
+    - 基于: https://bitbucket.org/swaroopch/byte_of_python
 
-> 我是中国北京科技大学无线电通讯研究所的一名研究生。我现在的研究领域主要在多载波CDMA系统的同步、信道估计、多用户检测等方面。实际上，Python语言（和Numeric库）是我目前在仿真和其他科研工作时日常使用的主要编程语言。我只是在关年前开始Python，但你能知道，它是容易理解、容易使用和富有成效的。正像在Swaroop的书中强调的，'现在，这是我最喜欢的编程语言'。
-在业余时间，他乐衷于各种FLOSS，如FreeBSD操作系统、PyGTK等等。电影、F1赛车和网球也是他的兴趣爱好。
-> 'A Byte of Python'是我学习Python的指南。在短时间内,它清晰、有效地带领你进入一个Python世界。本书不太长，但有效地覆盖了Python中几乎所有的重要的事情。我认为应该向初学者强烈推荐'A Byte of Python'，把它作为他们的第一个Python教程。把我的翻译奉献给中国可能数以百万计的Python用户。
+历史版本:
+
+- 沈洁元  译 1.20版本: [简明 Python 教程](http://woodpecker.org.cn/abyteofpython_cn/chinese/)
+- 已失效:
+    - 这里[http://www.swaroopch.org/notes/Python_cn:Table_of_Contents](http://www.swaroopch.org/notes/Python_cn:Table_of_Contents)有一个中文版。
+    - Juan Shen (orion-underscore-val-at-163-dot-com)志愿把本书翻译为中文，在[http://www.pycn.org/](http://www.pycn.org/python%E5%9C%A8%E7%BA%BF%E6%89%8B%E5%86%8C)可以看到。
+        - 我是中国北京科技大学无线电通讯研究所的一名研究生。我现在的研究领域主要在多载波CDMA系统的同步、信道估计、多用户检测等方面。实际上，Python语言（和Numeric库）是我目前在仿真和其他科研工作时日常使用的主要编程语言。我只是在关年前开始Python，但你能知道，它是容易理解、容易使用和富有成效的。正像在Swaroop的书中强调的，'现在，这是我最喜欢的编程语言'。在业余时间，他乐衷于各种FLOSS，如FreeBSD操作系统、PyGTK等等。电影、F1赛车和网球也是他的兴趣爱好。
+        - 'A Byte of Python'是我学习Python的指南。在短时间内,它清晰、有效地带领你进入一个Python世界。本书不太长，但有效地覆盖了Python中几乎所有的重要的事情。我认为应该向初学者强烈推荐'A Byte of Python'，把它作为他们的第一个Python教程。把我的翻译奉献给中国可能数以百万计的Python用户。
 
 ## 繁体中文
 
